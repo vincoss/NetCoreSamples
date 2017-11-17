@@ -1,0 +1,40 @@
+﻿@page
+@model GettingStarted_RazorPagesContacts.Pages.Customer.IndexModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>GettingStarted_RazorPagesContacts - Index</h2>
+
+<h3>Msg: @Model.Message</h3>
+
+<h1>Contacts</h1>
+<form method="post">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var contact in Model.Customers)
+            {
+                <tr>
+                    <td>@contact.Id</td>
+                    <td>@contact.FirstName</td>
+                    <td>@contact.LastName</td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@contact.Id">edit</a>
+                        <button type="submit" asp-page-handler="delete" asp-route-id="@contact.Id">
+                            delete
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a asp-page="./Create">Create</a>
+</form>

@@ -1,0 +1,22 @@
+﻿@page "{handler?}"
+@model CreateRouteModel
+@{
+    ViewData["Title"] = "CreateRoute";
+}
+
+<h2>Customizing Routing</h2>
+
+<html>
+<body>
+    <p>
+        Enter your name.
+    </p>
+    <div asp-validation-summary="All"></div>
+    <form method="POST">
+        <div>First Name: <input asp-for="Customer.FirstName" /></div>
+        <div>Last Name: <input asp-for="Customer.LastName" /></div>
+        <input type="submit" asp-page-handler="JoinList" value="Join" />
+        <input type="submit" asp-page-handler="JoinListUC" value="JOIN UC" />
+    </form>
+</body>
+</html>
