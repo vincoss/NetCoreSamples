@@ -17,3 +17,9 @@ https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/model
 run cmd and command below
 
 dotnet aspnet-codegenerator razorpage -m Movie -dc MovieContext -udl -outDir Pages\Movies --referenceScriptLibraries
+
+# Add migration for rating column from 'Package Manager Console'
+Possible you have to Truncate TABLE Movies
+
+Add-Migration Rating
+Update-Database
