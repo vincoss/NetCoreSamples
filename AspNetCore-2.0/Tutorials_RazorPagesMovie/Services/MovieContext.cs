@@ -15,5 +15,6 @@ namespace Tutorials_RazorPagesMovie.Services
         }
 
         public DbSet<Movie> Movie { get; set; }
+        public DbSet<Schedule> Schedule { get; set; }
     }
 }
