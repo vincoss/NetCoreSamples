@@ -45,6 +45,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorials_RazorPagesMovieMv
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorials_RazorPagesMovie", "src\Tutorials_RazorPagesMovie\Tutorials_RazorPagesMovie.csproj", "{451CAD2F-CDDF-47CC-8C9C-FA51E0ADB07C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_WebApplicationMvc", "src\Default_WebApplicationMvc\Default_WebApplicationMvc.csproj", "{3ECF7F0B-3EE9-4D04-A90E-8ACF4BA9AEFC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{451CAD2F-CDDF-47CC-8C9C-FA51E0ADB07C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{451CAD2F-CDDF-47CC-8C9C-FA51E0ADB07C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{451CAD2F-CDDF-47CC-8C9C-FA51E0ADB07C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3ECF7F0B-3EE9-4D04-A90E-8ACF4BA9AEFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ECF7F0B-3EE9-4D04-A90E-8ACF4BA9AEFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ECF7F0B-3EE9-4D04-A90E-8ACF4BA9AEFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ECF7F0B-3EE9-4D04-A90E-8ACF4BA9AEFC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -86,6 +92,7 @@ Global
 		{CD81AED2-EB19-4629-95A6-ED269C893627} = {4F23CF6B-57BE-44EF-B6D3-C0F247A8DEB6}
 		{A7CB9A16-5569-498D-A43D-61AD21CF3456} = {4F19C00D-6324-4748-8FB0-E69052771FB3}
 		{451CAD2F-CDDF-47CC-8C9C-FA51E0ADB07C} = {4F19C00D-6324-4748-8FB0-E69052771FB3}
+		{3ECF7F0B-3EE9-4D04-A90E-8ACF4BA9AEFC} = {01BC067A-DE01-4B53-AFE9-5B78CEE4FC85}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D8282B92-1BD9-46FB-A23B-4AD1E0EA297F}
