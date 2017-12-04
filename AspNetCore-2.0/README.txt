@@ -1,6 +1,6 @@
 
 -------------------- Next
 
-https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages-vsc/
+https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/adding-view
 
 -------------------- Review
