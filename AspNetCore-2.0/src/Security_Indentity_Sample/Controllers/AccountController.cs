@@ -437,6 +437,21 @@ namespace Security_Indentity_Sample.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Custom user, roles and provider.
+        /// https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity-primary-key-configuration?view=aspnetcore-2.1&tabs=aspnetcore2x
+        /// </summary>
+        [HttpGet]
+        [Microsoft.AspNetCore.Authorization.AllowAnonymous]
+        public async Task<Guid> GetCurrentUserId()
+        {
+            /*
+                CustomApplicationUser user = await _userManager.GetUserAsync(HttpContext.User);
+                return user.Id; // No need to cast here because user.Id is already a Guid, and not a string
+            */
+            throw new NotImplementedException();
+        }
+
         #region Helpers
 
         private void AddErrors(IdentityResult result)

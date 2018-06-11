@@ -13,6 +13,7 @@ using Microsoft.EntityFrameworkCore.InMemory;
 using Security_Indentity_Sample.Data;
 using Security_Indentity_Sample.Models;
 using Security_Indentity_Sample.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace Security_Indentity_Sample
 {
@@ -30,6 +31,14 @@ namespace Security_Indentity_Sample
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            // Custom application context
+
+            /*
+            services.AddIdentity<CustomApplicationUser, CustomApplicationRole>()
+                    .AddEntityFrameworkStores<CustomApplicationDbContext>()
+                    .AddDefaultTokenProviders();
+            */
 
             /*
                 Alternativelly can use in memory database for testing. If used in memoryDb comment above configuration.
@@ -64,6 +73,7 @@ namespace Security_Indentity_Sample
             {
                 // Cookie settings
                 options.Cookie.HttpOnly = true;
+                options.Cookie.Name = "YourAppCookieName"; // The default value is .AspNetCore.Cookies.
                 options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
                 // If the LoginPath isn't set, ASP.NET Core defaults 
                 // the path to /Account/Login.
@@ -71,7 +81,19 @@ namespace Security_Indentity_Sample
                 // If the AccessDeniedPath isn't set, ASP.NET Core defaults 
                 // the path to /Account/AccessDenied.
                 options.AccessDeniedPath = "/Account/AccessDenied";
+                // ReturnUrlParameter requires `using Microsoft.AspNetCore.Authentication.Cookies;`
+                options.ReturnUrlParameter = CookieAuthenticationDefaults.ReturnUrlParameter;
                 options.SlidingExpiration = true;
+            });
+
+            services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+            {
+                // User settings
+                options.User.RequireUniqueEmail = true;
+
+                // Signin settings
+                options.SignIn.RequireConfirmedEmail = true;
+                options.SignIn.RequireConfirmedPhoneNumber = false;
             });
 
             // Add application services.
