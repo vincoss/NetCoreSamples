@@ -7,13 +7,26 @@ using System.Threading.Tasks;
 namespace Tutorials_RazorPagesMovieMvc2.Controllers
 {
     public class HelloWorldController : Controller
-    { 
+    {
         // 
         // GET: /HelloWorld/
 
-        public string Index()
+        //public string Index()
+        //{
+        //    return "This is my default action...";
+        //}
+
+        public IActionResult Index()
         {
-            return "This is my default action...";
+            return View();
+        }
+
+        public IActionResult Welcome(string name, int numTimes = 1)
+        {
+            ViewData["Message"] = "Hello " + name;
+            ViewData["NumTimes"] = numTimes;
+
+            return View();
         }
 
         // 
@@ -26,9 +39,9 @@ namespace Tutorials_RazorPagesMovieMvc2.Controllers
 
         // GET: /HelloWorld/Welcome/ 
         // Requires using System.Text.Encodings.Web;
-        public string Welcome(string name, int numTimes = 1)
-        {
-            return System.Text.Encodings.Web.HtmlEncoder.Default.Encode($"Hello {name}, NumTimes is: {numTimes}");
-        }
+        //public string Welcome(string name, int numTimes = 1)
+        //{
+        //    return System.Text.Encodings.Web.HtmlEncoder.Default.Encode($"Hello {name}, NumTimes is: {numTimes}");
+        //}
     }
 }
