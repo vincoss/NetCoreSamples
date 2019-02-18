@@ -71,9 +71,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Security_Https", "src\Secur
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Security-WS_Federation", "src\Security-WS_Federation\Security-WS_Federation.csproj", "{93651D49-B990-46D8-B4B2-C592255EBA3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Security_IndividualUserAccounts", "src\Security_IndividualUserAccounts\Security_IndividualUserAccounts.csproj", "{2ACF1F83-FBD2-4D79-B36B-94C97CFD787E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Security_IndividualUserAccounts", "src\Security_IndividualUserAccounts\Security_IndividualUserAccounts.csproj", "{2ACF1F83-FBD2-4D79-B36B-94C97CFD787E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Security_Authentication_RazorPages_Cookie", "src\Security_Authentication_RazorPages_Cookie\Security_Authentication_RazorPages_Cookie.csproj", "{3B8B8B7F-30B4-422F-80E8-A9C28CB7B43C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Security_Authentication_RazorPages_Cookie", "src\Security_Authentication_RazorPages_Cookie\Security_Authentication_RazorPages_Cookie.csproj", "{3B8B8B7F-30B4-422F-80E8-A9C28CB7B43C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorials_TodoApi", "src\Tutorials_TodoApi\Tutorials_TodoApi.csproj", "{E97B9E46-D0E7-4538-A9A0-CAC254688592}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -157,6 +159,10 @@ Global
 		{3B8B8B7F-30B4-422F-80E8-A9C28CB7B43C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B8B8B7F-30B4-422F-80E8-A9C28CB7B43C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B8B8B7F-30B4-422F-80E8-A9C28CB7B43C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E97B9E46-D0E7-4538-A9A0-CAC254688592}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E97B9E46-D0E7-4538-A9A0-CAC254688592}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E97B9E46-D0E7-4538-A9A0-CAC254688592}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E97B9E46-D0E7-4538-A9A0-CAC254688592}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -181,6 +187,7 @@ Global
 		{93651D49-B990-46D8-B4B2-C592255EBA3E} = {41AB4F9F-8C59-4E9E-85F0-B805DA8BD751}
 		{2ACF1F83-FBD2-4D79-B36B-94C97CFD787E} = {41AB4F9F-8C59-4E9E-85F0-B805DA8BD751}
 		{3B8B8B7F-30B4-422F-80E8-A9C28CB7B43C} = {41AB4F9F-8C59-4E9E-85F0-B805DA8BD751}
+		{E97B9E46-D0E7-4538-A9A0-CAC254688592} = {4F19C00D-6324-4748-8FB0-E69052771FB3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D8282B92-1BD9-46FB-A23B-4AD1E0EA297F}
