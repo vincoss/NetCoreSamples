@@ -9,3 +9,6 @@ Right click on Controllers folder then Add -> New Scaffolded item
 
 Add-Migration Initial
 Update-Database
+
+# Add Rating
+Add-Migration Rating
