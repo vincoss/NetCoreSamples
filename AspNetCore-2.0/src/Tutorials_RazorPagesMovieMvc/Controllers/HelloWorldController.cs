@@ -1,46 +1,26 @@
-﻿using System;
-using Microsoft.AspNetCore.Mvc;
-using System.Text.Encodings.Web;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Tutorials_RazorPagesMovieMvc.Controllers
 {
     public class HelloWorldController : Controller
     {
+        // 
+        // GET: /HelloWorld/
+
         //public string Index()
         //{
         //    return "This is my default action...";
         //}
 
-        // GET: /HelloWorld/Welcome/ 
-        //public string Welcome()
-        //{
-        //    return "This is the Welcome action method...";
-        //}
-
-        // HelloWorld/Welcome?name=Fero&numtimes=4
-        //public string Welcome(string name, int numTimes = 1)
-        //{
-        //    return HtmlEncoder.Default.Encode($"Hello {name}, NumTimes is: {numTimes}");
-        //}
-        
-        /// <summary>
-        /// http://localhost:60587/helloworld
-        /// </summary>
-        /// <returns></returns
         public IActionResult Index()
         {
             return View();
         }
 
-        /// <summary>
-        /// HelloWorld/Welcome/3?name=Fero
-        /// </summary>
-        //public string Welcome(string name, int ID = 1)
-        //{
-        //    return HtmlEncoder.Default.Encode($"Hello {name}, ID: {ID}");
-        //}
-
-        // HelloWorld/Welcome?name=Fero&numtimes=4
         public IActionResult Welcome(string name, int numTimes = 1)
         {
             ViewData["Message"] = "Hello " + name;
@@ -48,5 +28,20 @@ namespace Tutorials_RazorPagesMovieMvc.Controllers
 
             return View();
         }
+
+        // 
+        // GET: /HelloWorld/Welcome/ 
+
+        //public string Welcome()
+        //{
+        //    return "This is the Welcome action method...";
+        //}
+
+        // GET: /HelloWorld/Welcome/ 
+        // Requires using System.Text.Encodings.Web;
+        //public string Welcome(string name, int numTimes = 1)
+        //{
+        //    return System.Text.Encodings.Web.HtmlEncoder.Default.Encode($"Hello {name}, NumTimes is: {numTimes}");
+        //}
     }
 }

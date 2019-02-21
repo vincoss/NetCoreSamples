@@ -18,10 +18,13 @@ namespace Tutorials_RazorPagesMovieMvc.Controllers
             _context = context;
         }
 
-        // GET: Movies
-        // Movies/?searchString=Ghost
-        // Movies/Ghost
-        //public async Task<IActionResult> Index(string id)
+        //// GET: Movies
+        //public async Task<IActionResult> Index()
+        //{
+        //    return View(await _context.Movie.ToListAsync());
+        //}
+
+        // movies/index?searchString=Ghost
         //public async Task<IActionResult> Index(string searchString)
         //{
         //    var movies = from m in _context.Movie
@@ -35,13 +38,6 @@ namespace Tutorials_RazorPagesMovieMvc.Controllers
         //    return View(await movies.ToListAsync());
         //}
 
-        //[HttpPost]
-        //public string Index(string searchString, bool notUsed)
-        //{
-        //    return "From [HttpPost]Index: filter on " + searchString;
-        //}
-
-        // Requires using Microsoft.AspNetCore.Mvc.Rendering;
         public async Task<IActionResult> Index(string movieGenre, string searchString)
         {
             // Use LINQ to get list of genres.
@@ -52,25 +48,32 @@ namespace Tutorials_RazorPagesMovieMvc.Controllers
             var movies = from m in _context.Movie
                          select m;
 
-            if (!String.IsNullOrEmpty(searchString))
+            if (!string.IsNullOrEmpty(searchString))
             {
                 movies = movies.Where(s => s.Title.Contains(searchString));
             }
 
-            if (!String.IsNullOrEmpty(movieGenre))
+            if (!string.IsNullOrEmpty(movieGenre))
             {
                 movies = movies.Where(x => x.Genre == movieGenre);
             }
 
-            var movieGenreVM = new MovieGenreViewModel();
-            movieGenreVM.Genres = new SelectList(await genreQuery.Distinct().ToListAsync());
-            movieGenreVM.Movies = await movies.ToListAsync();
+            var movieGenreVM = new MovieGenreViewModel
+            {
+                Genres = new SelectList(await genreQuery.Distinct().ToListAsync()),
+                Movies = await movies.ToListAsync()
+            };
 
             return View(movieGenreVM);
         }
 
+        [HttpPost]
+        public string Index(string searchString, bool notUsed)
+        {
+            return "From [HttpPost]Index: filter on " + searchString;
+        }
+
         // GET: Movies/Details/5
-        // GET: Movies/Details/?id=5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -79,7 +82,7 @@ namespace Tutorials_RazorPagesMovieMvc.Controllers
             }
 
             var movie = await _context.Movie
-                .SingleOrDefaultAsync(m => m.ID == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (movie == null)
             {
                 return NotFound();
@@ -99,7 +102,7 @@ namespace Tutorials_RazorPagesMovieMvc.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Title,ReleaseDate,Genre,Price,Rating")] Movie movie)
+        public async Task<IActionResult> Create([Bind("Id,Title,ReleaseDate,Genre,Price,Rating")] Movie movie)
         {
             if (ModelState.IsValid)
             {
@@ -118,7 +121,7 @@ namespace Tutorials_RazorPagesMovieMvc.Controllers
                 return NotFound();
             }
 
-            var movie = await _context.Movie.SingleOrDefaultAsync(m => m.ID == id);
+            var movie = await _context.Movie.FindAsync(id);
             if (movie == null)
             {
                 return NotFound();
@@ -131,9 +134,9 @@ namespace Tutorials_RazorPagesMovieMvc.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Title,ReleaseDate,Genre,Price")] Movie movie)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,ReleaseDate,Genre,Price,Rating")] Movie movie)
         {
-            if (id != movie.ID)
+            if (id != movie.Id)
             {
                 return NotFound();
             }
@@ -147,7 +150,7 @@ namespace Tutorials_RazorPagesMovieMvc.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!MovieExists(movie.ID))
+                    if (!MovieExists(movie.Id))
                     {
                         return NotFound();
                     }
@@ -170,7 +173,7 @@ namespace Tutorials_RazorPagesMovieMvc.Controllers
             }
 
             var movie = await _context.Movie
-                .SingleOrDefaultAsync(m => m.ID == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (movie == null)
             {
                 return NotFound();
@@ -184,7 +187,7 @@ namespace Tutorials_RazorPagesMovieMvc.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var movie = await _context.Movie.SingleOrDefaultAsync(m => m.ID == id);
+            var movie = await _context.Movie.FindAsync(id);
             _context.Movie.Remove(movie);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
@@ -192,7 +195,7 @@ namespace Tutorials_RazorPagesMovieMvc.Controllers
 
         private bool MovieExists(int id)
         {
-            return _context.Movie.Any(e => e.ID == id);
+            return _context.Movie.Any(e => e.Id == id);
         }
     }
 }

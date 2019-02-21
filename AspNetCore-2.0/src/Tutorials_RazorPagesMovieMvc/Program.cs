@@ -5,10 +5,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Tutorials_RazorPagesMovieMvc.Data;
-using Microsoft.Extensions.DependencyInjection;
+using Tutorials_RazorPagesMovieMvc.Models;
 
 namespace Tutorials_RazorPagesMovieMvc
 {
@@ -16,7 +18,7 @@ namespace Tutorials_RazorPagesMovieMvc
     {
         public static void Main(string[] args)
         {
-            var host = BuildWebHost(args);
+            var host = CreateWebHostBuilder(args).Build();
 
             using (var scope = host.Services.CreateScope())
             {
@@ -24,7 +26,8 @@ namespace Tutorials_RazorPagesMovieMvc
 
                 try
                 {
-                    // Requires using MvcMovie.Models;
+                    var context = services.GetRequiredService<MvcMovieContext>();
+                    context.Database.Migrate();
                     SeedData.Initialize(services);
                 }
                 catch (Exception ex)
@@ -37,9 +40,8 @@ namespace Tutorials_RazorPagesMovieMvc
             host.Run();
         }
 
-        public static IWebHost BuildWebHost(string[] args) =>
+        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
-                .Build();
+                .UseStartup<Startup>();
     }
 }
