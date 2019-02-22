@@ -4,16 +4,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Tutorials_RazorPagesMovie.Services;
+using Tutorials_WebApps_RazorPages.Data;
+using Tutorials_WebApps_RazorPages.Models;
 
-namespace Tutorials_RazorPagesMovie.Models
+namespace Tutorials_WebApps_RazorPages.Models
 {
     public static class SeedData
     {
         public static void Initialize(IServiceProvider serviceProvider)
         {
-            using (var context = new MovieContext(
-                serviceProvider.GetRequiredService<DbContextOptions<MovieContext>>()))
+            using (var context = new RazorPagesMovieContext(serviceProvider.GetRequiredService<DbContextOptions<RazorPagesMovieContext>>()))
             {
                 // Look for any movies.
                 if (context.Movie.Any())

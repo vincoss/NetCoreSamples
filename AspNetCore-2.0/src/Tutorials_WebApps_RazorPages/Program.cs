@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using RazorPagesMovie.Models;
-using Tutorials_RazorPagesMovie.Models;
+using Tutorials_WebApps_RazorPages.Models;
+using Tutorials_WebApps_RazorPages.Data;
 
 namespace Tutorials_WebApps_RazorPages
 {

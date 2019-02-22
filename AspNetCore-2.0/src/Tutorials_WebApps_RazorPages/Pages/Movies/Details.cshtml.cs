@@ -5,16 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using RazorPagesMovie.Models;
-using Tutorials_RazorPagesMovie.Models;
+using Tutorials_WebApps_RazorPages.Models;
+using Tutorials_WebApps_RazorPages.Data;
 
 namespace Tutorials_WebApps_RazorPages.Pages.Movies
 {
     public class DetailsModel : PageModel
     {
-        private readonly RazorPagesMovie.Models.RazorPagesMovieContext _context;
+        private readonly RazorPagesMovieContext _context;
 
-        public DetailsModel(RazorPagesMovie.Models.RazorPagesMovieContext context)
+        public DetailsModel(RazorPagesMovieContext context)
         {
             _context = context;
         }

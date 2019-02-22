@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
-using RazorPagesMovie.Models;
+using Tutorials_WebApps_RazorPages.Data;
 
 namespace Tutorials_WebApps_RazorPages
 {

@@ -2,7 +2,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Tutorials_RazorPagesMovie.Models
+namespace Tutorials_WebApps_RazorPages.Models
 {
     public class FileUpload
     {

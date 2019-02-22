@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Tutorials_RazorPagesMovie.Models
+namespace Tutorials_WebApps_RazorPages.Models
 {
     public class Schedule
     {
