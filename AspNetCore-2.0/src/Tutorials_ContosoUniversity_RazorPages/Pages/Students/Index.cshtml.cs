@@ -11,9 +11,9 @@ namespace Tutorials_ContosoUniversity_RazorPages.Pages.Students
 {
     public class IndexModel : PageModel
     {
-        private readonly Tutorials_ContosoUniversity_RazorPages.Models.SchoolContext _context;
+        private readonly SchoolContext _context;
 
-        public IndexModel(Tutorials_ContosoUniversity_RazorPages.Models.SchoolContext context)
+        public IndexModel(SchoolContext context)
         {
             _context = context;
         }

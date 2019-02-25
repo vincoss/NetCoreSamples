@@ -11,9 +11,9 @@ namespace Tutorials_ContosoUniversity_RazorPages.Pages.Students
 {
     public class DetailsModel : PageModel
     {
-        private readonly Tutorials_ContosoUniversity_RazorPages.Models.SchoolContext _context;
+        private readonly SchoolContext _context;
 
-        public DetailsModel(Tutorials_ContosoUniversity_RazorPages.Models.SchoolContext context)
+        public DetailsModel(SchoolContext context)
         {
             _context = context;
         }
@@ -27,7 +27,11 @@ namespace Tutorials_ContosoUniversity_RazorPages.Pages.Students
                 return NotFound();
             }
 
-            Student = await _context.Student.FirstOrDefaultAsync(m => m.ID == id);
+            Student = await _context.Student
+                                .Include(s => s.Enrollments)
+                                .ThenInclude(e => e.Course)
+                                .AsNoTracking()
+                                .FirstOrDefaultAsync(m => m.ID == id);
 
             if (Student == null)
             {
