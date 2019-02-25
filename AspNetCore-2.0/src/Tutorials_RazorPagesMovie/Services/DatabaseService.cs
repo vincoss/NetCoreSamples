@@ -8,7 +8,7 @@ namespace Tutorials_RazorPagesMovie.Services
 {
     public interface IDatabaseService
     {
-
+        IEnumerable<Movie> Movie { get; }
     }
 
     public class DatabaseService : IDatabaseService

@@ -12,8 +12,7 @@ namespace Tutorials_RazorPagesMovie.Models
     {
         public static void Initialize(IServiceProvider serviceProvider)
         {
-            using (var context = new MovieContext(
-                serviceProvider.GetRequiredService<DbContextOptions<MovieContext>>()))
+            using (var context = new MovieContext(serviceProvider.GetRequiredService<DbContextOptions<MovieContext>>()))
             {
                 // Look for any movies.
                 if (context.Movie.Any())
