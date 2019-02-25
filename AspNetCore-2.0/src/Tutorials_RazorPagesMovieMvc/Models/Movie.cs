@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Tutorials_RazorPagesMovieMvc.Models
 {
@@ -12,8 +15,8 @@ namespace Tutorials_RazorPagesMovieMvc.Models
         [Required]
         public string Title { get; set; }
 
-        [Display(Name = "Release Date")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Release Date")]
         [DataType(DataType.Date)]
         public DateTime ReleaseDate { get; set; }
 

@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Tutorials_RazorPagesMovieMvc2;
+using Tutorials_RazorPagesMovieMvc;
 
-namespace Tutorials_RazorPagesMovieMvc2.Migrations
+namespace Tutorials_RazorPagesMovieMvc.Migrations
 {
     [DbContext(typeof(MvcMovieContext))]
     [Migration("20190222015836_Initial")]
@@ -21,7 +21,7 @@ namespace Tutorials_RazorPagesMovieMvc2.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Tutorials_RazorPagesMovieMvc2.Models.Movie", b =>
+            modelBuilder.Entity("Tutorials_RazorPagesMovieMvc.Models.Movie", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

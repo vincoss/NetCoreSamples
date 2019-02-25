@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Tutorials_RazorPagesMovieMvc;
 using Tutorials_RazorPagesMovieMvc.Models;
 
 namespace Tutorials_RazorPagesMovieMvc.Controllers
@@ -18,27 +19,9 @@ namespace Tutorials_RazorPagesMovieMvc.Controllers
             _context = context;
         }
 
-        //// GET: Movies
-        //public async Task<IActionResult> Index()
-        //{
-        //    return View(await _context.Movie.ToListAsync());
-        //}
-
-        // movies/index?searchString=Ghost
-        //public async Task<IActionResult> Index(string searchString)
-        //{
-        //    var movies = from m in _context.Movie
-        //                 select m;
-
-        //    if (!String.IsNullOrEmpty(searchString))
-        //    {
-        //        movies = movies.Where(s => s.Title.Contains(searchString));
-        //    }
-
-        //    return View(await movies.ToListAsync());
-        //}
-
-        public async Task<IActionResult> Index(string movieGenre, string searchString)
+        // GET: Movies
+        // movies?searchString=Ghost
+        public async Task<IActionResult> Index(string searchString, string movieGenre)
         {
             // Use LINQ to get list of genres.
             IQueryable<string> genreQuery = from m in _context.Movie
@@ -72,7 +55,22 @@ namespace Tutorials_RazorPagesMovieMvc.Controllers
         {
             return "From [HttpPost]Index: filter on " + searchString;
         }
+        // movies/Ghost
+        //public async Task<IActionResult> Index(string id)
+        //{
+        //    var movies = from m in _context.Movie
+        //                 select m;
 
+        //    if (!String.IsNullOrEmpty(id))
+        //    {
+        //        movies = movies.Where(s => s.Title.Contains(id));
+        //    }
+
+        //    return View(await movies.ToListAsync());
+        //}
+
+        // /movies/details/1
+        // /movies/details?id=1
         // GET: Movies/Details/5
         public async Task<IActionResult> Details(int? id)
         {

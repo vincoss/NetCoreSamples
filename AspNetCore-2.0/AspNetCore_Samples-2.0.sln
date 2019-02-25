@@ -75,15 +75,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Security_Authentication_Raz
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorials_TodoApi", "src\Tutorials_TodoApi\Tutorials_TodoApi.csproj", "{E97B9E46-D0E7-4538-A9A0-CAC254688592}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorials_WebApiWithMongoDb", "src\Tutorials_WebApiWithMongoDb\Tutorials_WebApiWithMongoDb.csproj", "{83803C48-B627-4243-8D35-1FC47C57C4C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorials_WebApiWithMongoDb", "src\Tutorials_WebApiWithMongoDb\Tutorials_WebApiWithMongoDb.csproj", "{83803C48-B627-4243-8D35-1FC47C57C4C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorials_TodoApiMobileBackend", "src\Tutorials_TodoApiMobileBackend\Tutorials_TodoApiMobileBackend.csproj", "{24DBD315-F00D-41B5-B784-58B1C0755B08}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorials_TodoApiMobileBackend", "src\Tutorials_TodoApiMobileBackend\Tutorials_TodoApiMobileBackend.csproj", "{24DBD315-F00D-41B5-B784-58B1C0755B08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorials_WebApps_RazorPages", "src\Tutorials_WebApps_RazorPages\Tutorials_WebApps_RazorPages.csproj", "{C22C912E-9086-45A3-9B97-28C40A6376DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorials_WebApps_RazorPages", "src\Tutorials_WebApps_RazorPages\Tutorials_WebApps_RazorPages.csproj", "{C22C912E-9086-45A3-9B97-28C40A6376DB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorials_RazorPagesMovieMvc", "src\Tutorials_RazorPagesMovieMvc\Tutorials_RazorPagesMovieMvc.csproj", "{81B2F462-240E-4C78-932F-6CD0BD2A7EEF}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorials_RazorPagesMovieMvc2", "src\Tutorials_RazorPagesMovieMvc2\Tutorials_RazorPagesMovieMvc2.csproj", "{119CB8CB-93E7-48FC-8B2F-CFCE532DA2A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorials_RazorPagesMovieMvc", "src\Tutorials_RazorPagesMovieMvc\Tutorials_RazorPagesMovieMvc.csproj", "{BFF4DE85-F41B-4C58-8A00-B8D98A984000}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -179,14 +177,10 @@ Global
 		{C22C912E-9086-45A3-9B97-28C40A6376DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C22C912E-9086-45A3-9B97-28C40A6376DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C22C912E-9086-45A3-9B97-28C40A6376DB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{81B2F462-240E-4C78-932F-6CD0BD2A7EEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{81B2F462-240E-4C78-932F-6CD0BD2A7EEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{81B2F462-240E-4C78-932F-6CD0BD2A7EEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{81B2F462-240E-4C78-932F-6CD0BD2A7EEF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{119CB8CB-93E7-48FC-8B2F-CFCE532DA2A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{119CB8CB-93E7-48FC-8B2F-CFCE532DA2A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{119CB8CB-93E7-48FC-8B2F-CFCE532DA2A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{119CB8CB-93E7-48FC-8B2F-CFCE532DA2A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFF4DE85-F41B-4C58-8A00-B8D98A984000}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFF4DE85-F41B-4C58-8A00-B8D98A984000}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFF4DE85-F41B-4C58-8A00-B8D98A984000}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFF4DE85-F41B-4C58-8A00-B8D98A984000}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -214,8 +208,7 @@ Global
 		{83803C48-B627-4243-8D35-1FC47C57C4C9} = {4F19C00D-6324-4748-8FB0-E69052771FB3}
 		{24DBD315-F00D-41B5-B784-58B1C0755B08} = {4F19C00D-6324-4748-8FB0-E69052771FB3}
 		{C22C912E-9086-45A3-9B97-28C40A6376DB} = {4F19C00D-6324-4748-8FB0-E69052771FB3}
-		{81B2F462-240E-4C78-932F-6CD0BD2A7EEF} = {4F19C00D-6324-4748-8FB0-E69052771FB3}
-		{119CB8CB-93E7-48FC-8B2F-CFCE532DA2A6} = {4F19C00D-6324-4748-8FB0-E69052771FB3}
+		{BFF4DE85-F41B-4C58-8A00-B8D98A984000} = {4F19C00D-6324-4748-8FB0-E69052771FB3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D8282B92-1BD9-46FB-A23B-4AD1E0EA297F}

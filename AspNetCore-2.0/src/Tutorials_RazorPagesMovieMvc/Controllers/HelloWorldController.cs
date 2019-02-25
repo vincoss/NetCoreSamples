@@ -1,8 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Encodings.Web;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Tutorials_RazorPagesMovieMvc.Controllers
 {
@@ -21,14 +22,6 @@ namespace Tutorials_RazorPagesMovieMvc.Controllers
             return View();
         }
 
-        public IActionResult Welcome(string name, int numTimes = 1)
-        {
-            ViewData["Message"] = "Hello " + name;
-            ViewData["NumTimes"] = numTimes;
-
-            return View();
-        }
-
         // 
         // GET: /HelloWorld/Welcome/ 
 
@@ -37,11 +30,25 @@ namespace Tutorials_RazorPagesMovieMvc.Controllers
         //    return "This is the Welcome action method...";
         //}
 
-        // GET: /HelloWorld/Welcome/ 
+        // GET: helloworld/welcome?name=Ferdinand&numtimes=2
         // Requires using System.Text.Encodings.Web;
         //public string Welcome(string name, int numTimes = 1)
         //{
-        //    return System.Text.Encodings.Web.HtmlEncoder.Default.Encode($"Hello {name}, NumTimes is: {numTimes}");
+        //    return HtmlEncoder.Default.Encode($"Hello {name}, NumTimes is: {numTimes}");
         //}
+
+        //helloworld/welcome/5?name=Ferdinand
+        //public string Welcome(string name, int id = 1)
+        //{
+        //    return HtmlEncoder.Default.Encode($"Hello {name}, ID: {id}");
+        //}
+
+        public IActionResult Welcome(string name, int numTimes = 1)
+        {
+            ViewData["Message"] = "Hello " + name;
+            ViewData["NumTimes"] = numTimes;
+
+            return View();
+        }
     }
 }

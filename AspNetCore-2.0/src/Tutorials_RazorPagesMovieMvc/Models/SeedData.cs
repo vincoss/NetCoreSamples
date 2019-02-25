@@ -4,10 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Tutorials_RazorPagesMovieMvc.Models;
 
-
-namespace Tutorials_RazorPagesMovieMvc.Data
+namespace Tutorials_RazorPagesMovieMvc.Models
 {
     public static class SeedData
     {
@@ -27,8 +25,8 @@ namespace Tutorials_RazorPagesMovieMvc.Data
                         Title = "When Harry Met Sally",
                         ReleaseDate = DateTime.Parse("1989-2-12"),
                         Genre = "Romantic Comedy",
-                        Rating = "R",
-                        Price = 7.99M
+                        Price = 7.99M,
+                        Rating = "A"
                     },
 
                     new Movie
@@ -36,8 +34,8 @@ namespace Tutorials_RazorPagesMovieMvc.Data
                         Title = "Ghostbusters ",
                         ReleaseDate = DateTime.Parse("1984-3-13"),
                         Genre = "Comedy",
-                        Rating = "C",
-                        Price = 8.99M
+                        Price = 8.99M,
+                        Rating = "B"
                     },
 
                     new Movie
@@ -45,8 +43,8 @@ namespace Tutorials_RazorPagesMovieMvc.Data
                         Title = "Ghostbusters 2",
                         ReleaseDate = DateTime.Parse("1986-2-23"),
                         Genre = "Comedy",
-                        Rating = "R",
-                        Price = 9.99M
+                        Price = 9.99M,
+                        Rating = "D"
                     },
 
                     new Movie
@@ -54,8 +52,8 @@ namespace Tutorials_RazorPagesMovieMvc.Data
                         Title = "Rio Bravo",
                         ReleaseDate = DateTime.Parse("1959-4-15"),
                         Genre = "Western",
-                        Rating = "M",
-                        Price = 3.99M
+                        Price = 3.99M,
+                        Rating = "C"
                     }
                 );
                 context.SaveChanges();

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Tutorials_RazorPagesMovieMvc.Models;
+using Tutorials_RazorPagesMovieMvc;
 
 namespace Tutorials_RazorPagesMovieMvc.Migrations
 {
