@@ -85,6 +85,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorials_SignalRChat_Razor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorials_SignalRChat_WebPack_RazorPages", "src\Tutorials_SignalRChat_WebPack_RazorPages\Tutorials_SignalRChat_WebPack_RazorPages.csproj", "{9C1B9263-9D58-4866-8A13-49FD04F5D919}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorials_ContosoUniversity_RazorPages", "src\Tutorials_ContosoUniversity_RazorPages\Tutorials_ContosoUniversity_RazorPages.csproj", "{BE0E6390-99E9-4662-886A-FBF051FD9C22}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -187,6 +189,10 @@ Global
 		{9C1B9263-9D58-4866-8A13-49FD04F5D919}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C1B9263-9D58-4866-8A13-49FD04F5D919}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C1B9263-9D58-4866-8A13-49FD04F5D919}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE0E6390-99E9-4662-886A-FBF051FD9C22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE0E6390-99E9-4662-886A-FBF051FD9C22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE0E6390-99E9-4662-886A-FBF051FD9C22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE0E6390-99E9-4662-886A-FBF051FD9C22}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -216,6 +222,7 @@ Global
 		{BFF4DE85-F41B-4C58-8A00-B8D98A984000} = {4F19C00D-6324-4748-8FB0-E69052771FB3}
 		{016B873D-5152-454D-B4CE-6F044C67A8EE} = {4F19C00D-6324-4748-8FB0-E69052771FB3}
 		{9C1B9263-9D58-4866-8A13-49FD04F5D919} = {4F19C00D-6324-4748-8FB0-E69052771FB3}
+		{BE0E6390-99E9-4662-886A-FBF051FD9C22} = {4F19C00D-6324-4748-8FB0-E69052771FB3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D8282B92-1BD9-46FB-A23B-4AD1E0EA297F}
