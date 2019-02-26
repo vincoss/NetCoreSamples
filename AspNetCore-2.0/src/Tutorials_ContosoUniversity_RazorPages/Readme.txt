@@ -15,3 +15,15 @@ Update-Database
 
 -The data model snapshot
 Remove-Migration
+
+- ColumnFirstName update
+Add-Migration ColumnFirstName
+Update-Database
+
+-Complex migration (upgrade)
+Add-Migration ComplexDataModel
+Update-Database
+
+-Complex migratio (emtpy)
+Drop-Database
+Update-Database
