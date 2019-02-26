@@ -9,18 +9,18 @@ using Tutorials_ContosoUniversity_RazorPages.Models;
 
 namespace Tutorials_ContosoUniversity_RazorPages.Pages.Courses
 {
-    public class CreateModel : PageModel
+    public class CreateModel : DepartmentNamePageModel
     {
-        private readonly Tutorials_ContosoUniversity_RazorPages.Models.SchoolContext _context;
+        private readonly SchoolContext _context;
 
-        public CreateModel(Tutorials_ContosoUniversity_RazorPages.Models.SchoolContext context)
+        public CreateModel(SchoolContext context)
         {
             _context = context;
         }
 
         public IActionResult OnGet()
         {
-        ViewData["DepartmentID"] = new SelectList(_context.Departments, "DepartmentID", "DepartmentID");
+            PopulateDepartmentsDropDownList(_context);
             return Page();
         }
 
@@ -34,10 +34,21 @@ namespace Tutorials_ContosoUniversity_RazorPages.Pages.Courses
                 return Page();
             }
 
-            _context.Courses.Add(Course);
-            await _context.SaveChangesAsync();
+            var emptyCourse = new Course();
 
-            return RedirectToPage("./Index");
+            if (await TryUpdateModelAsync<Course>(
+                 emptyCourse,
+                 "course",   // Prefix for form value.
+                 s => s.CourseID, s => s.DepartmentID, s => s.Title, s => s.Credits))
+            {
+                _context.Courses.Add(emptyCourse);
+                await _context.SaveChangesAsync();
+                return RedirectToPage("./Index");
+            }
+
+            // Select DepartmentID if TryUpdateModelAsync fails.
+            PopulateDepartmentsDropDownList(_context, emptyCourse.DepartmentID);
+            return Page();
         }
     }
 }
