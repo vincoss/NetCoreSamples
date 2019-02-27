@@ -27,5 +27,8 @@ namespace Tutorials_ContosoUniversity_RazorPages.Models
 
         public Instructor Administrator { get; set; }
         public ICollection<Course> Courses { get; set; }
+
+        [Timestamp]
+        public byte[] RowVersion { get; set; }
     }
 }

@@ -27,3 +27,7 @@ Update-Database
 -Complex migratio (emtpy)
 Drop-Database
 Update-Database
+
+-Hande concurrency
+Add-Migration RowVersion
+Update-Database
