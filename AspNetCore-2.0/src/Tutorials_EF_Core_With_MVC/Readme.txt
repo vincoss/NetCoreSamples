@@ -1,4 +1,10 @@
 ﻿# Based on
 https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/?view=aspnetcore-2.2
 
-# Scaffolding
+# Scaffolding with CLI
+
+dotnet ef migrations add InitialCreate
+dotnet ef database update
+
+-drop the migration
+dotnet ef migrations remove
