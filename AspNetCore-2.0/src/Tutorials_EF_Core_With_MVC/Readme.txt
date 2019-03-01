@@ -17,3 +17,7 @@ dotnet ef database update
 - add migration
 dotnet ef migrations add ComplexDataModel
 dotnet ef database update
+
+-add migration
+dotnet ef migrations add Inheritance
+dotnet ef database update
