@@ -8,3 +8,12 @@ dotnet ef database update
 
 -drop the migration
 dotnet ef migrations remove
+
+- add migration
+dotnet ef migrations add MaxLengthOnNames
+dotnet ef migrations add ColumnFirstName
+dotnet ef database update
+
+- add migration
+dotnet ef migrations add ComplexDataModel
+dotnet ef database update
