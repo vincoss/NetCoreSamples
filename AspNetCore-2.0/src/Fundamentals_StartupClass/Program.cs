@@ -4,7 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -23,7 +25,7 @@ namespace Fundamentals_StartupClass
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
                 WebHost.CreateDefaultBuilder(args)
-                       .UseStartup<Startup>();
+                       .UseStartup<DefaultStartup>();
 
         public static void DefaultConfig(string[] args)
         {
@@ -36,7 +38,7 @@ namespace Fundamentals_StartupClass
 
         public static void WithoutStartupClass(string[] args)
         {
-            WebHost.CreateDefaultBuilder(args)
+           var host = WebHost.CreateDefaultBuilder(args)
                   .ConfigureAppConfiguration((hostingContext, config) =>
                   {
                       HostingEnvironment = hostingContext.HostingEnvironment;
@@ -65,7 +67,13 @@ namespace Fundamentals_StartupClass
                       var configValue = Configuration["subsection:suboption1"];
 
                       // ...
-                  });
+                      app.Run(async (context) =>
+                      {
+                          await context.Response.WriteAsync("Hello World!");
+                      });
+                  }).Build();
+
+            host.Run();
         }
 
         public static IHostingEnvironment HostingEnvironment { get; set; }
