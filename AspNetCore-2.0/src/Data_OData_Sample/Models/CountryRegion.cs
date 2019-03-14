@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Data_OData_Sample.Models
 {
@@ -12,6 +13,7 @@ namespace Data_OData_Sample.Models
             StateProvince = new HashSet<StateProvince>();
         }
 
+        [Key]
         public string CountryRegionCode { get; set; }
         public string Name { get; set; }
         public DateTime ModifiedDate { get; set; }

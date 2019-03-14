@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Data_OData_Sample.Models
 {
     public partial class SalesTerritoryHistory
     {
+        [Key]
         public int BusinessEntityId { get; set; }
         public int TerritoryId { get; set; }
         public DateTime StartDate { get; set; }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Data_OData_Sample.Models
 {
@@ -14,6 +15,7 @@ namespace Data_OData_Sample.Models
             PersonPhone = new HashSet<PersonPhone>();
         }
 
+        [Key]
         public int BusinessEntityId { get; set; }
         public string PersonType { get; set; }
         public bool NameStyle { get; set; }

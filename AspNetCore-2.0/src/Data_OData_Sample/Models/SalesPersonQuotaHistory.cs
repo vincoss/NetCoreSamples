@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Data_OData_Sample.Models
 {
     public partial class SalesPersonQuotaHistory
     {
+        [Key]
         public int BusinessEntityId { get; set; }
         public DateTime QuotaDate { get; set; }
         public decimal SalesQuota { get; set; }

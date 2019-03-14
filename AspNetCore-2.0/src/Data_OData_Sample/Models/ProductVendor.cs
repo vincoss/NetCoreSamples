@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Data_OData_Sample.Models
 {
     public partial class ProductVendor
     {
+        [Key]
         public int ProductId { get; set; }
         public int BusinessEntityId { get; set; }
         public int AverageLeadTime { get; set; }

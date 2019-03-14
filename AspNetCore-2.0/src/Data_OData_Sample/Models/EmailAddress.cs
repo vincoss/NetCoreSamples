@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Data_OData_Sample.Models
 {
     public partial class EmailAddress
     {
+        [Key]
         public int BusinessEntityId { get; set; }
         public int EmailAddressId { get; set; }
         public string EmailAddress1 { get; set; }

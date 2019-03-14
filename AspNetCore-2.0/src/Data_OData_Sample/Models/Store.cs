@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Data_OData_Sample.Models
 {
@@ -10,6 +11,7 @@ namespace Data_OData_Sample.Models
             Customer = new HashSet<Customer>();
         }
 
+        [Key]
         public int BusinessEntityId { get; set; }
         public string Name { get; set; }
         public int? SalesPersonId { get; set; }
