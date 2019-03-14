@@ -9,7 +9,7 @@ namespace Fundamentals_TheHost.Middleware
 {
     public class CustomMiddleware
     {
-        public async Task Invoke(HttpContext context, IHostingEnvironment env) // Inject inoto the invoke method.
+        public async Task Invoke(HttpContext context, IHostingEnvironment env) // Inject into the invoke method.
         {
             if (env.IsDevelopment())
             {
