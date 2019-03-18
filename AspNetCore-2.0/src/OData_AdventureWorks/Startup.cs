@@ -31,7 +31,7 @@ namespace OData_AdventureWorks
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddOData();
-            services.AddODataQueryFilter();
+            services.AddODataQueryFilter();// http://go.microsoft.com/fwlink/?LinkId=279712
 
             services.AddMvc(options =>
             {
