@@ -18,7 +18,7 @@ namespace Fundamentals_TheHost
     {
         public static int SampleMain(string[] args)
         {
-
+            SetupHost(args);
             return 0;
         }
 
@@ -123,7 +123,7 @@ namespace Fundamentals_TheHost
                     });
 
             // Extensibility
-           // builder.UseHostedService<TimedHostedService>();
+           // builder.UseHostedService<TimedHostedService>(); // TODO: continue from here
 
             var host = builder.Build();
             await host.RunAsync();
