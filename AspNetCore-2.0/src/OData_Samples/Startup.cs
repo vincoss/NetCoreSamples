@@ -104,6 +104,36 @@ namespace OData_Samples
                .Page()
                .Select();
 
+            builder.EntitySet<Product>("Products")
+              .EntityType
+              .HasKey(x => x.ID)
+              .Filter()
+              .Count()
+              .Expand()
+              .OrderBy()
+              .Page()
+              .Select();
+
+            builder.EntitySet<Supplier>("Suppliers")
+             .EntityType
+             .HasKey(x => x.Key)
+             .Filter()
+             .Count()
+             .Expand()
+             .OrderBy()
+             .Page()
+             .Select();
+
+            builder.EntitySet<Category>("Categories")
+             .EntityType
+             .HasKey(x => x.ID)
+             .Filter()
+             .Count()
+             .Expand()
+             .OrderBy()
+             .Page()
+             .Select();
+
             return builder.GetEdmModel();
         }
 

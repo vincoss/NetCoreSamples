@@ -1,6 +1,6 @@
 ﻿# Based on
 https://damienbod.com/2018/10/12/odata-with-asp-net-core/
-
+https://damienbod.com/2018/10/18/using-an-odata-client-with-an-asp-net-core-api/
 
 # Scaffolding
 https://docs.microsoft.com/en-us/ef/core/get-started/aspnetcore/existing-db

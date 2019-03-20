@@ -33,7 +33,49 @@ namespace OData_Samples.Data
             Variables.Add(new Variable { Name = "abstract class", Keyword = Keywords.Single(x => x.Name == "abstract") });
             Variables.Add(new Variable { Name = "convert as some type", Keyword = Keywords.Single(x => x.Name == "as") });
             Variables.Add(new Variable { Name = "base type", Keyword = Keywords.Single(x => x.Name == "base") });
+
+            LoadProductData();
         }
 
+        #region Products data
+
+        public static readonly ICollection<Product> Products = new HashSet<Product>();
+        public static readonly ICollection<Supplier> Suppliers = new HashSet<Supplier>();
+        public static readonly ICollection<Category> Categories = new HashSet<Category>();
+
+        private static void LoadProductData()
+        {
+            var c1 = new Category { ID = 1, Name = "Beverages" };
+            var c2 = new Category { ID = 2, Name = "Condiments" };
+            var c3 = new Category { ID = 3, Name = "Confections" };
+
+            Categories.Add(c1);
+            Categories.Add(c2);
+            Categories.Add(c3);
+
+            var s1 = new Supplier { Key = "1", Name = "Exotic Liquids" };
+            var s2 = new Supplier { Key = "2", Name = "New Orleans Cajun Delights" };
+            var s3 = new Supplier { Key = "3", Name = "Grandma Kelly's Homestead" };
+
+            Suppliers.Add(s1);
+            Suppliers.Add(s2);
+            Suppliers.Add(s3);
+
+            var p1 = new Product { ID = 1, Name = "Chai", Price = 18.00M, CategoryId = 1, SupplierId = "1", Supplier = s1, Category = c1 };
+            var p2 = new Product { ID = 2, Name = "Aniseed Syrup", Price = 10.00M, CategoryId = 1, SupplierId = "2", Supplier = s2, Category = c1 };
+            var p3 = new Product { ID = 3, Name = "Grandma's Boysenberry Spread", Price = 25.00M, CategoryId = 3, SupplierId = "2", Supplier = s2, Category = c3 };
+
+            c1.Products.Add(p1);
+            c1.Products.Add(p2);
+            c3.Products.Add(p3);
+
+            Products.Add(p1);
+            Products.Add(p2);
+            Products.Add(p3);
+
+
+        }
+
+        #endregion
     }
 }

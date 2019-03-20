@@ -109,7 +109,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OData", "OData", "{1C9C8201
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OData_AdventureWorks", "src\OData_AdventureWorks\OData_AdventureWorks.csproj", "{665FA563-813A-43C3-83B8-17E10A78267B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OData_Samples", "src\OData_Samples\OData_Samples.csproj", "{40A324AD-8E4F-42FE-8055-B91E85A18147}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OData_Samples", "src\OData_Samples\OData_Samples.csproj", "{40A324AD-8E4F-42FE-8055-B91E85A18147}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solution_DevResources", "src\Solution_DevResources\Solution_DevResources.csproj", "{5078C805-3753-47E1-A22C-1C844D1EB243}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -257,6 +259,10 @@ Global
 		{40A324AD-8E4F-42FE-8055-B91E85A18147}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40A324AD-8E4F-42FE-8055-B91E85A18147}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40A324AD-8E4F-42FE-8055-B91E85A18147}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5078C805-3753-47E1-A22C-1C844D1EB243}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5078C805-3753-47E1-A22C-1C844D1EB243}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5078C805-3753-47E1-A22C-1C844D1EB243}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5078C805-3753-47E1-A22C-1C844D1EB243}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
