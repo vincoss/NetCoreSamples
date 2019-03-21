@@ -51,6 +51,7 @@ namespace OData_Samples.Data
         public static readonly ICollection<Product> Products = new HashSet<Product>();
         public static readonly ICollection<Supplier> Suppliers = new HashSet<Supplier>();
         public static readonly ICollection<Category> Categories = new HashSet<Category>();
+        public static readonly ICollection<ProductRating> Ratings = new HashSet<ProductRating>();
 
         private static void LoadProductData()
         {
@@ -62,9 +63,9 @@ namespace OData_Samples.Data
             Categories.Add(c2);
             Categories.Add(c3);
 
-            var s1 = new Supplier { Key = "1", Name = "Exotic Liquids" };
-            var s2 = new Supplier { Key = "2", Name = "New Orleans Cajun Delights" };
-            var s3 = new Supplier { Key = "3", Name = "Grandma Kelly's Homestead" };
+            var s1 = new Supplier { Key = 1, Name = "Exotic Liquids" };
+            var s2 = new Supplier { Key = 2, Name = "New Orleans Cajun Delights" };
+            var s3 = new Supplier { Key = 3, Name = "Grandma Kelly's Homestead" };
 
             Suppliers.Add(s1);
             Suppliers.Add(s2);
@@ -77,6 +78,10 @@ namespace OData_Samples.Data
             c1.Products.Add(p1);
             c1.Products.Add(p2);
             c3.Products.Add(p3);
+
+            s1.Products.Add(p1);
+            s2.Products.Add(p2);
+            s2.Products.Add(p3);
 
             Products.Add(p1);
             Products.Add(p2);

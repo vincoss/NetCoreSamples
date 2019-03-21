@@ -9,9 +9,16 @@ namespace OData_Samples.Models
 {
     public class Supplier
     {
+        public Supplier()
+        {
+            Products = new HashSet<Product>();
+        }
+
         [Key]
-        public string Key { get; set; }
+        public int Key { get; set; }
         public string Name { get; set; }
+
+        public ICollection<Product> Products { get; set; }
     }
 
     public class Category
@@ -41,5 +48,13 @@ namespace OData_Samples.Models
         [ForeignKey("Supplier")]
         public string SupplierId { get; set; }
         public virtual Supplier Supplier { get; set; }
+    }
+
+    public class ProductRating
+    {
+        public int ID { get; set; }
+        public int Rating { get; set; }
+        public int ProductID { get; set; }
+        public virtual Product Product { get; set; }
     }
 }

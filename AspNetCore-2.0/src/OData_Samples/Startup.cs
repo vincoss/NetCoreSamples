@@ -142,6 +142,53 @@ namespace OData_Samples
              .Page()
              .Select();
 
+            builder.EntitySet<ProductRating>("Ratings")
+              .EntityType
+              .HasKey(x => x.ID)
+              .Filter()
+              .Count()
+              .Expand()
+              .OrderBy()
+              .Page()
+              .Select();
+
+            // Functions
+            builder.Namespace = "ProductService";
+
+            // Action
+            builder.EntityType<Product>()
+              .Action("Rate")
+              .Parameter<int>("Rating");
+
+            // Function
+            builder.EntityType<Product>().Collection
+                .Function("MostExpensive")
+                .Returns<double>();
+
+            // Unbound Function
+            builder.Function("GetSalesTaxRate")
+                .Returns<double>()
+                .Parameter<int>("PostalCode");
+
+            // Containet
+            builder.EntitySet<Account>("Accounts");
+            var paymentInstrumentType = builder.EntityType<PaymentInstrument>();
+            var functionConfiguration = paymentInstrumentType.Collection.Function("GetCount");
+            functionConfiguration.Parameter<string>("NameContains");
+            functionConfiguration.Returns<int>();
+            //builder.Namespace = typeof(Account).Namespace;
+
+            // Singleton
+            builder.EntitySet<Employee>("Employees");
+            builder.Singleton<Company>("Umbrella");
+            //builder.Namespace = typeof(Company).Namespace;
+
+            /*
+                // Explicit binding navigation property
+                EntitySetConfiguration<Employee> employeesConfiguration = builder.EntitySet<Employee>("Employees"); 
+                employeesConfiguration.HasSingletonBinding(c => c.Company, "Umbrella");
+             */
+
             return builder.GetEdmModel();
         }
 
