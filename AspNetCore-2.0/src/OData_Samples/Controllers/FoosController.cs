@@ -23,8 +23,8 @@ namespace OData_Samples.Controllers
 
     public class FoosController : ODataController
     {
-        public const int Num = 10;
-        public static IList<Foo> foos = Enumerable.Range(0, Num).Select(i =>
+        private const int _num = 10;
+        public static IList<Foo> Foos = Enumerable.Range(0, _num).Select(i =>
                new Foo
                {
                    FooId = 100 + i,
@@ -34,14 +34,14 @@ namespace OData_Samples.Controllers
         [EnableQuery]
         public IActionResult Get()
         {
-            return Ok(foos);
+            return Ok(Foos);
         }
     }
 
     public class BarsController : ODataController
     {
-        public const int Num = 10;
-        public static IList<Bar> bars = Enumerable.Range(0, Num).Select(i =>
+        private const int _num = 10;
+        public static IList<Bar> Bars = Enumerable.Range(0, _num).Select(i =>
                new Bar
                {
                    BarId = 1000 + i,
@@ -51,14 +51,14 @@ namespace OData_Samples.Controllers
         [EnableQuery]
         public IActionResult Get()
         {
-            return Ok(bars);
+            return Ok(Bars);
         }
     }
 
     public class FooBarRecsController : ODataController
     {
-        public const int Num = 10;
-        public static IList<FooBarRec> fooBarRecs = Enumerable.Range(0, Num).Select(i =>
+        private const int _num = 10;
+        public static IList<FooBarRec> FooBarRecs = Enumerable.Range(0, _num).Select(i =>
                 new FooBarRec
                 {
                     Id = i,
@@ -67,17 +67,17 @@ namespace OData_Samples.Controllers
 
         static FooBarRecsController()
         {
-            for (int i = 0; i < Num; i++)
+            for (int i = 0; i < _num; i++)
             {
-                fooBarRecs[i].FooRec = FoosController.foos[i];
-                fooBarRecs[i].BarRec = BarsController.bars[i];
+                FooBarRecs[i].FooRec = FoosController.Foos[i];
+                FooBarRecs[i].BarRec = BarsController.Bars[i];
             }
         }
 
         [EnableQuery]
         public IActionResult Get()
         {
-            return Ok(fooBarRecs);
+            return Ok(FooBarRecs);
         }
     }
 }

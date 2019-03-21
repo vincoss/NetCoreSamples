@@ -11,6 +11,7 @@ using OData_Samples.Models;
 namespace OData_Samples.Controllers
 {
     /// <summary>
+    /// NOTE: No runnable only for reference.
     /// https://docs.microsoft.com/en-us/aspnet/web-api/overview/odata-support-in-aspnet-web-api/odata-security-guidance
     /// </summary>
     public class SecurityGuidanceController : ODataController

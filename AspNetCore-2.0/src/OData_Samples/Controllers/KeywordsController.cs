@@ -41,7 +41,7 @@ namespace OData_Samples.Controllers
     /// </summary>
     public class KeywordsController : ODataController
     {
-        [EnableQuery(PageSize = 10)] // Enable OData query options for the action
+        [EnableQuery(PageSize = 10)] // Enable OData query options for the action, page for large size.
         public IActionResult Get()
         {
             return Ok(SampleData.Keywords);

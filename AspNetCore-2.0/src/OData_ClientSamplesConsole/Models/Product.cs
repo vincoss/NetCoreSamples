@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace OData_Samples.Models
+
+namespace OData_ClientSamplesConsole.Models
 {
     public class Supplier
     {
-        [Key]
         public string Key { get; set; }
         public string Name { get; set; }
     }
@@ -33,12 +28,10 @@ namespace OData_Samples.Models
         public decimal Price { get; set; }
 
         public int Rating { get; set; }
-
-        [ForeignKey("Category")]
+        
         public int CategoryId { get; set; }
         public Category Category { get; set; }
-
-        [ForeignKey("Supplier")]
+        
         public string SupplierId { get; set; }
         public virtual Supplier Supplier { get; set; }
     }

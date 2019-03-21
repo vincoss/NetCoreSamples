@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNet.OData;
 using Microsoft.AspNetCore.Mvc;
@@ -20,10 +21,15 @@ namespace OData_Samples.Controllers
     /// service/Products?$select=Price,Name
     /// service/Products?$select=Name,Supplier&$expand=Supplier
     /// service/Categories?$expand=Products($select=Name)&$select=Name,Products
+    /// service/Categories(1)/Products?$top=1&$orderby=Name
+    /// service/Categories?$top=1&$select=Name
     /// 
     /// $value (Get individual property from an entity)
     /// service/Products(1)/Name
     /// service/Products(1)/Name/$value
+    /// 
+    /// $top
+    /// service/Categories?$top=1
     /// 
     /// </summary>
     public class ProductsController : ODataController

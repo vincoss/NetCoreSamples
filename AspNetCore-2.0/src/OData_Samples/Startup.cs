@@ -11,6 +11,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OData.Edm;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using OData_Samples.Filters;
 using OData_Samples.Models;
 
@@ -31,10 +33,16 @@ namespace OData_Samples
             };
             services.AddODataQueryFilter(queryAttribute);// http://go.microsoft.com/fwlink/?LinkId=279712
             /*
-                OR
+                OR custom filter, default filter
                 services.AddODataQueryFilter(new CustomQueryableAttribute());
                 services.AddODataQueryFilter();
             */
+
+            services.AddMvc().AddJsonOptions(opt =>
+            {
+                opt.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+                opt.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,7 +55,7 @@ namespace OData_Samples
 
             app.UseMvc(b => b.MapODataServiceRoute("service", "service", GetEdmModelFooBarRec()));
         }
-
+        
         private static IEdmModel GetEdmModelFooBarRec()
         {
             ODataModelBuilder builder = new ODataConventionModelBuilder();
@@ -59,15 +67,15 @@ namespace OData_Samples
                     Define a key for the OData mapping. or use the [Key] attribute.
                     Exception: Web APi OData V4 Issue "The entity '' does not have a key defined
                 */
-                .Filter()
-                .Count()
-                .Expand()
-                .OrderBy()
-                .Page()
-                .Select();
+                .Filter()   // Allow for the $filter Command
+                .Count()    // Allow for the $count Command
+                .Expand()   // Allow for the $expand Command
+                .OrderBy()  // Allow for the $orderby Command
+                .Page()     // Allow for the $top and $skip Commands
+                .Select();  // Allow for the $select Command
 
             builder.EntitySet<Foo>("Foos")
-                 .EntityType
+                .EntityType
                 .Filter()
                 .Count()
                 .Expand()
@@ -76,7 +84,7 @@ namespace OData_Samples
                 .Select();
 
             builder.EntitySet<Bar>("Bars")
-                 .EntityType
+                .EntityType
                 .Filter()
                 .Count()
                 .Expand()

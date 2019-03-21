@@ -8,10 +8,18 @@ namespace OData_Samples.Data
 {
     public static class SampleData
     {
+        static SampleData()
+        {
+            LoadKeywordData();
+            LoadProductData();
+        }
+
+        #region Keyword data
+
         public static readonly ICollection<Keyword> Keywords = new HashSet<Keyword>();
         public static readonly ICollection<Variable> Variables = new HashSet<Variable>();
 
-        static SampleData()
+        public static void LoadKeywordData()
         {
             // Keywords
             Keywords.Add(new Keyword { Name = "abstract", Weight = 1.1M, ReleaseDate = new DateTime(2005, 11, 01) });
@@ -34,10 +42,11 @@ namespace OData_Samples.Data
             Variables.Add(new Variable { Name = "convert as some type", Keyword = Keywords.Single(x => x.Name == "as") });
             Variables.Add(new Variable { Name = "base type", Keyword = Keywords.Single(x => x.Name == "base") });
 
-            LoadProductData();
         }
 
-        #region Products data
+        #endregion
+
+        #region Product data
 
         public static readonly ICollection<Product> Products = new HashSet<Product>();
         public static readonly ICollection<Supplier> Suppliers = new HashSet<Supplier>();
