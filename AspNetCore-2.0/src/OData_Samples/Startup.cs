@@ -60,6 +60,9 @@ namespace OData_Samples
         {
             ODataModelBuilder builder = new ODataConventionModelBuilder();
 
+            // Ignore data member
+            GetEdmModelIgnoreDataMemberFoo(builder);
+
             builder.EntitySet<FooBarRec>("FooBarRecs")
                 .EntityType
                 .HasKey(x => x.Id)
@@ -152,7 +155,26 @@ namespace OData_Samples
               .Page()
               .Select();
 
-            // Functions
+            // Action & Functions
+            GetEdmModel_ActionAndFunction(builder);
+
+            // Containment
+            GetEdmModel_Containment(builder);
+
+            // Singleton
+            GetEdmModel_Singleton(builder);
+
+            // Open Types in OData
+            GetEdmModel_OpenTypes(builder);
+
+            // Complex Types
+            GetEdmModel_ComplexTypes(builder);
+
+            return builder.GetEdmModel();
+        }
+
+        public static void GetEdmModel_ActionAndFunction(ODataModelBuilder builder)
+        {
             builder.Namespace = "ProductService";
 
             // Action
@@ -169,16 +191,21 @@ namespace OData_Samples
             builder.Function("GetSalesTaxRate")
                 .Returns<double>()
                 .Parameter<int>("PostalCode");
+        }
 
-            // Containet
+        public static void GetEdmModel_Containment(ODataModelBuilder builder)
+        {
+            // Containment
             builder.EntitySet<Account>("Accounts");
             var paymentInstrumentType = builder.EntityType<PaymentInstrument>();
             var functionConfiguration = paymentInstrumentType.Collection.Function("GetCount");
             functionConfiguration.Parameter<string>("NameContains");
             functionConfiguration.Returns<int>();
             //builder.Namespace = typeof(Account).Namespace;
+        }
 
-            // Singleton
+        public static void GetEdmModel_Singleton(ODataModelBuilder builder)
+        {
             builder.EntitySet<Employee>("Employees");
             builder.Singleton<Company>("Umbrella");
             //builder.Namespace = typeof(Company).Namespace;
@@ -189,12 +216,86 @@ namespace OData_Samples
                 employeesConfiguration.HasSingletonBinding(c => c.Company, "Umbrella");
              */
 
-            return builder.GetEdmModel();
         }
 
-        private static IEdmModel GetEdmModelIgnoreDataMemberFoo()
+        public static void GetEdmModel_OpenTypes(ODataModelBuilder builder)
         {
-            ODataModelBuilder builder = new ODataConventionModelBuilder();
+            builder.EntitySet<BookOt>("Books");
+            builder.EntitySet<CustomerOt>("Customers");
+
+            // Build EDM model explicitly example
+            /*
+                ComplexTypeConfiguration<PressOt> pressType = builder.ComplexType<PressOt>();
+                pressType.Property(c => c.Name);
+                // ...
+                pressType.HasDynamicProperties(c => c.DynamicProperties);
+
+                EntityTypeConfiguration<BookOt> bookType = builder.EntityType<BookOt>();
+                bookType.HasKey(c => c.ISBN);
+                bookType.Property(c => c.Title);
+                // ...
+                bookType.ComplexProperty(c => c.Press);
+                bookType.HasDynamicProperties(c => c.Properties);
+
+                // ...
+                builder.EntitySet<BookOt>("Books");
+            */
+        }
+
+        public static void GetEdmModel_ComplexTypes(ODataModelBuilder builder)
+        {
+            builder.EntitySet<Window>("Windows"); // infers the inheritance relationships from the CLR types
+
+            // Build EDM model explicitly example which allows more control
+            /*
+
+            EnumTypeConfiguration<Color> color = builder.EnumType<Color>();
+            color.Member(Color.Red);
+            color.Member(Color.Blue);
+            color.Member(Color.Green);
+            color.Member(Color.Yellow);
+
+            ComplexTypeConfiguration<Point> point = builder.ComplexType<Point>();
+            point.Property(c => c.X);
+            point.Property(c => c.Y);
+
+            ComplexTypeConfiguration<Shape> shape = builder.ComplexType<Shape>();
+            shape.EnumProperty(c => c.Color);
+            shape.Property(c => c.HasBorder);
+            shape.Abstract();
+
+            ComplexTypeConfiguration<Triangle> triangle = builder.ComplexType<Triangle>();
+            triangle.ComplexProperty(c => c.P1);
+            triangle.ComplexProperty(c => c.P2);
+            triangle.ComplexProperty(c => c.P2);
+            triangle.DerivesFrom<Shape>();
+
+            ComplexTypeConfiguration<Rectangle> rectangle = builder.ComplexType<Rectangle>();
+            rectangle.ComplexProperty(c => c.LeftTop);
+            rectangle.Property(c => c.Height);
+            rectangle.Property(c => c.Weight);
+            rectangle.DerivesFrom<Shape>();
+
+            ComplexTypeConfiguration<RoundRectangle> roundRectangle = builder.ComplexType<RoundRectangle>();
+            roundRectangle.Property(c => c.Round);
+            roundRectangle.DerivesFrom<Rectangle>();
+
+            ComplexTypeConfiguration<Circle> circle = builder.ComplexType<Circle>();
+            circle.ComplexProperty(c => c.Center);
+            circle.Property(c => c.Radius);
+            circle.DerivesFrom<Shape>();
+
+            EntityTypeConfiguration<Window> window = builder.EntityType<Window>();
+            window.HasKey(c => c.Id);
+            window.Property(c => c.Title);
+            window.ComplexProperty(c => c.Shape);
+
+            builder.EntitySet<Window>("Windows");
+            */
+        }
+
+        private static void GetEdmModelIgnoreDataMemberFoo(ODataModelBuilder builder)
+        {
             builder.EntitySet<IgnoreDataMemberFoo>("IgnoreDataMemberFoos")
                 .EntityType
                 .HasKey(x => x.Name)
@@ -205,8 +306,6 @@ namespace OData_Samples
                 .Page()
                 .Select()
                 .Ignore(x => x.Age); // will not be visible to query
-
-            return builder.GetEdmModel();
         }
     }
 }
