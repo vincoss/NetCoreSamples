@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using OData_AdventureWorks.Models;
 using Microsoft.AspNet.OData;
 using Microsoft.AspNetCore.Mvc;
-
+using OData_AdventureWorks.Data;
 
 namespace OData_AdventureWorks.Controllers
 {

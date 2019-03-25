@@ -11,5 +11,5 @@ Scaffold-DbContext "Server=BNELTP009\MSSQLSERVER2016;Database=AdventureWorks2014
 Microsoft.AspNetCore.OData
 
 # Run from DLL
-AspNetCore-2.0\src\OData_AdventureWorks\bin\Debug\netcoreapp2.2
+cd AspNetCore-2.0\src\OData_AdventureWorks\bin\Debug\netcoreapp2.2
 dotnet Data_OData_Sample.dll

@@ -15,6 +15,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.OData.Edm;
+using OData_AdventureWorks.Data;
 
 namespace OData_AdventureWorks
 {
@@ -91,6 +92,7 @@ namespace OData_AdventureWorks
                 .OrderBy()
                 .Page()
                 .Select();
+
             builder.EntitySet<BusinessEntityAddress>("BusinessEntityAddress")
                 .EntityType
                 .Filter()

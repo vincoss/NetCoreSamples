@@ -1,8 +1,9 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using OData_AdventureWorks.Models;
 
-namespace OData_AdventureWorks.Models
+namespace OData_AdventureWorks.Data
 {
     public partial class AdventureWorks2014Context : DbContext
     {
