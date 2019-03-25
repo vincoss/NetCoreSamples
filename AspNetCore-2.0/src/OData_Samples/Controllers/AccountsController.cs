@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace OData_Samples.Controllers
 {
     /// <summary>
-    /// TOOD: The commented routes does not works
+    /// NOTE: Use postman, body->raw->JSON
     /// </summary>
     public class AccountsController : ODataController
     {
@@ -33,17 +33,25 @@ namespace OData_Samples.Controllers
             return Ok(payinPIs);
         }
 
+        // service/Accounts(100)/PayinPIs(101)
         [EnableQuery]
-        //[ODataRoute("Accounts({accountId})/PayinPIs({paymentInstrumentId})")]
+        [ODataRoute("Accounts({accountId})/PayinPIs({paymentInstrumentId})")]
         public IActionResult GetSinglePayinPI(int accountId, int paymentInstrumentId)
         {
             var payinPIs = _accounts.Single(a => a.AccountID == accountId).PayinPIs;
             var payinPI = payinPIs.Single(pi => pi.PaymentInstrumentID == paymentInstrumentId);
             return Ok(payinPI);
         }
+        
+        /*
+            PUT ~/Accounts(100)/PayinPIs(101)     
 
-        // PUT ~/Accounts(100)/PayinPIs(101)         
-        //[ODataRoute("Accounts({accountId})/PayinPIs({paymentInstrumentId})")]
+            {
+                "PaymentInstrumentID": 101,
+                "FriendlyName": "101 first PI"
+            }
+        */
+        [ODataRoute("Accounts({accountId})/PayinPIs({paymentInstrumentId})")]
         public IActionResult PutToPayinPI(int accountId, int paymentInstrumentId, [FromBody]PaymentInstrument paymentInstrument)
         {
             var account = _accounts.Single(a => a.AccountID == accountId);
@@ -53,7 +61,7 @@ namespace OData_Samples.Controllers
         }
 
         // DELETE ~/Accounts(100)/PayinPIs(101)         
-        //[ODataRoute("Accounts({accountId})/PayinPIs({paymentInstrumentId})")]
+        [ODataRoute("Accounts({accountId})/PayinPIs({paymentInstrumentId})")]
         public IActionResult DeletePayinPIFromAccount(int accountId, int paymentInstrumentId)
         {
             var account = _accounts.Single(a => a.AccountID == accountId);
@@ -67,8 +75,9 @@ namespace OData_Samples.Controllers
                 return StatusCode((int)HttpStatusCode.InternalServerError);
             }
         }
-        // GET ~/Accounts(100)/PayinPIs/Namespace.GetCount() 
-        //[ODataRoute("Accounts({accountId})/PayinPIs/ODataContrainmentSample.GetCount(NameContains={name})")]
+
+        // GET ~/Accounts(100)/PayinPIs/Default.GetCount() 
+        [ODataRoute("Accounts({accountId})/PayinPIs/Default.GetCount(NameContains={name})")]
         public IActionResult GetPayinPIsCountWhoseNameContainsGivenValue(int accountId, [FromODataUri]string name)
         {
             var account = _accounts.Single(a => a.AccountID == accountId);
@@ -103,3 +112,4 @@ namespace OData_Samples.Controllers
         }
     }
 }
+ 

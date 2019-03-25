@@ -15,8 +15,10 @@ namespace OData_Samples.Controllers
         https://localhost:44358/service
         The metadata document describes the types, sets, function and action understand by OData service.
         https://localhost:44358/service/$metadata
+
         The URIs for the dynamic resources
         https://localhost:44358/service/foos
+        https://localhost:44358/service/foos(103)
 
         https://localhost:44358/service/FooBarRecs?$expand=FooRec,BarRec
     */
@@ -35,6 +37,17 @@ namespace OData_Samples.Controllers
         public IActionResult Get()
         {
             return Ok(Foos);
+        }
+
+        public IActionResult Get([FromODataUri]int key)
+        {
+            Foo book = Foos.FirstOrDefault(e => e.FooId == key);
+            if (book == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(book);
         }
     }
 

@@ -39,10 +39,10 @@ namespace OData_Samples.Controllers
     /// service/Categories?$top=1
     /// 
     /// Action
-    /// service/Products(1)/ProductService.Rate?Rating=5
+    /// service/Products(1)/Default.Rate?Rating=5
     /// 
     /// Function
-    /// service/Products/ProductService.MostExpensive
+    /// service/Products/Default.MostExpensive
     /// service/GetSalesTaxRate(PostalCode=10)
     /// 
     /// </summary>
@@ -52,6 +52,12 @@ namespace OData_Samples.Controllers
         public IActionResult Get()
         {
             return Ok(SampleData.Products);
+        }
+
+        [EnableQuery]
+        public SingleResult<Product> Get([FromODataUri] int key)
+        {
+            return SingleResult.Create(SampleData.Products.AsQueryable().Where(x => x.ID == key));
         }
 
         [EnableQuery]
@@ -80,10 +86,17 @@ namespace OData_Samples.Controllers
             var result = SampleData.Products.AsQueryable().Where(m => m.ID == key).Select(m => m.Supplier);
             return SingleResult.Create(result);
         }
+        
+        /*
+            POST
+            service/Products(1)/Default.Rate
 
-        // TODO: Does not work
+           {
+	            "Rating":7
+           }
+        */
         [HttpPost]
-        public async Task<IActionResult> Rate([FromODataUri] int key, [FromBody] ODataActionParameters parameters)
+        public async Task<IActionResult> Rate([FromODataUri] int key, ODataActionParameters parameters)//http://odata.github.io/WebApi/#04-07-action-parameter-support
         {
             if (!ModelState.IsValid)
             {
@@ -104,6 +117,9 @@ namespace OData_Samples.Controllers
             return StatusCode((int)HttpStatusCode.NoContent);
         }
 
+        /// <summary>
+        /// service/Products/Default.MostExpensive
+        /// </summary>
         [HttpGet]
         public IActionResult MostExpensive()
         {
@@ -111,6 +127,9 @@ namespace OData_Samples.Controllers
             return Ok(product);
         }
 
+        /// <summary>
+        /// service/GetSalesTaxRate(PostalCode=10)
+        /// </summary>
         [HttpGet]
         [ODataRoute("GetSalesTaxRate(PostalCode={postalCode})")]
         public IActionResult GetSalesTaxRate([FromODataUri] int postalCode)
@@ -122,12 +141,18 @@ namespace OData_Samples.Controllers
 
     public class SuppliersController : ODataController
     {
+        /// <summary>
+        /// service/suppliers
+        /// </summary>
         [EnableQuery]
         public IActionResult Get()
         {
             return Ok(SampleData.Suppliers);
         }
 
+        /// <summary>
+        /// service/Suppliers(2)/Products
+        /// </summary>
         [EnableQuery]
         public IQueryable<Product> GetProducts([FromODataUri] int key)
         {
@@ -137,6 +162,7 @@ namespace OData_Samples.Controllers
 
     public class CategoriesController : ODataController
     {
+        // service/categories
         [EnableQuery]
         public IActionResult Get()
         {
@@ -149,6 +175,7 @@ namespace OData_Samples.Controllers
             return SampleData.Categories.AsQueryable();
         }
 
+        //service/categories(3)
         [EnableQuery]
         public SingleResult<Category> GetCategory([FromODataUri] int key)
         {
@@ -158,6 +185,7 @@ namespace OData_Samples.Controllers
 
     public class RatingsController : ODataController
     {
+        // service/ratings
         [EnableQuery]
         public IActionResult Get()
         {
@@ -165,3 +193,4 @@ namespace OData_Samples.Controllers
         }
     }
 }
+ 

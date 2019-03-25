@@ -175,13 +175,13 @@ namespace OData_Samples
 
         public static void GetEdmModel_ActionAndFunction(ODataModelBuilder builder)
         {
-            builder.Namespace = "ProductService";
+            builder.Namespace = "Default";
 
             // Action
             builder.EntityType<Product>()
               .Action("Rate")
               .Parameter<int>("Rating");
-
+            
             // Function
             builder.EntityType<Product>().Collection
                 .Function("MostExpensive")
@@ -202,6 +202,7 @@ namespace OData_Samples
             functionConfiguration.Parameter<string>("NameContains");
             functionConfiguration.Returns<int>();
             //builder.Namespace = typeof(Account).Namespace;
+            builder.Namespace = "Default";
         }
 
         public static void GetEdmModel_Singleton(ODataModelBuilder builder)

@@ -17,7 +17,7 @@ namespace OData_Samples.Controllers
     {
         public class BooksController : ODataController
         {
-            private IList<BookOt> _books = new List<BookOt>
+            private static IList<BookOt> _books = new List<BookOt>
             {
                 new BookOt
                 {
@@ -74,6 +74,7 @@ namespace OData_Samples.Controllers
             }
 
             /*
+                POST
                 https://localhost:44358/service/books
             
                 {
@@ -82,7 +83,8 @@ namespace OData_Samples.Controllers
                    }, "Price": 49.99, "Published":"2014-02-15T00:00:00Z"
                 }
             */
-            public IActionResult Post(BookOt book)
+            [HttpPost]
+            public IActionResult Post([FromBody]BookOt book)
             {
                 if (!ModelState.IsValid)
                 {
