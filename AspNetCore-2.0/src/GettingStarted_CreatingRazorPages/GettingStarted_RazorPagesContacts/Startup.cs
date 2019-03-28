@@ -21,6 +21,8 @@ namespace GettingStarted_RazorPagesContacts
             services.AddMvc();
 
             services.AddSingleton<IDatabaseService, DatabaseService>();
+            services.AddScoped<IDatabaseService, DatabaseService>();
+            services.AddTransient<IDatabaseService, DatabaseService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

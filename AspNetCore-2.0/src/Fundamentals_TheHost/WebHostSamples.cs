@@ -22,7 +22,7 @@ namespace Fundamentals_TheHost
     {
         public static int SampleMain(string[] args)
         {
-            OverrideConfiguration(args);
+            ManageTheHost_Start_RequestDelegate(args);
             return 0;
         }
 
@@ -146,7 +146,6 @@ namespace Fundamentals_TheHost
         }
 
         // Host configuration values
-
         public static void HostConfigurationValues(string[] args)
         {
             var builder = WebHost.CreateDefaultBuilder(args)
@@ -222,7 +221,6 @@ namespace Fundamentals_TheHost
         }
 
         // Manage the host
-
         public static void ManageTheHost(string[] args)
         {
             var builder = WebHost.CreateDefaultBuilder(args)
@@ -269,72 +267,44 @@ namespace Fundamentals_TheHost
                 Console.WriteLine("Use Ctrl-C to shutdown the host...");
                 host2.WaitForShutdown();
             }
+        }
 
-            /*  
-                Start(Action<IRouteBuilder> routeBuilder)
+        /*  
+               Start(Action<IRouteBuilder> routeBuilder)
 
-                http://localhost:5000/hello/Martin	        Hello, Martin!
-                http://localhost:5000/buenosdias/Catrina	Buenos dias, Catrina!
-                http://localhost:5000/throw/ooops!	        Throws an exception with string "ooops!"
-                http://localhost:5000/throw	                Throws an exception with string "Uh oh!"
-                http://localhost:5000/Sante/Kevin	        Sante, Kevin!
-                http://localhost:5000	                    Hello World!
-            */
-
+               http://localhost:5000/hello/Ferdinand	    Hello, Ferdinand!
+               http://localhost:5000/buenosdias/Minjin	    Buenos dias, Minjin!
+               http://localhost:5000/throw/lol!	            Throws an exception with string "lol!"
+               http://localhost:5000/throw	                Throws an exception with string "Uh oh!"
+               http://localhost:5000/Sante/Adam	            Sante, Kevin!
+               http://localhost:5000	                    Hello World!
+        */
+        public static void ManageTheHost_Start_RequestDelegate(string[] args)
+        {
             using (var host2 = WebHost.Start(router =>
-            router.MapGet("hello/{name}", (req, res, data) =>
-            res.WriteAsync($"Hello, {data.Values["name"]}!")).MapGet("buenosdias/{name}", (req, res, data) =>
-            res.WriteAsync($"Buenos dias, {data.Values["name"]}!")).MapGet("throw/{message?}", (req, res, data) =>
-            throw new Exception((string)data.Values["message"] ?? "Uh oh!")).MapGet("{greeting}/{name}", (req, res, data) =>
-            res.WriteAsync($"{data.Values["greeting"]}, {data.Values["name"]}!"))
-            .MapGet("", (req, res, data) => res.WriteAsync("Hello, World!"))))
+             router
+             .MapGet("hello/{name}", (req, res, data) => res.WriteAsync($"Hello, {data.Values["name"]}!"))
+             .MapGet("buenosdias/{name}", (req, res, data) => res.WriteAsync($"Buenos dias, {data.Values["name"]}!"))
+             .MapGet("throw/{message?}", (req, res, data) => throw new Exception((string)data.Values["message"] ?? "Uh oh!"))
+             .MapGet("{greeting}/{name}", (req, res, data) => res.WriteAsync($"{data.Values["greeting"]}, {data.Values["name"]}!"))
+             .MapGet("", (req, res, data) => res.WriteAsync("Hello, World!"))))
             {
                 Console.WriteLine("Use Ctrl-C to shutdown the host...");
                 host2.WaitForShutdown();
             }
+        }
 
-            // Start(string url, Action<IRouteBuilder> routeBuilder) same as above but 8080 port
-
-            using (var host2 = WebHost.Start("http://localhost:8080", router => router
-            .MapGet("hello/{name}", (req, res, data) =>
-                res.WriteAsync($"Hello, {data.Values["name"]}!"))
-            .MapGet("buenosdias/{name}", (req, res, data) =>
-                res.WriteAsync($"Buenos dias, {data.Values["name"]}!"))
-            .MapGet("throw/{message?}", (req, res, data) =>
-                throw new Exception((string)data.Values["message"] ?? "Uh oh!"))
-            .MapGet("{greeting}/{name}", (req, res, data) =>
-                res.WriteAsync($"{data.Values["greeting"]}, {data.Values["name"]}!"))
-            .MapGet("", (req, res, data) => res.WriteAsync("Hello, World!"))))
-            {
-                Console.WriteLine("Use Ctrl-C to shut down the host...");
-                host2.WaitForShutdown();
-            }
-
-            // StartWith(Action<IApplicationBuilder> app)
-
-            using (var host2 = WebHost.StartWith(app =>
-                app.Use(next =>
-                {
-                    return async context =>
-                    {
-                        await context.Response.WriteAsync("Hello World!");
-                    };
-                })))
-            {
-                Console.WriteLine("Use Ctrl-C to shut down the host...");
-                host2.WaitForShutdown();
-            }
-
-            // StartWith(string url, Action<IApplicationBuilder> app)
-
-            using (var host2 = WebHost.StartWith("http://localhost:8080", app =>
-                app.Use(next =>
-                {
-                    return async context =>
-                    {
-                        await context.Response.WriteAsync("Hello World!");
-                    };
-                })))
+        // StartWith(string url, Action<IApplicationBuilder> app)
+        public static void ManageTheHost_StartWith(string[] args)
+        {
+            using (var host2 = WebHost.StartWith("http://localhost:5000", app =>
+               app.Use(next =>
+               {
+                   return async context =>
+                   {
+                       await context.Response.WriteAsync("Hello World! StartWith");
+                   };
+               })))
             {
                 Console.WriteLine("Use Ctrl-C to shut down the host...");
                 host2.WaitForShutdown();
@@ -342,7 +312,6 @@ namespace Fundamentals_TheHost
         }
 
         // Scope validation
-
         public static void ScopeValidation(string[] args)
         {
             var builder = WebHost.CreateDefaultBuilder(args)

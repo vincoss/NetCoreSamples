@@ -23,10 +23,6 @@ namespace Fundamentals_TheHost
         public static void Main(string[] args)
         {
             WebHostSamples.SampleMain(args);
-
-            //CreateWebHostBuilder(args).Build().Run();
-            //CreateDefaultBuilder_Details(args);
-            //OverrideConfiguration(args);
         }
     }
 }
