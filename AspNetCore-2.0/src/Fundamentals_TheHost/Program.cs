@@ -22,7 +22,7 @@ namespace Fundamentals_TheHost
     {
         public static void Main(string[] args)
         {
-            WebHostSamples.SampleMain(args);
+            GenericHostSamples.SampleMain(args);
         }
     }
 }

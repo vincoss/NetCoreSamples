@@ -7,8 +7,13 @@ using System.Threading.Tasks;
 
 namespace Fundamentals_TheHost.Services
 {
-    public class TimedHostedService : IHostedService
+    public class TimedHostedService : IHostedService, IDisposable
     {
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
+
         public Task StartAsync(CancellationToken cancellationToken)
         {
             throw new NotImplementedException();

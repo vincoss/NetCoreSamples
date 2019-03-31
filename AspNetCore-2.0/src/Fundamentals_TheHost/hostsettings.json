@@ -1,3 +1,4 @@
 ﻿{
-  "urls": "http://*:5005"
+  "urls": "http://*:5005",
+  "environment": "Development"
 }
