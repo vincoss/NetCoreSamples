@@ -22,8 +22,68 @@ namespace Fundamentals_TheHost
     {
         public static int SampleMain(string[] args)
         {
-            ManageTheHost_Start_RequestDelegate(args);
+            SampleConfig(args);
             return 0;
+        }
+
+        private static void SampleConfigRunAndStart(string[] args)
+        {
+            var host = new WebHostBuilder()
+                   .UseSetting("ApplicationName", "SampleApplication")
+                   .UseContentRoot(@"C:\Temp")
+                   .UseKestrel()
+                   .UseStartup<Startup>()
+
+                   .Build();
+
+            // Here to start the host application use Run or Start
+
+            host.Run(); // Will block main thread
+
+            // host.Start(); // Will not block main thread
+            // Console.Read(); // To keep it open
+        }
+
+        public static void SampleConfig(string[] args)
+        {
+            var config = new ConfigurationBuilder()
+             .SetBasePath(Directory.GetCurrentDirectory())
+             .AddJsonFile("hostsettings.json", optional: true)
+             .AddCommandLine(args)
+             .Build();
+
+            // Can configure without Startup class, just use extension methods
+
+            var host = new WebHostBuilder()
+                    .UseSetting(WebHostDefaults.ApplicationKey, "SampleApplication")
+                    //.UseContentRoot(@"C:\Temp")
+                    //.CaptureStartupErrors(true) // Will try to capture errors and start server then display those
+                    //.UseSetting("detailedErrors", "true") // Default is false, to show detailed errors set to true
+                    //.UseEnvironment("Development")    // Default is Production, see launchSettings.json for visual studio settings
+                    .UseUrls("http://*:5000;http://localhost:5001;https://localhost:5002") // for * use any IP address to serve the request
+                    .UseStartup<Startup>() // Specify assembly name to search for Startup class
+                    //.UseWebRoot("public")   // if not specified default is contentRootPaht\wwwroot
+                    .UseConfiguration(config)
+                    .UseKestrel()
+                    .Configure(app =>
+                    {
+                        app.Run(async (context) =>
+                        {
+                            context.ShowConnectionInfoDetails();
+
+                            await context.Response.WriteAsync("Ahoj!");
+
+                            foreach (var pair in app.Properties)
+                            {
+                                await context.Response.WriteAsync(string.Format("{0}Key: {1}, Value: {2}", Environment.NewLine, pair.Key, pair.Value));
+                            }
+
+                        });
+                    })
+
+                    .Build();
+            
+            host.Run();
         }
 
         // Setup The Host
