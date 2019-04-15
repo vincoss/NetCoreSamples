@@ -1,0 +1,11 @@
+<configuration>
+  <MySettings1>
+    <SomeSetting>Test</SomeSetting>
+    <Another>true</Another>
+  </MySettings1>
+  <MySettings2>
+    <SomeSetting>Test</SomeSetting>
+    <Another>true</Another>
+  </MySettings2>
+</configuration>
+
