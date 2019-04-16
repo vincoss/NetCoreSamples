@@ -58,8 +58,7 @@ namespace Fundamentals_Configuration.Configuration
             }
         }
 
-        private static IDictionary<string, string> CreateAndSaveDefaultValues(
-            EFConfigurationContext dbContext)
+        private static IDictionary<string, string> CreateAndSaveDefaultValues(EFConfigurationContext dbContext)
         {
             // Quotes (c)2005 Universal Pictures: Serenity
             // https://www.uphe.com/movies/serenity

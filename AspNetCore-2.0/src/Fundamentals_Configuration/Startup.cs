@@ -29,7 +29,7 @@ namespace Fundamentals_Configuration
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            var value = config["key"];
+            var value = _config["key"];
 
             if (env.IsDevelopment())
             {

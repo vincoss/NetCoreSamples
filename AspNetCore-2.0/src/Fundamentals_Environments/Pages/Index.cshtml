@@ -1,0 +1,27 @@
+﻿@page
+@model Fundamentals_Environments.Pages.IndexModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <environment include="Development">
+        <div>&lt;environment include="Development"&gt;</div>
+    </environment>
+    <environment exclude="Development">
+        <div>&lt;environment exclude="Development"&gt;</div>
+    </environment>
+    <environment include="Staging,Development,Staging_2">
+        <div>
+            &lt;environment include="Staging,Development,Staging_2"&gt;
+        </div>
+    </environment>
+</body>
+</html>
