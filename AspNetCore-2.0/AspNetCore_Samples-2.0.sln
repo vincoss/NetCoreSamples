@@ -125,9 +125,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Advanced_BackgroundTasksAnd
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fundamentals_Options", "src\Fundamentals_Options\Fundamentals_Options.csproj", "{57593DF6-A1A7-43F4-8643-E8600290BE1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fundamentals_Environments", "src\Fundamentals_Environments\Fundamentals_Environments.csproj", "{0DFA8CAB-0A3B-4A87-A4FD-2D32D4BDC5FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fundamentals_Environments", "src\Fundamentals_Environments\Fundamentals_Environments.csproj", "{0DFA8CAB-0A3B-4A87-A4FD-2D32D4BDC5FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fundamentals_Logging", "src\Fundamentals_Logging\Fundamentals_Logging.csproj", "{672D37DD-355A-4F8F-AE26-30EE2DC09A1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fundamentals_Logging", "src\Fundamentals_Logging\Fundamentals_Logging.csproj", "{672D37DD-355A-4F8F-AE26-30EE2DC09A1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fundamentals_Routing", "src\Fundamentals_Routing\Fundamentals_Routing.csproj", "{A07A1743-BE7D-4CA6-A70C-06E4502E50E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fundamentals_HandleErrors", "src\Fundamentals_HandleErrors\Fundamentals_HandleErrors.csproj", "{C017AF20-F86E-4CA9-9668-B29478927CCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fundamentals_MakeHttpRequests", "src\Fundamentals_MakeHttpRequests\Fundamentals_MakeHttpRequests.csproj", "{11E26228-D361-4ED2-B623-FF3D22009A0D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -307,6 +313,18 @@ Global
 		{672D37DD-355A-4F8F-AE26-30EE2DC09A1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{672D37DD-355A-4F8F-AE26-30EE2DC09A1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{672D37DD-355A-4F8F-AE26-30EE2DC09A1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A07A1743-BE7D-4CA6-A70C-06E4502E50E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A07A1743-BE7D-4CA6-A70C-06E4502E50E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A07A1743-BE7D-4CA6-A70C-06E4502E50E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A07A1743-BE7D-4CA6-A70C-06E4502E50E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C017AF20-F86E-4CA9-9668-B29478927CCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C017AF20-F86E-4CA9-9668-B29478927CCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C017AF20-F86E-4CA9-9668-B29478927CCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C017AF20-F86E-4CA9-9668-B29478927CCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11E26228-D361-4ED2-B623-FF3D22009A0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11E26228-D361-4ED2-B623-FF3D22009A0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11E26228-D361-4ED2-B623-FF3D22009A0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11E26228-D361-4ED2-B623-FF3D22009A0D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -354,6 +372,9 @@ Global
 		{57593DF6-A1A7-43F4-8643-E8600290BE1A} = {FD87B9F7-931B-440D-BA33-6E0072E4E072}
 		{0DFA8CAB-0A3B-4A87-A4FD-2D32D4BDC5FD} = {FD87B9F7-931B-440D-BA33-6E0072E4E072}
 		{672D37DD-355A-4F8F-AE26-30EE2DC09A1F} = {FD87B9F7-931B-440D-BA33-6E0072E4E072}
+		{A07A1743-BE7D-4CA6-A70C-06E4502E50E8} = {FD87B9F7-931B-440D-BA33-6E0072E4E072}
+		{C017AF20-F86E-4CA9-9668-B29478927CCB} = {FD87B9F7-931B-440D-BA33-6E0072E4E072}
+		{11E26228-D361-4ED2-B623-FF3D22009A0D} = {FD87B9F7-931B-440D-BA33-6E0072E4E072}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D8282B92-1BD9-46FB-A23B-4AD1E0EA297F}
