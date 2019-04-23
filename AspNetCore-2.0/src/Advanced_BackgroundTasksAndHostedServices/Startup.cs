@@ -21,6 +21,8 @@ namespace Advanced_BackgroundTasksAndHostedServices
             services.AddHostedService<ConsumeScopedServiceHostedService>();
             services.AddHostedService<QueuedHostedService>();
             services.AddHostedService<QueuedTasksHostedService>();
+            // Or
+            //services.AddSingleton<TimedHostedService>();
 
             // Scoped
             services.AddScoped<IScopedProcessingService, ScopedProcessingService>();

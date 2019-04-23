@@ -26,7 +26,7 @@ namespace Fundamentals_Configuration
     {
         public static void Main(string[] args)
         {
-            BindToAClass_Sample(args);
+            ConfigureAppConfiguration_Sample(args);
         }
 
         public static void Default_Sample(string[] args)
