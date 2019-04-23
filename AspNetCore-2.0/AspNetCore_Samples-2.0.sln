@@ -97,8 +97,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fundamentals_StartupClass",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_WebApplication", "src\Default_WebApplication\Default_WebApplication.csproj", "{4F1347DD-AE3A-499D-8B4B-76CDBDCBBFA0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_EmptyProject", "src\Default_EmptyProject\Default_EmptyProject.csproj", "{38639BAF-13F4-4ABE-967B-5331541D57CF}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fundamentals_DependencyInjection", "src\Fundamentals_DependencyInjection\Fundamentals_DependencyInjection.csproj", "{4B45BBED-D91D-413A-91DB-DCC8C9247BBE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fundamentals_Middleware", "src\Fundamentals_Middleware\Fundamentals_Middleware.csproj", "{FC852EF4-BF98-455D-93F1-C9C7A6A613CB}"
@@ -129,11 +127,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fundamentals_Environments",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fundamentals_Logging", "src\Fundamentals_Logging\Fundamentals_Logging.csproj", "{672D37DD-355A-4F8F-AE26-30EE2DC09A1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fundamentals_Routing", "src\Fundamentals_Routing\Fundamentals_Routing.csproj", "{A07A1743-BE7D-4CA6-A70C-06E4502E50E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fundamentals_Routing", "src\Fundamentals_Routing\Fundamentals_Routing.csproj", "{A07A1743-BE7D-4CA6-A70C-06E4502E50E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fundamentals_HandleErrors", "src\Fundamentals_HandleErrors\Fundamentals_HandleErrors.csproj", "{C017AF20-F86E-4CA9-9668-B29478927CCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fundamentals_HandleErrors", "src\Fundamentals_HandleErrors\Fundamentals_HandleErrors.csproj", "{C017AF20-F86E-4CA9-9668-B29478927CCB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fundamentals_MakeHttpRequests", "src\Fundamentals_MakeHttpRequests\Fundamentals_MakeHttpRequests.csproj", "{11E26228-D361-4ED2-B623-FF3D22009A0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fundamentals_MakeHttpRequests", "src\Fundamentals_MakeHttpRequests\Fundamentals_MakeHttpRequests.csproj", "{11E26228-D361-4ED2-B623-FF3D22009A0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_EmptyProject", "src\Default_EmptyProject\Default_EmptyProject.csproj", "{BF170607-2E97-48A5-B895-B020DF5947BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_EmptyProject_Docker", "src\Default_EmptyProject_Docker\Default_EmptyProject_Docker.csproj", "{9451332A-94BC-4138-B208-6320F5139CEE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -257,10 +259,6 @@ Global
 		{4F1347DD-AE3A-499D-8B4B-76CDBDCBBFA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F1347DD-AE3A-499D-8B4B-76CDBDCBBFA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F1347DD-AE3A-499D-8B4B-76CDBDCBBFA0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{38639BAF-13F4-4ABE-967B-5331541D57CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{38639BAF-13F4-4ABE-967B-5331541D57CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{38639BAF-13F4-4ABE-967B-5331541D57CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{38639BAF-13F4-4ABE-967B-5331541D57CF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4B45BBED-D91D-413A-91DB-DCC8C9247BBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4B45BBED-D91D-413A-91DB-DCC8C9247BBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B45BBED-D91D-413A-91DB-DCC8C9247BBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -325,6 +323,14 @@ Global
 		{11E26228-D361-4ED2-B623-FF3D22009A0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11E26228-D361-4ED2-B623-FF3D22009A0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11E26228-D361-4ED2-B623-FF3D22009A0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF170607-2E97-48A5-B895-B020DF5947BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF170607-2E97-48A5-B895-B020DF5947BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF170607-2E97-48A5-B895-B020DF5947BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF170607-2E97-48A5-B895-B020DF5947BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9451332A-94BC-4138-B208-6320F5139CEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9451332A-94BC-4138-B208-6320F5139CEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9451332A-94BC-4138-B208-6320F5139CEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9451332A-94BC-4138-B208-6320F5139CEE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -359,7 +365,6 @@ Global
 		{2BA66BEA-623F-4D99-B533-B8D4CDC895B9} = {4F19C00D-6324-4748-8FB0-E69052771FB3}
 		{0DEA9CD5-B7EA-4DC4-AC3C-B55E1465F8A3} = {FD87B9F7-931B-440D-BA33-6E0072E4E072}
 		{4F1347DD-AE3A-499D-8B4B-76CDBDCBBFA0} = {01BC067A-DE01-4B53-AFE9-5B78CEE4FC85}
-		{38639BAF-13F4-4ABE-967B-5331541D57CF} = {01BC067A-DE01-4B53-AFE9-5B78CEE4FC85}
 		{4B45BBED-D91D-413A-91DB-DCC8C9247BBE} = {FD87B9F7-931B-440D-BA33-6E0072E4E072}
 		{FC852EF4-BF98-455D-93F1-C9C7A6A613CB} = {FD87B9F7-931B-440D-BA33-6E0072E4E072}
 		{6D4D364E-466E-4C6F-B383-2971A4AE2CF4} = {FD87B9F7-931B-440D-BA33-6E0072E4E072}
@@ -375,6 +380,8 @@ Global
 		{A07A1743-BE7D-4CA6-A70C-06E4502E50E8} = {FD87B9F7-931B-440D-BA33-6E0072E4E072}
 		{C017AF20-F86E-4CA9-9668-B29478927CCB} = {FD87B9F7-931B-440D-BA33-6E0072E4E072}
 		{11E26228-D361-4ED2-B623-FF3D22009A0D} = {FD87B9F7-931B-440D-BA33-6E0072E4E072}
+		{BF170607-2E97-48A5-B895-B020DF5947BD} = {01BC067A-DE01-4B53-AFE9-5B78CEE4FC85}
+		{9451332A-94BC-4138-B208-6320F5139CEE} = {01BC067A-DE01-4B53-AFE9-5B78CEE4FC85}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D8282B92-1BD9-46FB-A23B-4AD1E0EA297F}
