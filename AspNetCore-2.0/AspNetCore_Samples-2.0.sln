@@ -10,27 +10,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.txt = README.txt
 	EndProjectSection
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Default_WebApplicationFromCommand", "src\Default_WebApplicationFromCommand\", "{B369C5FC-0CDC-4655-A96E-5500041D9340}"
-	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_55570"
-		Debug.AspNetCompiler.PhysicalPath = "src\Default_WebApplicationFromCommand\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55570\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_55570"
-		Release.AspNetCompiler.PhysicalPath = "src\Default_WebApplicationFromCommand\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55570\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "55570"
-		SlnRelativePath = "src\Default_WebApplicationFromCommand\"
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GettingStarted", "GettingStarted", "{4F23CF6B-57BE-44EF-B6D3-C0F247A8DEB6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GettingStarted_RazorPagesContacts", "src\GettingStarted_CreatingRazorPages\GettingStarted_RazorPagesContacts\GettingStarted_RazorPagesContacts.csproj", "{483F10F0-AE9A-444B-BA25-AD43EFCECB60}"
@@ -127,19 +106,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fundamentals_HandleErrors",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fundamentals_MakeHttpRequests", "src\Fundamentals_MakeHttpRequests\Fundamentals_MakeHttpRequests.csproj", "{11E26228-D361-4ED2-B623-FF3D22009A0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_EmptyProject", "src\Default_EmptyProject\Default_EmptyProject.csproj", "{BF170607-2E97-48A5-B895-B020DF5947BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_EmptyProject", "src\Default_EmptyProject\Default_EmptyProject.csproj", "{BF170607-2E97-48A5-B895-B020DF5947BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_EmptyProject_Docker", "src\Default_EmptyProject_Docker\Default_EmptyProject_Docker.csproj", "{9451332A-94BC-4138-B208-6320F5139CEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_EmptyProject_Docker", "src\Default_EmptyProject_Docker\Default_EmptyProject_Docker.csproj", "{9451332A-94BC-4138-B208-6320F5139CEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_WebApplication", "src\Default_WebApplication\Default_WebApplication.csproj", "{4AC8813F-38B0-4BF7-9B32-6D05740001C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_WebApplication", "src\Default_WebApplication\Default_WebApplication.csproj", "{4AC8813F-38B0-4BF7-9B32-6D05740001C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_WebApplication_MVC", "src\Default_WebApplication_MVC\Default_WebApplication_MVC.csproj", "{8627EF40-1412-4D0E-B113-67FF89EB45AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_WebApplication_MVC", "src\Default_WebApplication_MVC\Default_WebApplication_MVC.csproj", "{8627EF40-1412-4D0E-B113-67FF89EB45AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_WebApplication_API", "src\Default_WebApplication_API\Default_WebApplication_API.csproj", "{A99BA460-065E-4D17-AA96-FF189CBCFECE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_WebApplication_API", "src\Default_WebApplication_API\Default_WebApplication_API.csproj", "{A99BA460-065E-4D17-AA96-FF189CBCFECE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_WebApplication_MVC_IndividualUserAccount", "src\Default_WebApplication_MVC_IndividualUserAccount\Default_WebApplication_MVC_IndividualUserAccount.csproj", "{92896A74-6B48-4813-B63B-5A29309069F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_WebApplication_MVC_IndividualUserAccount", "src\Default_WebApplication_MVC_IndividualUserAccount\Default_WebApplication_MVC_IndividualUserAccount.csproj", "{92896A74-6B48-4813-B63B-5A29309069F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_WebApplication_MVC_WindowsAuthentication", "src\Default_WebApplication_MVC_WindowsAuthentication\Default_WebApplication_MVC_WindowsAuthentication.csproj", "{907ADA62-ACEF-47C6-8346-C8B815EF5CCF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_WebApplication_MVC_WindowsAuthentication", "src\Default_WebApplication_MVC_WindowsAuthentication\Default_WebApplication_MVC_WindowsAuthentication.csproj", "{907ADA62-ACEF-47C6-8346-C8B815EF5CCF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -147,10 +126,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B369C5FC-0CDC-4655-A96E-5500041D9340}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B369C5FC-0CDC-4655-A96E-5500041D9340}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B369C5FC-0CDC-4655-A96E-5500041D9340}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{B369C5FC-0CDC-4655-A96E-5500041D9340}.Release|Any CPU.Build.0 = Debug|Any CPU
 		{483F10F0-AE9A-444B-BA25-AD43EFCECB60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{483F10F0-AE9A-444B-BA25-AD43EFCECB60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{483F10F0-AE9A-444B-BA25-AD43EFCECB60}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -348,7 +323,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{B369C5FC-0CDC-4655-A96E-5500041D9340} = {01BC067A-DE01-4B53-AFE9-5B78CEE4FC85}
 		{483F10F0-AE9A-444B-BA25-AD43EFCECB60} = {4F23CF6B-57BE-44EF-B6D3-C0F247A8DEB6}
 		{CD81AED2-EB19-4629-95A6-ED269C893627} = {4F23CF6B-57BE-44EF-B6D3-C0F247A8DEB6}
 		{451CAD2F-CDDF-47CC-8C9C-FA51E0ADB07C} = {4F19C00D-6324-4748-8FB0-E69052771FB3}
