@@ -120,6 +120,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_WebApplication_MVC_
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_WebApplication_MVC_WindowsAuthentication", "src\Default_WebApplication_MVC_WindowsAuthentication\Default_WebApplication_MVC_WindowsAuthentication.csproj", "{907ADA62-ACEF-47C6-8346-C8B815EF5CCF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_RazorClassLibrary", "src\Default_RazorClassLibrary\Default_RazorClassLibrary.csproj", "{8D3AACB0-1DAB-4A6B-9C4F-84ED608DAEBD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -318,6 +320,10 @@ Global
 		{907ADA62-ACEF-47C6-8346-C8B815EF5CCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{907ADA62-ACEF-47C6-8346-C8B815EF5CCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{907ADA62-ACEF-47C6-8346-C8B815EF5CCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D3AACB0-1DAB-4A6B-9C4F-84ED608DAEBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D3AACB0-1DAB-4A6B-9C4F-84ED608DAEBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D3AACB0-1DAB-4A6B-9C4F-84ED608DAEBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D3AACB0-1DAB-4A6B-9C4F-84ED608DAEBD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -370,6 +376,7 @@ Global
 		{A99BA460-065E-4D17-AA96-FF189CBCFECE} = {01BC067A-DE01-4B53-AFE9-5B78CEE4FC85}
 		{92896A74-6B48-4813-B63B-5A29309069F0} = {01BC067A-DE01-4B53-AFE9-5B78CEE4FC85}
 		{907ADA62-ACEF-47C6-8346-C8B815EF5CCF} = {01BC067A-DE01-4B53-AFE9-5B78CEE4FC85}
+		{8D3AACB0-1DAB-4A6B-9C4F-84ED608DAEBD} = {01BC067A-DE01-4B53-AFE9-5B78CEE4FC85}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D8282B92-1BD9-46FB-A23B-4AD1E0EA297F}
