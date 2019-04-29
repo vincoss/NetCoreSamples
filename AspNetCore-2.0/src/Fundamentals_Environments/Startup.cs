@@ -65,27 +65,4 @@ namespace Fundamentals_Environments
         }
     }
 
-    // Startup class to use in the Development environment
-    public class StartupDevelopment
-    {
-        public void ConfigureServices(IServiceCollection services)
-        {
-        }
-
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
-        {
-        }
-    }
-
-    // Startup class to use in the Production environment
-    public class StartupProduction
-    {
-        public void ConfigureServices(IServiceCollection services)
-        {
-        }
-
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
-        {
-        }
-    }
 }
