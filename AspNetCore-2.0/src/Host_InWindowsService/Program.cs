@@ -6,6 +6,7 @@ using System.Linq;
 using Host_InWindowsService.Services;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Logging;
 
 
 namespace Host_InWindowsService
@@ -46,6 +47,10 @@ namespace Host_InWindowsService
 
             var host = WebHost.CreateDefaultBuilder(localArgs.ToArray())
                 .UseContentRoot(pathToContentRoot)
+                .ConfigureAppConfiguration((context, config) =>
+                {
+                    // Configure the app here.
+                })
                 .UseStartup<Startup>()
                 //.UseApplicationInsights()
                 .UseUrls(new[]
@@ -54,6 +59,10 @@ namespace Host_InWindowsService
                     //"http://AH801879",
                     "http://localhost:5000",
                     //"http://AH801879:5000"
+                })
+                .ConfigureLogging((hostingContext, logging) =>
+                {
+                    logging.AddEventLog();
                 })
                 .Build();
 
