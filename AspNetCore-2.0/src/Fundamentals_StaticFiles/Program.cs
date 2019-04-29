@@ -33,22 +33,21 @@ namespace Fundamentals_StaticFiles
 
         #region WatchForChanges
 
-        ​private static PhysicalFileProvider _fileProvider = new PhysicalFileProvider(Directory.GetCurrentDirectory());
-
         public static void WatchForChanges(string[] args)
         {
-
             Console.WriteLine("Monitoring quotes.txt for changes (Ctrl-c to quit)...");
 
             while (true)
             {
-                WatchForChanges_MainAsync().GetAwaiter().GetResult();
+                //WatchForChanges_MainAsync().GetAwaiter().GetResult();
             }
         }
 
         private static async Task WatchForChanges_MainAsync()
         {
-            IChangeToken token = _fileProvider.Watch("quotes.txt");
+            var fileProvider = new PhysicalFileProvider(Directory.GetCurrentDirectory());
+
+            IChangeToken token = fileProvider.Watch("quotes.txt");
             var tcs = new TaskCompletionSource<object>();
 
             token.RegisterChangeCallback(state =>
@@ -57,7 +56,7 @@ namespace Fundamentals_StaticFiles
             await tcs.Task.ConfigureAwait(false);
 
             Console.WriteLine("quotes.txt changed");
-        } 
+        }
         #endregion
     }
 }
