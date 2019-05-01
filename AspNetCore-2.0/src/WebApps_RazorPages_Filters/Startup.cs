@@ -28,12 +28,13 @@ namespace WebApps_RazorPages_Filters
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            // 1. Implement Razor Page filters globally
+            // 1. Implement Razor Page filters globally (async or sync)
 
             services.AddMvc(options =>
             {
+                // Async filter
                 options.Filters.Add(new SampleAsyncPageFilter(_logger));
-                // Or
+                // Or Sync filter
                 //options.Filters.Add(new SamplePageFilter(_logger));
             });
 
