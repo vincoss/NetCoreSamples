@@ -130,13 +130,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApps_RazorPages_Introduc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApps_RazorPages_Filters", "src\WebApps_RazorPages_Filters\WebApps_RazorPages_Filters.csproj", "{C1DDFC2D-250F-4B10-A6D8-027F7B9303BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApps_RazorPages_RazorClassLibrary", "src\WebApps_RazorPages_RazorClassLibrary\WebApps_RazorPages_RazorClassLibrary.csproj", "{B66C6F64-9B6F-419D-8846-B864C6A6BABF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApps_RazorPages_RazorClassLibrary", "src\WebApps_RazorPages_RazorClassLibrary\WebApps_RazorPages_RazorClassLibrary.csproj", "{B66C6F64-9B6F-419D-8846-B864C6A6BABF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApps_RazorPages_RazorClassLibraryApplication", "src\WebApps_RazorPages_RazorClassLibraryApplication\WebApps_RazorPages_RazorClassLibraryApplication.csproj", "{E941E08C-7A9E-47A8-BEA2-DFEC647196C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApps_RazorPages_RazorClassLibraryApplication", "src\WebApps_RazorPages_RazorClassLibraryApplication\WebApps_RazorPages_RazorClassLibraryApplication.csproj", "{E941E08C-7A9E-47A8-BEA2-DFEC647196C3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApps_RazorPages_SQLite", "src\WebApps_RazorPages_SQLite\WebApps_RazorPages_SQLite.csproj", "{0EA22E9A-A630-420A-AA0E-35DDAD759A0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApps_RazorPages_RouteAndAppConventions", "src\WebApps_RazorPages_RouteAndAppConventions\WebApps_RazorPages_RouteAndAppConventions.csproj", "{4D98D842-5E8E-4CFD-8183-3634EA87CABF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApps_RazorPages_RouteAndAppConventions", "src\WebApps_RazorPages_RouteAndAppConventions\WebApps_RazorPages_RouteAndAppConventions.csproj", "{4D98D842-5E8E-4CFD-8183-3634EA87CABF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApps_RazorPages_UploadFiles", "src\WebApps_RazorPages_UploadFiles\WebApps_RazorPages_UploadFiles.csproj", "{A84040E1-8936-4C77-884F-31F239FB933F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -368,6 +370,10 @@ Global
 		{4D98D842-5E8E-4CFD-8183-3634EA87CABF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D98D842-5E8E-4CFD-8183-3634EA87CABF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D98D842-5E8E-4CFD-8183-3634EA87CABF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A84040E1-8936-4C77-884F-31F239FB933F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A84040E1-8936-4C77-884F-31F239FB933F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A84040E1-8936-4C77-884F-31F239FB933F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A84040E1-8936-4C77-884F-31F239FB933F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -427,6 +433,7 @@ Global
 		{E941E08C-7A9E-47A8-BEA2-DFEC647196C3} = {3DF44458-5277-4486-B3F3-585CF7B357AE}
 		{0EA22E9A-A630-420A-AA0E-35DDAD759A0D} = {3DF44458-5277-4486-B3F3-585CF7B357AE}
 		{4D98D842-5E8E-4CFD-8183-3634EA87CABF} = {3DF44458-5277-4486-B3F3-585CF7B357AE}
+		{A84040E1-8936-4C77-884F-31F239FB933F} = {3DF44458-5277-4486-B3F3-585CF7B357AE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D8282B92-1BD9-46FB-A23B-4AD1E0EA297F}
