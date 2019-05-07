@@ -44,5 +44,16 @@ namespace WebApps_Mvc_FileUploads.Controllers
 
             return View();
         }
+
+        // View Injection
+        public IActionResult ViewInjection()
+        {
+            return View();
+        }
+
+        public IActionResult ProfileInjection()
+        {
+            return View();
+        }
     }
 }

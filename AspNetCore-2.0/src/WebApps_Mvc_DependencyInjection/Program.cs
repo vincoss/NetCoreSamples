@@ -19,12 +19,12 @@ namespace WebApps_Mvc_DependencyInjection
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-            .ConfigureAppConfiguration((hostingContext, config) =>
-            {
-                config.AddJsonFile("OtherSettings.json",
-                                    optional: false,        // File is not optional.
-                                    reloadOnChange: false);
-            })
-            .UseStartup<Startup>();
+               .ConfigureAppConfiguration((hostingContext, config) =>
+               {
+                   config.AddJsonFile("OtherSettings.json",
+                                       optional: false,        // File is not optional.
+                                       reloadOnChange: false);
+               })
+                .UseStartup<Startup>();
     }
 }
