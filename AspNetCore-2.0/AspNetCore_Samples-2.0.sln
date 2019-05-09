@@ -146,7 +146,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApps_Mvc_FileUploads", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApps_Mvc_DependencyInjection", "src\WebApps_Mvc_DependencyInjection\WebApps_Mvc_DependencyInjection.csproj", "{72F170FB-F333-4345-9442-9CF556F754F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApps_Mvc_DependencyInjection.Test", "src\WebApps_Mvc_DependencyInjection.Test\WebApps_Mvc_DependencyInjection.Test.csproj", "{C4F10018-DAFA-4739-9B9F-F8B90CFD286A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApps_Mvc_DependencyInjection.Test", "src\WebApps_Mvc_DependencyInjection.Test\WebApps_Mvc_DependencyInjection.Test.csproj", "{C4F10018-DAFA-4739-9B9F-F8B90CFD286A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Blazor", "Blazor", "{510746BD-FAFA-403E-8B58-120FAAD2059A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor_GetStarted_ClientSide", "src\Blazor_GetStarted_ClientSide\Blazor_GetStarted_ClientSide.csproj", "{D76BF1D2-5248-4E9F-8B1F-55036798E300}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor_GetStarted_ServerSide", "src\Blazor_GetStarted_ServerSide\Blazor_GetStarted_ServerSide.csproj", "{961A781D-8062-41E8-A57B-062440C075FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -398,6 +404,14 @@ Global
 		{C4F10018-DAFA-4739-9B9F-F8B90CFD286A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4F10018-DAFA-4739-9B9F-F8B90CFD286A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4F10018-DAFA-4739-9B9F-F8B90CFD286A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D76BF1D2-5248-4E9F-8B1F-55036798E300}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D76BF1D2-5248-4E9F-8B1F-55036798E300}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D76BF1D2-5248-4E9F-8B1F-55036798E300}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D76BF1D2-5248-4E9F-8B1F-55036798E300}.Release|Any CPU.Build.0 = Release|Any CPU
+		{961A781D-8062-41E8-A57B-062440C075FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{961A781D-8062-41E8-A57B-062440C075FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{961A781D-8062-41E8-A57B-062440C075FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{961A781D-8062-41E8-A57B-062440C075FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -462,6 +476,8 @@ Global
 		{B1DEE6EA-42FB-4152-9B54-08FAE8316A5C} = {3DF44458-5277-4486-B3F3-585CF7B357AE}
 		{72F170FB-F333-4345-9442-9CF556F754F0} = {3DF44458-5277-4486-B3F3-585CF7B357AE}
 		{C4F10018-DAFA-4739-9B9F-F8B90CFD286A} = {3DF44458-5277-4486-B3F3-585CF7B357AE}
+		{D76BF1D2-5248-4E9F-8B1F-55036798E300} = {510746BD-FAFA-403E-8B58-120FAAD2059A}
+		{961A781D-8062-41E8-A57B-062440C075FD} = {510746BD-FAFA-403E-8B58-120FAAD2059A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D8282B92-1BD9-46FB-A23B-4AD1E0EA297F}
