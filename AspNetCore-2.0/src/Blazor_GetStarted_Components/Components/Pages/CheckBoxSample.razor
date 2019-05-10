@@ -1,0 +1,8 @@
+﻿@page "/Components/CheckBoxSample"
+
+<input type="checkbox" checked="@IsCompleted">
+
+@functions {
+    [Parameter]
+    private bool IsCompleted { get; set; } = true;
+}

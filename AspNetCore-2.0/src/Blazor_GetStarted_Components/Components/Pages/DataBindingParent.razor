@@ -1,0 +1,47 @@
+﻿@page "/Components/DataBindingParent"
+
+<!-- Data binding -->
+
+<input type="checkbox" class="form-check-input" id="italicsCheck" bind="@_italicsCheck"/>
+
+<!-- OR -->
+<input value="@CurrentValue" onchange="@((UIChangeEventArgs __e) => CurrentValue = (int)__e.Value)"/>
+
+<input type="text" bind-value-oninput="@CurrentValue"/>
+
+@functions
+{
+    private bool _italicsCheck = true;
+    private int CurrentValue = 1; 
+}
+
+<!-- Format strings -->
+
+<input bind="@StartDate" format-value="yyyy-MM-dd"/>
+
+@functions {
+    [Parameter]
+    private DateTime StartDate { get; set; } = new DateTime(2020, 1, 1);
+}
+
+<!-- Component Parameters -->
+
+<h1>Parent Component</h1>
+
+<p>ParentYear: @ParentYear</p>
+
+<DataBindingChild bind-Year="@ParentYear" />
+
+<button class="btn btn-primary" onclick="@ChangeTheYear">
+    Change Year to 1986
+</button>
+
+@functions {
+    [Parameter]
+    private int ParentYear { get; set; } = 1978;
+
+    private void ChangeTheYear()
+    {
+        ParentYear = 1986;
+    }
+}

@@ -1,0 +1,11 @@
+﻿<h2>Child Component</h2>
+
+<p>Year: @Year</p>
+
+@functions {
+    [Parameter]
+    private int Year { get; set; }
+
+    [Parameter]
+    private EventCallback<int> YearChanged { get; set; }
+}

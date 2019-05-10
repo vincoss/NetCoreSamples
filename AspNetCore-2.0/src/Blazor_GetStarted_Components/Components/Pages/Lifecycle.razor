@@ -1,0 +1,46 @@
+﻿@page "/Components/Lifecycle"
+
+@functions
+{
+    // OnInitAsync and OnInit execute code to initialize the component.
+    protected override async Task OnInitAsync()
+    {
+
+    }
+
+    protected override void OnInit()
+    {
+    }
+
+    // OnParametersSetAsync and OnParametersSet are called when a component has received parameters from its parent and the values are assigned to properties.
+    protected override async Task OnParametersSetAsync()
+    {
+    }
+
+    protected override void OnParametersSet()
+    {
+    }
+
+    // OnAfterRenderAsync and OnAfterRender are called after a component has finished rendering.
+    protected override async Task OnAfterRenderAsync()
+    {
+    }
+
+    protected override void OnAfterRender()
+    {
+    }
+
+    // SetParameters can be overridden to execute code before parameters are set:
+    //public override void SetParameters(ParameterCollection parameters)
+    //{
+    //    base.SetParameters(parameters);
+    //}
+
+    // ShouldRender can be overridden to suppress refreshing of the UI. If the implementation returns true, the UI is refreshed. 
+
+    protected override bool ShouldRender()
+    {
+        var renderUI = true;
+        return renderUI;
+    }
+}

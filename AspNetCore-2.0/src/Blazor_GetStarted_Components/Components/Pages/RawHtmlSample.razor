@@ -1,0 +1,9 @@
+﻿@page "/Components/RawHtmlSample"
+
+@((MarkupString)myMarkup)
+
+@functions {
+    private string myMarkup =
+        "<p class='markup'>This is a <em>markup string</em>.</p>";
+}
+

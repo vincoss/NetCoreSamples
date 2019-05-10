@@ -154,17 +154,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor_GetStarted_ClientSid
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor_GetStarted_ServerSide", "src\Blazor_GetStarted_ServerSide\Blazor_GetStarted_ServerSide.csproj", "{961A781D-8062-41E8-A57B-062440C075FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor_GetStarted_Components", "src\Blazor_GetStarted_Components\Blazor_GetStarted_Components.csproj", "{D3101A90-3603-4F22-9C98-B7493A380AA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor_GetStarted_Components", "src\Blazor_GetStarted_Components\Blazor_GetStarted_Components.csproj", "{D3101A90-3603-4F22-9C98-B7493A380AA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_Blazor_ClientSide", "src\Default_Blazor_ClientSide\Default_Blazor_ClientSide.csproj", "{A6388FA3-8EDF-4465-B9E3-69FBBEA5B2C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_Blazor_ClientSide", "src\Default_Blazor_ClientSide\Default_Blazor_ClientSide.csproj", "{A6388FA3-8EDF-4465-B9E3-69FBBEA5B2C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_Blazor_ServerSide", "src\Default_Blazor_ServerSide\Default_Blazor_ServerSide.csproj", "{EE19A303-B70A-474F-9D57-AA313DEA1BD6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_Blazor_ServerSide", "src\Default_Blazor_ServerSide\Default_Blazor_ServerSide.csproj", "{EE19A303-B70A-474F-9D57-AA313DEA1BD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_Blazor_AspNetCoreHosted.Server", "src\Default_Blazor_AspNetCoreHosted.Server\Default_Blazor_AspNetCoreHosted.Server.csproj", "{45B6EC95-1D11-497D-AC56-EC870BDF176A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_Blazor_AspNetCoreHosted.Server", "src\Default_Blazor_AspNetCoreHosted.Server\Default_Blazor_AspNetCoreHosted.Server.csproj", "{45B6EC95-1D11-497D-AC56-EC870BDF176A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_Blazor_AspNetCoreHosted.Client", "src\Default_Blazor_AspNetCoreHosted.Client\Default_Blazor_AspNetCoreHosted.Client.csproj", "{F70E35C1-FC07-43DD-BD7F-4C546E534DCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_Blazor_AspNetCoreHosted.Client", "src\Default_Blazor_AspNetCoreHosted.Client\Default_Blazor_AspNetCoreHosted.Client.csproj", "{F70E35C1-FC07-43DD-BD7F-4C546E534DCB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_Blazor_AspNetCoreHosted.Shared", "src\Default_Blazor_AspNetCoreHosted.Shared\Default_Blazor_AspNetCoreHosted.Shared.csproj", "{D494EC3F-1BBD-4CDC-8712-CE62EC3412A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_Blazor_AspNetCoreHosted.Shared", "src\Default_Blazor_AspNetCoreHosted.Shared\Default_Blazor_AspNetCoreHosted.Shared.csproj", "{D494EC3F-1BBD-4CDC-8712-CE62EC3412A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

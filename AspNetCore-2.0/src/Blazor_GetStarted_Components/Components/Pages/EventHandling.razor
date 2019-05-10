@@ -1,0 +1,61 @@
+﻿@page "/Components/EventHandling"
+<!-- Button -->
+<button class="btn btn-primary" onclick="@ButtonClicked">
+    Update heading
+</button>
+<br />
+
+<input type="text" bind-value-oninput="@MessageText" />
+<br />
+
+<!-- Checkbox -->
+<input type="checkbox" value="CheckBox" class="form-check-input" onchange="@CheckboxChanged" />
+<br />
+
+<!-- Lambda expressions can also be used -->
+<button onclick="@(e => Console.WriteLine("Hello, world!"))">Say hello</button>
+
+<!-- -->
+<h4>@message</h4>
+
+@for (var i = 1; i < 4; i++)
+{
+    var buttonNumber = i;
+
+    <button class="btn btn-primary"
+            onclick="@(e => UpdateHeading(e, buttonNumber))">
+        Button #@i
+    </button>
+    <br/>
+}
+
+@functions 
+{
+    private string message = "Select a button to learn its position.";
+
+    private void UpdateHeading(UIMouseEventArgs e, int buttonNumber)
+    {
+        message = $"You selected Button #{buttonNumber} at " +
+            $"mouse position: {e.ClientX} X {e.ClientY}.";
+    }
+}
+
+
+@functions
+{
+    private string MessageText;
+
+    private void ButtonClicked(UIMouseEventArgs e)
+    {
+        MessageText = "Button clicked";
+    }
+
+    private async Task ButtonClickedAsync(UIMouseEventArgs e)
+    {
+    }
+
+    private void CheckboxChanged()
+    {
+        MessageText = "Checkbox checked";
+    }
+}

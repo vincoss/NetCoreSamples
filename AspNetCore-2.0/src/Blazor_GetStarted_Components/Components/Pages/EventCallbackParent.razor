@@ -1,0 +1,24 @@
+﻿@page "/Components/EventCallbackParent"
+
+<h4>Parent-child example</h4>
+
+<ChildComponent Title="Panel Title from Parent"
+                OnClick="@ShowMessage">
+    Content of the child component is supplied
+    by the parent component.
+</ChildComponent>
+
+<p><b>@messageText</b></p>
+
+@{ var message = "Default Text"; }
+
+<ChildComponent OnClick="@(async () => { await Task.Yield(); messageText = "Blaze It!"; })"/>
+
+@functions {
+    private string messageText;
+
+    private void ShowMessage(UIMouseEventArgs e)
+    {
+        messageText = "Blaze a new trail with Blazor!";
+    }
+}
