@@ -168,6 +168,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_Blazor_AspNetCoreHo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor_GetStarted_ClassLib", "src\Blazor_GetStarted_ClassLib\Blazor_GetStarted_ClassLib.csproj", "{CF82324C-B2E9-4E64-BB43-0EE1D793EA41}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_WebApplication_Angular", "src\Default_WebApplication_Angular\Default_WebApplication_Angular.csproj", "{A7C60D71-ED00-4396-BB3C-3CB0093CE9AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_WebApplication_React", "src\Default_WebApplication_React\Default_WebApplication_React.csproj", "{8FE9574F-1060-4244-9FF7-46FF42EFFF26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_WebApplication_ReactWithRedux", "src\Default_WebApplication_ReactWithRedux\Default_WebApplication_ReactWithRedux.csproj", "{F536212A-DC03-48B9-9143-E8EB418A53B0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -454,6 +460,18 @@ Global
 		{CF82324C-B2E9-4E64-BB43-0EE1D793EA41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF82324C-B2E9-4E64-BB43-0EE1D793EA41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF82324C-B2E9-4E64-BB43-0EE1D793EA41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7C60D71-ED00-4396-BB3C-3CB0093CE9AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7C60D71-ED00-4396-BB3C-3CB0093CE9AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7C60D71-ED00-4396-BB3C-3CB0093CE9AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7C60D71-ED00-4396-BB3C-3CB0093CE9AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FE9574F-1060-4244-9FF7-46FF42EFFF26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FE9574F-1060-4244-9FF7-46FF42EFFF26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FE9574F-1060-4244-9FF7-46FF42EFFF26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FE9574F-1060-4244-9FF7-46FF42EFFF26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F536212A-DC03-48B9-9143-E8EB418A53B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F536212A-DC03-48B9-9143-E8EB418A53B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F536212A-DC03-48B9-9143-E8EB418A53B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F536212A-DC03-48B9-9143-E8EB418A53B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -525,6 +543,9 @@ Global
 		{EE19A303-B70A-474F-9D57-AA313DEA1BD6} = {01BC067A-DE01-4B53-AFE9-5B78CEE4FC85}
 		{45B6EC95-1D11-497D-AC56-EC870BDF176A} = {01BC067A-DE01-4B53-AFE9-5B78CEE4FC85}
 		{CF82324C-B2E9-4E64-BB43-0EE1D793EA41} = {510746BD-FAFA-403E-8B58-120FAAD2059A}
+		{A7C60D71-ED00-4396-BB3C-3CB0093CE9AA} = {01BC067A-DE01-4B53-AFE9-5B78CEE4FC85}
+		{8FE9574F-1060-4244-9FF7-46FF42EFFF26} = {01BC067A-DE01-4B53-AFE9-5B78CEE4FC85}
+		{F536212A-DC03-48B9-9143-E8EB418A53B0} = {01BC067A-DE01-4B53-AFE9-5B78CEE4FC85}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D8282B92-1BD9-46FB-A23B-4AD1E0EA297F}
