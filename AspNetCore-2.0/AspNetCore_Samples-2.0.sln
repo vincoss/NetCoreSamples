@@ -174,6 +174,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_WebApplication_Reac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_WebApplication_ReactWithRedux", "src\Default_WebApplication_ReactWithRedux\Default_WebApplication_ReactWithRedux.csproj", "{F536212A-DC03-48B9-9143-E8EB418A53B0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ClientSideDevelopment", "ClientSideDevelopment", "{70BAC9E5-DE9E-4879-A154-9541447B7BB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientSideDevelopment_LibMan", "src\ClientSideDevelopment_LibMan\ClientSideDevelopment_LibMan.csproj", "{250FA32F-5D3D-4B19-A080-68A6F62E423F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -472,6 +476,10 @@ Global
 		{F536212A-DC03-48B9-9143-E8EB418A53B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F536212A-DC03-48B9-9143-E8EB418A53B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F536212A-DC03-48B9-9143-E8EB418A53B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{250FA32F-5D3D-4B19-A080-68A6F62E423F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{250FA32F-5D3D-4B19-A080-68A6F62E423F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{250FA32F-5D3D-4B19-A080-68A6F62E423F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{250FA32F-5D3D-4B19-A080-68A6F62E423F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -546,6 +554,7 @@ Global
 		{A7C60D71-ED00-4396-BB3C-3CB0093CE9AA} = {01BC067A-DE01-4B53-AFE9-5B78CEE4FC85}
 		{8FE9574F-1060-4244-9FF7-46FF42EFFF26} = {01BC067A-DE01-4B53-AFE9-5B78CEE4FC85}
 		{F536212A-DC03-48B9-9143-E8EB418A53B0} = {01BC067A-DE01-4B53-AFE9-5B78CEE4FC85}
+		{250FA32F-5D3D-4B19-A080-68A6F62E423F} = {70BAC9E5-DE9E-4879-A154-9541447B7BB4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D8282B92-1BD9-46FB-A23B-4AD1E0EA297F}
