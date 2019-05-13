@@ -1,0 +1,20 @@
+﻿@layout MasterLayout
+@inherits LayoutComponentBase
+
+<header></header>
+<nav>
+    <!-- Menu structure of master list -->
+
+</nav>
+
+@Body
+
+<footer>
+    @TrademarkMessage
+</footer>
+
+@functions {
+    public string TrademarkMessage { get; set; } =
+        "Doctor Who is a registered trademark of the BBC. " +
+        "https://www.doctorwho.tv/";
+}

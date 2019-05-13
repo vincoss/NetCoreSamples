@@ -40,6 +40,7 @@ namespace Blazor_GetStarted_Components
 
             app.UseStaticFiles();
 
+            // Routing
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>

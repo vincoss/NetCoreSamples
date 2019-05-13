@@ -1,0 +1,28 @@
+﻿@page "/BuiltContent"
+
+<h1>Build a component</h1>
+
+@CustomRender
+
+<button type="button" onclick="@RenderComponent">
+    Create three Pet Details components
+</button>
+
+@functions {
+    private RenderFragment CustomRender { get; set; }
+
+    private RenderFragment CreateComponent() => builder =>
+    {
+        for (var i = 0; i < 3; i++)
+        {
+            builder.OpenComponent(0, typeof(PetDetails));
+            builder.AddAttribute(1, "PetDetailsQuote", "Someone's best friend!");
+            builder.CloseComponent();
+        }
+    };
+
+    private void RenderComponent()
+    {
+        CustomRender = CreateComponent();
+    }
+}

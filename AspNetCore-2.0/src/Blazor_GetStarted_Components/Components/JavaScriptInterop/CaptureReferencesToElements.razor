@@ -1,0 +1,30 @@
+﻿@inject IJSRuntime JSRuntime
+
+<input ref="username" />
+<button onclick="@SetFocus">Set focus on username</button>
+
+@functions {
+    private ElementRef username;
+
+    public async void SetFocus()
+    {
+        await JSRuntime.InvokeAsync<object>(
+                "exampleJsFunctions.focusElement", username);
+    }
+}
+
+<!-- Use extension method instead -->
+@*@inject IJSRuntime JSRuntime
+@using JsInteropClasses
+
+<input ref="username" />
+<button onclick="@SetFocus">Set focus on username</button>
+
+@functions {
+    private ElementRef username;
+
+    public async Task SetFocus()
+    {
+        await username.Focus(JSRuntime);
+    }
+}*@

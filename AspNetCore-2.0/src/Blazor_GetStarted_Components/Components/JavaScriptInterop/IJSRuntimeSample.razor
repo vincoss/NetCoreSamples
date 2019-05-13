@@ -1,0 +1,27 @@
+﻿@page "/Components/JavaScriptInterop/IJSRuntimeSample"
+@using BlazorSample.JsInteropClasses
+@inject IJSRuntime JSRuntime
+
+<h1>JavaScript Interop</h1>
+
+<h2>Invoke JavaScript functions from .NET methods</h2>
+
+<button type="button" class="btn btn-primary" onclick="@TriggerJsPrompt">
+    Trigger JavaScript Prompt
+</button>
+
+<h3 id="welcome" style="color:green;font-style:italic"></h3>
+
+@functions {
+    public async void TriggerJsPrompt()
+    {
+        // showPrompt is implemented in wwwroot/exampleJsInterop.js
+        var name = await JSRuntime.InvokeAsync<string>(
+                "exampleJsFunctions.showPrompt",
+                "What's your name?");
+        // displayWelcome is implemented in wwwroot/exampleJsInterop.js
+        await JSRuntime.InvokeAsync<string>(
+                "exampleJsFunctions.displayWelcome",
+                $"Hello {name}! Welcome to Blazor!");
+    }
+}

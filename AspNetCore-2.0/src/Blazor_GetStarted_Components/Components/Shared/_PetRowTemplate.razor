@@ -1,0 +1,34 @@
+﻿<TableTemplate Items="@pets">
+    <TableHeader>
+        <th>ID</th>
+        <th>Name</th>
+    </TableHeader>
+    <RowTemplate>
+        <td>@context.PetId</td>
+        <td>@context.Name</td>
+    </RowTemplate>
+</TableTemplate>
+
+<!-- Change @context to @pet -->
+@*<TableTemplate Items="@pets">
+        <TableHeader>
+            <th>ID</th>
+            <th>Name</th>
+        </TableHeader>
+        <RowTemplate Context="pet">
+            <td>@pet.PetId</td>
+            <td>@pet.Name</td>
+        </RowTemplate>
+    </TableTemplate>*@
+
+<!-- Specify @context to @pet-->
+@*<TableTemplate Items="@pets" Context="pet">
+        <TableHeader>
+            <th>ID</th>
+            <th>Name</th>
+        </TableHeader>
+        <RowTemplate>
+            <td>@pet.PetId</td>
+            <td>@pet.Name</td>
+        </RowTemplate>
+    </TableTemplate>*@

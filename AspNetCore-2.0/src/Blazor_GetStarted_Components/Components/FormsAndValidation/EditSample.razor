@@ -1,0 +1,17 @@
+﻿<EditForm Model="@exampleModel" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <InputText id="name" bind-Value="@exampleModel.Name" />
+
+    <button type="submit">Submit</button>
+</EditForm>
+
+@functions {
+    private EditFormSampleViewModel exampleModel = new EditFormSampleViewModel();
+
+    private void HandleValidSubmit()
+    {
+        Console.WriteLine("OnValidSubmit");
+    }
+}

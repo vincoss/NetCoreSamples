@@ -15,6 +15,19 @@
     </tfoot>
 </table>
 
+<br/>
+<ListViewTemplate Items="@pets">
+    <ItemTemplate Context="pet">
+        <li>@pet.Name</li>
+    </ItemTemplate>
+</ListViewTemplate>
+
+@*<ListViewTemplate Items="@pets" TItem="Pet">
+    <ItemTemplate Context="pet">
+        <li>@pet.Name</li>
+    </ItemTemplate>
+</ListViewTemplate>*@
+
 @functions {
     [Parameter]
     private RenderFragment TableHeader { get; set; }
