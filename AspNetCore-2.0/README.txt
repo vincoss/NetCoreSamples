@@ -3,3 +3,4 @@
 
 - Fix unloaded projects
 - Review and fix the Blazor samples
+- mark project names with Cove version 3,2,1

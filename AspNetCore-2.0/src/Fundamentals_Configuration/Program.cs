@@ -24,6 +24,9 @@ namespace Fundamentals_Configuration
     /// dotnet run quote1="This is from args"
     /// dotnet run --quote1="This is from args"
     /// dotnet run /quote1="This is from args"
+    /// dotnet run CommandLineKey1=value1 --CommandLineKey2=value2 /CommandLineKey3=value3
+    /// dotnet run --CommandLineKey1 value1 /CommandLineKey2 value2
+    /// dotnet run CommandLineKey1= CommandLineKey2=value2
     /// </summary>
     public class Program
     {
