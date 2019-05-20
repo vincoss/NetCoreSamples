@@ -1,0 +1,213 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<!-- Razor syntax -->
+
+<p>@@Model.UserName</p>
+<p>@Model.UserName</p>
+
+<a href="mailto:Support@contoso.com">Support@contoso.com</a>
+
+<!-- Implicit Razor expressions -->
+<p>@DateTime.Now</p>
+<p>@DateTime.IsLeapYear(2016)</p>
+
+<p>@await Model.DoSomething("hello", "world")</p>
+
+<!-- Explicit Razor expressions -->
+<p>Last week this time: @(DateTime.Now - TimeSpan.FromDays(7))</p>
+
+@{
+    var joe = new Person("Ferdinand", 33);
+}
+
+<p>Age@(joe.Age)</p>
+
+<p>@(Model.GenericMethod<string>("Hi there"))</p>
+
+<!-- Expression encoding -->
+@("<p>Hello World</p>")
+@Html.Raw("<p>Hello World</p>")
+
+<!-- Razor code blocks -->
+@{
+    var quote = "The future depends on what you do today. - Mahatma Gandhi";
+}
+
+<p>@quote</p>
+
+@{
+    quote = "Hate cannot drive out hate, only love can do that. - Martin Luther King, Jr.";
+}
+
+<p>@quote</p>
+
+@{
+    void RenderName(string name)
+    {
+         <p>Name: <strong> @name </strong></p>
+    }
+
+    RenderName("Mahatma Gandhi");
+    RenderName("Martin Luther King, Jr.");
+}
+
+
+@*Implicit transitions*@
+@{
+    var inCSharp = true;
+    <p>Now in HTML, was in C# @inCSharp</p>
+}
+
+@*Explicit delimited transition*@
+@for (int i = 0; i < Model.People.Length; i++)
+{
+    var person = Model.People[i];
+    <text>Name: @person.Name</text>
+}
+
+@*Explicit Line Transition with @:*@
+@for (var i = 0; i < Model.People.Length; i++)
+{
+    var person = Model.People[i];
+    @:Name: @person.Name
+}
+
+<!--  Control structures -->
+
+@*Conditionals @if, else if, else, and @switch*@
+@if (Model.Value % 2 == 0)
+{
+    <p>The value was even.</p>
+}
+
+@if (Model.Value % 2 == 0)
+{
+    <p>The value was even.</p>
+}
+else if (Model.Value >= 1337)
+{
+    <p>The value is large.</p>
+}
+else
+{
+    <p>The value is odd and small.</p>
+}
+
+@switch (Model.Value)
+{
+    case 1:
+        <p>The value is 1!</p>
+        break;
+    case 1337:
+        <p>Your number is 1337!</p>
+        break;
+    default:
+        <p>Your number wasn't 1 or 1337.</p>
+        break;
+}
+
+@*Looping @for, @foreach, @while, and @do while*@
+@{
+    var people = new Person[]
+    {
+          new Person("Gabriel", 33),
+          new Person("Ferdinand", 41)
+    };
+}
+
+@for (var i = 0; i < people.Length; i++)
+{
+    var person = people[i];
+    <p>Name: @person.Name</p>
+    <p>Age: @person.Age</p>
+}
+
+@foreach (var person in people)
+{
+    <p>Name: @person.Name</p>
+    <p>Age: @person.Age</p>
+}
+
+@{ var j = 0; }
+@while (j < people.Length)
+{
+    var person = people[j];
+    <p>Name: @person.Name</p>
+    <p>Age: @person.Age</p>
+
+    j++;
+}
+
+@{ j = 0; }
+@do
+{
+    var person = people[j];
+    <p>Name: @person.Name</p>
+    <p>Age: @person.Age</p>
+
+    j++;
+} while (j < people.Length);
+
+@*Compound @using*@
+
+@using (Html.BeginForm())
+{
+    <div>
+        email:
+        <input type="email" id="Email" value="">
+        <button>Register</button>
+    </div>
+}
+
+@*@try, catch, finally*@
+
+@try
+{
+    throw new InvalidOperationException("You did something invalid.");
+}
+catch (Exception ex)
+{
+    <p>The exception message: @ex.Message</p>
+}
+finally
+{
+    <p>The finally statement.</p>
+}
+
+@*@lock*@
+@*
+@lock (SomeLock)
+{
+    // Do critical section work
+}
+*@
+
+<!--   Directives -->
+
+@{
+    var quote2 = "Getting old ain't for wimps! - Anonymous";
+}
+
+<div>Quote of the Day: @quote2</div>
+
+@*@using*@
+
+@using System.IO
+@{
+    var dir = Directory.GetCurrentDirectory();
+}
+<p>@dir</p>
+
+@*@model*@
+@*@model TypeNameOfModel*@
+@*<div>The Login Email: @Model.Email</div>*@
+
+@*@inherits*@
+@*@inherits TypeNameOfClassToInheritFrom*@
+
+@*@inherits CustomRazorPage<TModel>*@
+@*<div>Custom text: @CustomText</div>*@
