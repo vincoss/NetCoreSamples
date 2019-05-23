@@ -1,0 +1,46 @@
+﻿@page
+@model WebApps_RazorSyntax_V3.Pages.TemplatedRazorDelegatesModel
+@{
+    ViewData["Title"] = "TemplatedRazorDelegates";
+}
+
+@{
+    Func<dynamic, object> petTemplate = @<p>You have a pet named <strong>@item.Name</strong>.</p>;
+
+var pets = new List<Pet>
+{
+        new Pet { Name = "Rin Tin Tin" },
+        new Pet { Name = "Mr. Bigglesworth" },
+        new Pet { Name = "K-9" }
+    };
+}
+
+@foreach (var pet in pets)
+{
+    @petTemplate(pet)
+}
+
+<!-- Inline templates -->
+@using Microsoft.AspNetCore.Html
+
+@functions 
+{
+    public static IHtmlContent Repeat(IEnumerable<dynamic> items, int times, Func<dynamic, IHtmlContent> template)
+    {
+        var html = new HtmlContentBuilder();
+
+        foreach (var item in items)
+        {
+            for (var i = 0; i < times; i++)
+            {
+                html.AppendHtml(template(item));
+            }
+        }
+
+        return html;
+    }
+}
+
+<ul>
+    @Repeat(pets, 3, @<li>@item.Name</li>)
+</ul>
