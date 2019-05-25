@@ -5,27 +5,24 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using WebApps_RazorSyntax_V3.Models;
 
-namespace WebApps_RazorSyntax_V3.Pages
+
+namespace WebApps_RazorSyntax_V3.Classes
 {
-    public class FunctionsModel : RazorPage<dynamic>
+    public class FunctionsPage : RazorPage<dynamic>
     {
-        public void OnGet()
-        {
-
-        }
-
         // Functions placed between here 
         public string GetHelloCodeBehind()
         {
-            return "Hello";
+            return $"Hello - {DateTime.Now}";
         }
 
         // And here.
 #pragma warning disable 1998
         public override async Task ExecuteAsync()
         {
-            WriteLiteral("\r\n<div>From method: ");
+            WriteLiteral("\r\n<div>ExecuteAsync From method: ");
             Write(GetHelloCodeBehind());
             WriteLiteral("</div>\r\n");
         }
