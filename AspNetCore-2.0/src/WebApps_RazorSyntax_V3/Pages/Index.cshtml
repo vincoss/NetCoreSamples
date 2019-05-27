@@ -13,7 +13,7 @@
 
 <!-- Implicit Razor expressions -->
 <p>@DateTime.Now</p>
-<p>@DateTime.IsLeapYear(2016)</p>
+<p>Is leap year? @DateTime.IsLeapYear(2016)</p>
 
 <p>@await Model.DoSomething("hello", "world")</p>
 
@@ -21,10 +21,10 @@
 <p>Last week this time: @(DateTime.Now - TimeSpan.FromDays(7))</p>
 
 @{
-    var joe = new Person("Ferdinand", 33);
+    var adam = new Person("Adam", 2);
 }
 
-<p>Age@(joe.Age)</p>
+<p>@adam.Name age @(adam.Age)</p>
 
 <p>@(Model.GenericMethod<string>("Hi there"))</p>
 
@@ -48,7 +48,7 @@
 @{
     void RenderName(string name)
     {
-         <p>Name: <strong> @name </strong></p>
+        <p>Name: <strong> @name </strong></p>
     }
 
     RenderName("Mahatma Gandhi");
