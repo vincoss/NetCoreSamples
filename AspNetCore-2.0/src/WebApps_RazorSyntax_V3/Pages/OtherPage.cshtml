@@ -1,0 +1,34 @@
+﻿@page
+<!-- Embedding a backslash in a string -->
+@{ var myFilePath = @"C:\MyFolder\"; }
+<p>The path is: @myFilePath</p>
+
+<br /><br />
+
+<!-- Embedding double quotation marks in a string -->
+@{ var myQuote = @"The person said: ""Hello, today is Monday."""; }
+<p>@myQuote</p>
+
+@*Inject sample*@
+
+@using Microsoft.AspNetCore.Hosting
+@inject IHostingEnvironment Html
+
+<div>The Application Name: @Html.ApplicationName</div>
+<div>The Application ContentRootFileProvider: @Html.ContentRootFileProvider</div>
+<div>The Application ContentRootPath: @Html.ContentRootPath</div>
+<div>The Application EnvironmentName: @Html.EnvironmentName</div>
+
+@*The following would generate a run time error
+    'IHostingEnvironment' does not contain a definition for 'Label'
+
+    <p>@Html.Label("xyz")</p>
+*@
+
+<br /><br />
+
+@using System.IO
+@{
+    var dir = Directory.GetCurrentDirectory();
+}
+<p>@dir</p>

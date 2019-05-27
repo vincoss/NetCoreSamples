@@ -17,6 +17,7 @@ namespace WebApps_RazorSyntax_V3
            .AddNewtonsoftJson();
 
             services.AddRazorPages();
+           // services.AddSingleton<RazorTemplateEngine, CustomTemplateEngine>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
