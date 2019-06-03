@@ -192,6 +192,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApps_SessionAndAppState_
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApps_RazorSyntax_V3", "src\WebApps_RazorSyntax_V3\WebApps_RazorSyntax_V3.csproj", "{63666301-924C-4319-BF13-A20EE2B09403}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WevApps_TagHelpers_V3", "src\WevApps_TagHelpers_V3\WevApps_TagHelpers_V3.csproj", "{2FCE07A9-F7FE-4DE8-BD95-74B2BD03F87F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -522,6 +524,10 @@ Global
 		{63666301-924C-4319-BF13-A20EE2B09403}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63666301-924C-4319-BF13-A20EE2B09403}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63666301-924C-4319-BF13-A20EE2B09403}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FCE07A9-F7FE-4DE8-BD95-74B2BD03F87F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FCE07A9-F7FE-4DE8-BD95-74B2BD03F87F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FCE07A9-F7FE-4DE8-BD95-74B2BD03F87F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FCE07A9-F7FE-4DE8-BD95-74B2BD03F87F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -604,6 +610,7 @@ Global
 		{60370E6F-69BE-47BF-870C-6652F6CC9B62} = {01BC067A-DE01-4B53-AFE9-5B78CEE4FC85}
 		{E6EF2114-91B3-4A91-8F99-FDE545522562} = {3DF44458-5277-4486-B3F3-585CF7B357AE}
 		{63666301-924C-4319-BF13-A20EE2B09403} = {3DF44458-5277-4486-B3F3-585CF7B357AE}
+		{2FCE07A9-F7FE-4DE8-BD95-74B2BD03F87F} = {3DF44458-5277-4486-B3F3-585CF7B357AE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D8282B92-1BD9-46FB-A23B-4AD1E0EA297F}
