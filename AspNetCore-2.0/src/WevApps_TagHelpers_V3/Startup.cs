@@ -5,8 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Razor.TagHelpers;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using WevApps_TagHelpers_V3.TagHelpers;
 
 namespace WevApps_TagHelpers_V3
 {
@@ -16,9 +18,15 @@ namespace WevApps_TagHelpers_V3
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            services.AddControllersWithViews()
+           .AddSessionStateTempDataProvider() // Session store
+           .AddNewtonsoftJson();
 
             services.AddRazorPages();
+
+            // Register a Component - 1.Registration via services container
+            services.AddTransient<ITagHelperComponent, AddressScriptTagHelperComponent>();
+            services.AddTransient<ITagHelperComponent, AddressStyleTagHelperComponent>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

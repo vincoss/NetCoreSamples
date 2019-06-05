@@ -1,0 +1,21 @@
+﻿@page
+<!-- Registration via Razor file -->
+
+@using WevApps_TagHelpers_V3.TagHelpers;
+@using Microsoft.AspNetCore.Mvc.Razor.TagHelpers;
+@inject ITagHelperComponentManager manager;
+
+@{
+    string markup;
+
+    if (true)
+    {
+        markup = "<em class='text-warning'>Office closed today!</em>";
+    }
+    else
+    {
+        markup = "<em class='text-info'>Office open today!</em>";
+    }
+
+    manager.Components.Add(new AddressTagHelperComponent(markup, 1));
+}

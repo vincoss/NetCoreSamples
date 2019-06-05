@@ -1,0 +1,170 @@
+﻿@page
+@model FormsTagHelpersPage
+
+<h3>The Form Tag Helper</h3>
+<form asp-controller="Form" asp-action="Register" method="post">
+    <!-- Input and Submit elements -->
+    <input name="Value" />
+    <input type="submit" name="submit" value="Submit" />
+</form>
+
+<h4>Using a named route</h4>
+<form asp-route="RegisterRoute" method="post">
+    <!-- Input and Submit elements -->
+    <input name="Value" />
+    <input type="submit" name="submit" value="Submit" />
+</form>
+
+<form asp-controller="Account" asp-action="Login"
+      asp-route-returnurl="@ViewData["ReturnUrl"]"
+      method="post" class="form-horizontal" role="form">
+    <!-- Input and Submit elements -->
+</form>
+
+<h3>The Form Action Tag Helper Samples</h3>
+
+<h4>Submit to controller example</h4>
+<form method="post">
+    <button asp-controller="Form" asp-action="Register">Click Me</button>
+    <input type="image" src="..." alt="Or Click Me" asp-controller="Form" asp-action="Register">
+</form>
+
+<h4>Submit to page example</h4>
+<form method="post">
+    <button asp-page="About">Click Me</button>
+    <input type="image" src="..." alt="Or Click Me" asp-page="About">
+</form>
+
+<h4>Submit to route example</h4>
+<form method="post">
+    <button asp-route="TestRoute">Click Me</button>
+    <input type="image" src="..." alt="Or Click Me" asp-route="TestRoute">
+</form>
+
+<h3>The Input Tag Helper</h3>
+<input asp-for="Register.Email">
+
+<form asp-controller="Form" asp-action="RegisterInput" method="post">
+    Email:  <input asp-for="Register.Email" /> <br />
+    Password: <input asp-for="Register.Password" /><br />
+    <button type="submit">Register</button>
+</form>
+
+<h4>Inputs based on NET types</h4>
+<input asp-for="StringValue">
+<input asp-for="BoolValue">
+<input asp-for="DateTimeValue">
+<input asp-for="ByteValue">
+<input asp-for="IntValue">
+<input asp-for="DoubleValue">
+
+<h4>HtmlAttributes</h4>
+@Html.EditorFor(model => model.Register.Email,
+  new { htmlAttributes = new { @class = "myCssClass", style = "Width:100px" } })
+
+<h4>Expression names</h4>
+@{
+    var joe = "Joe";
+}
+<input asp-for="@joe">
+
+<h4>Navigating child properties</h4>
+
+<form asp-controller="Form" asp-action="RegisterAddress" method="post">
+    Email:  <input asp-for="Address.Email" /> <br />
+    Password: <input asp-for="Address.Password" /><br />
+    Address: <input asp-for="Address.Address.AddressLine1" /><br />
+    <button type="submit">Register</button>
+</form>
+
+<h4>Expression names and Collections</h4>
+@{
+    var index = 1;
+}
+
+<form asp-controller="Form" asp-action="Edit" method="post">
+    @Html.EditorFor(m => m.Person.Colors[index])
+    <label asp-for="Person.Age"></label>
+    <input asp-for="Person.Age" name="age" /><br />
+    <button type="submit">Post</button>
+</form>
+
+@{
+    var todoModel = Model.Todos;
+}
+<form asp-controller="Form" asp-action="EditTodo" method="post">
+    <table>
+        <tr> <th>Name</th> <th>Is Done</th> </tr>
+
+        @for (int i = 0; i < todoModel.Count; i++)
+        {
+            <tr>
+                @Html.EditorFor(todoModel => todoModel.Todos[i])
+            </tr>
+        }
+
+    </table>
+    <button type="submit">Save</button>
+</form>
+
+<h3>The Textarea Tag Helper</h3>
+<form asp-controller="Form" asp-action="RegisterTextArea" method="post">
+    <textarea asp-for="Description.Comment"></textarea>
+    <button type="submit">Test</button>
+</form>
+
+<h3>The Label Tag Helper</h3>
+
+<h4>The Validation Message Tag Helper</h4>
+<form asp-controller="Form" asp-action="RegisterLabel" method="post">
+    <label asp-for="SimpleModel.Email"></label>
+    <input asp-for="SimpleModel.Email" /> <br />
+    <button type="submit">Test</button>
+</form>
+
+<h4>The Validation Tag Helpers</h4>
+<form asp-controller="Form" asp-action="RegisterLabel" method="post">
+    <label asp-for="SimpleModel.Email"></label>
+    <input asp-for="SimpleModel.Email" /> <br />
+    <span asp-validation-for="SimpleModel.Email"></span>
+    <button type="submit">Test</button>
+</form>
+
+<h4>The Validation Summary Tag Helper</h4>
+<form asp-controller="Form" asp-action="RegisterValidation" method="post">
+    <div asp-validation-summary="ModelOnly"></div>
+    Email:  <input asp-for="Register.Email" /> <br />
+    <span asp-validation-for="Register.Email"></span><br />
+    Password: <input asp-for="Register.Password" /><br />
+    <span asp-validation-for="Register.Password"></span><br />
+    <button type="submit">Register</button>
+</form>
+
+<h3>The Select Tag Helper</h3>
+
+<select asp-for="CountryModel.Country" asp-items="Model.CountryModel.Countries"></select>
+
+<form asp-controller="Form" asp-action="CreateCountry" method="post">
+    <select asp-for="CountryModel.Country" asp-items="Model.CountryModel.Countries"></select>
+    <br /><button type="submit">Register</button>
+</form>
+
+<h4>Enum binding</h4>
+<form asp-controller="Form" asp-action="CreateCountryEnum" method="post">
+    <select asp-for="EnumCountryModel.EnumCountry" asp-items="Html.GetEnumSelectList<CountryEnum>()"></select>
+    <br /><button type="submit">Register</button>
+</form>
+
+<h4>Option Group</h4>
+<form asp-controller="Form" asp-action="CreateCountryEnum" method="post">
+    <select asp-for="CountryModelGroup.Country" asp-items="Model.CountryModelGroup.Countries"></select>
+    <br /><button type="submit">Register</button>
+</form>
+
+<h4>Multiple select and No selection</h4>
+<form asp-controller="Form" asp-action="CreateMultiSelectCountry" method="post">
+    <select asp-for="CountryCodeList.CountryCodes" asp-items="Model.CountryCodeList.Countries">
+        <option value="">--none--</option>
+    </select>
+    <br /><button type="submit">Register</button>
+</form>

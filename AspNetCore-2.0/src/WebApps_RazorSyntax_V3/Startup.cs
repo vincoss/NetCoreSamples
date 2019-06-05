@@ -43,6 +43,11 @@ namespace WebApps_RazorSyntax_V3
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
+
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
+            });
         }
     }
 }
