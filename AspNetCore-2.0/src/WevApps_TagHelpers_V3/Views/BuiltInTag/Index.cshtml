@@ -1,0 +1,62 @@
+﻿@model WevApps_TagHelpers_V3.Controllers.Speaker
+
+<h3>Anchor Tag Helper attributes</h3>
+<a asp-controller="Speaker" asp-action="Index">All Speakers</a>
+
+<h4>asp-action</h4>
+<a asp-controller="Speaker" asp-action="Evaluations">Speaker Evaluations</a>
+
+<h4>asp-route-{value}</h4>
+<p>
+    <a asp-controller="Speaker"
+       asp-action="Detail"
+       asp-route-id="@Model.SpeakerId">SpeakerId:@Model.SpeakerId</a>
+</p>
+
+<p>
+    <a asp-controller="Speaker"
+       asp-action="Detail"
+       asp-route-speakerid="@Model.SpeakerId">SpeakerId:@Model.SpeakerId</a>
+</p>
+
+<h4>asp-route</h4>
+<a asp-route="speakerevals">Speaker Evaluations</a>
+
+<h3>asp-all-route-data</h3>
+
+<p>
+    @{
+        var parms = new Dictionary<string, string>
+        {
+                { "speakerId", "11" },
+                { "currentYear", "true" }
+            };
+    }
+
+    <a asp-route="speakerevalscurrent" asp-all-route-data="parms">Speaker Evaluations</a>
+</p>
+
+<p>
+    <h4>asp-fragment</h4>
+    <a asp-controller="Speaker"
+       asp-action="Evaluations"
+       asp-fragment="SpeakerEvaluations">Speaker Evaluations</a>
+</p>
+
+<h4>asp-protocol</h4>
+<p>
+    <a asp-protocol="https"
+       asp-controller="Home"
+       asp-action="About">About</a>
+</p>
+
+<h4>asp-host</h4>
+<p>
+    <a asp-protocol="https"
+       asp-host="microsoft.com"
+       asp-controller="Home"
+       asp-action="About">About</a>
+</p>
+
+<h4>asp-page</h4>
+<a asp-page="/Attendee">All Attendees</a>

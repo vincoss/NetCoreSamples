@@ -1,0 +1,83 @@
+﻿@page
+@model RegisterViewModel
+
+<h3>The Form Tag Helper</h3>
+
+<h4>Sample</h4>
+<form asp-controller="Form" asp-action="Register" method="post">
+    <!-- Input and Submit elements -->
+</form>
+<br /><br />
+
+<h4>Using a named route</h4>
+<form asp-route="RegisterRoute"
+      asp-route-returnurl="@ViewData["ReturnUrl"]"
+      method="post">
+    <!-- Input and Submit elements -->
+</form>
+<br /><br />
+
+<h3>The Form Action Tag Helper</h3>
+
+<h4>Submit to controller example</h4>
+<form method="post">
+    <button asp-controller="Form" asp-action="Test">Click Me</button>
+    <input type="image" src="..." alt="Or Click Me" asp-controller="Form" asp-action="Test">
+</form>
+
+<h4>Submit to page example</h4>
+<form method="post">
+    <button asp-page="About">Click Me</button>
+    <input type="image" src="..." alt="Or Click Me" asp-page="About">
+</form>
+<br /><br />
+
+<h4>Submit to route example</h4>
+<form method="post">
+    <button asp-route="TestRoute">Click Me</button>
+    <input type="image" src="..." alt="Or Click Me" asp-route="TestRoute">
+</form>
+<br /><br />
+
+<h3>The Input Tag Helper</h3>
+
+<h4>Sample</h4>
+<form asp-controller="Form" asp-action="RegisterInput" method="post">
+    Email:  <input asp-for="Email" /> <br />
+    Password: <input asp-for="Password" /><br />
+    <button type="submit">Register</button>
+</form>
+<br /><br />
+
+<h4>Expression names</h4>
+@{
+    var joe = "Joe";
+}
+<input asp-for="@joe">
+<br /><br />
+
+<h4>Navigation Child Properties</h4>
+@{
+    var childModel = new RegisterAddressViewModel();
+}
+
+<form asp-controller="Demo" asp-action="RegisterAddress" method="post">
+    Email:  <input asp-for="@childModel.Email" /> <br />
+    Password: <input asp-for="@childModel.Password" /><br />
+    Address: <input asp-for="@childModel.Address.AddressLine1" /><br />
+    <button type="submit">Register</button>
+</form>
+<br /><br />
+
+<h4>Expression names and Collections</h4>
+<br /><br />
+
+
+
+<br /><br />
+
+<br /><br />
+
+<br /><br />
+
+<br /><br />

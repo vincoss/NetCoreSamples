@@ -1,0 +1,25 @@
+﻿@page
+
+<h3>Environment Tag Helper Attributes</h3>
+<p>
+    <h4>names</h4>
+    <environment names="Staging,Production">
+        <strong>HostingEnvironment.EnvironmentName is Staging or Production</strong>
+    </environment>
+</p>
+
+<h3>include and exclude attributes</h3>
+
+<p>
+    <h4>include</h4>
+    <environment include="Staging,Production">
+        <strong>HostingEnvironment.EnvironmentName is Staging or Production</strong>
+    </environment>
+</p>
+
+<p>
+    <h4>exclude</h4>
+    <environment exclude="Development">
+        <strong>HostingEnvironment.EnvironmentName is not Development</strong>
+    </environment>
+</p>

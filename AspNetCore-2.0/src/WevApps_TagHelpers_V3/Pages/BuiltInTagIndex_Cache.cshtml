@@ -1,0 +1,96 @@
+﻿@page
+
+<cache>@DateTime.Now</cache>
+
+<h3>Cache Tag Helper Attributes</h3>
+
+<p>
+    <h4>enabled</h4>
+    <cache enabled="true">
+        Current Time Inside Cache Tag Helper: @DateTime.Now
+    </cache>
+</p>
+
+<p>
+    <h4>expires-on</h4>
+    <cache expires-on="@new DateTime(2025,1,29,17,02,0)">
+        Current Time Inside Cache Tag Helper: @DateTime.Now
+    </cache>
+</p>
+
+<p>
+    <h4>expires-after</h4>
+    <cache expires-after="@TimeSpan.FromSeconds(120)">
+        Current Time Inside Cache Tag Helper: @DateTime.Now
+    </cache>
+</p>
+
+<p>
+    <h4>vary-by-header</h4>
+    <cache vary-by-header="User-Agent">
+        Current Time Inside Cache Tag Helper: @DateTime.Now
+    </cache>
+</p>
+
+<p>
+    <h4>vary-by-route</h4>
+    <cache vary-by-route="id">
+        Current Time Inside Cache Tag Helper: @DateTime.Now
+    </cache>
+
+    <!--
+        // Example
+    routes.MapRoute(
+    name: "default",
+    template: "{controller=Home}/{action=Index}/{Make?}/{Model?}");
+        -->
+</p>
+
+<p>
+    <h4>vary-by-cookie</h4>
+    <cache vary-by-cookie=".AspNetCore.Identity.Application">
+        Current Time Inside Cache Tag Helper: @DateTime.Now
+    </cache>
+</p>
+
+<p>
+    <h4>vary-by-user</h4>
+    <cache vary-by-user="true">
+        Current Time Inside Cache Tag Helper: @DateTime.Now
+    </cache>
+</p>
+
+<p>
+    <h4>vary-by</h4>
+    <cache vary-by="@Model">
+        Current Time Inside Cache Tag Helper: @DateTime.Now
+    </cache>
+
+    <!--
+        // Example
+    public IActionResult Index(string myParam1, string myParam2, string myParam3)
+    {
+        int num1;
+        int num2;
+        int.TryParse(myParam1, out num1);
+        int.TryParse(myParam2, out num2);
+        return View(viewName, num1 + num2);
+    }
+            -->
+</p>
+
+<p>
+    <h4>priority</h4>
+    <cache priority="Microsoft.Extensions.Caching.Memory.CacheItemPriority.High">
+        Current Time Inside Cache Tag Helper: @DateTime.Now
+    </cache>
+</p>
+
+<h3>Distributed Cache Tag Helper Attributes</h3>
+
+<p>
+    <h4>name</h4>
+    <distributed-cache name="my-distributed-cache-unique-key-101">
+        Time Inside Cache Tag Helper: @DateTime.Now
+    </distributed-cache>
+</p>
