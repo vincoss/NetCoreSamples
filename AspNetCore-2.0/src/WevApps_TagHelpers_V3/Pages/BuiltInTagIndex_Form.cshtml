@@ -70,14 +70,137 @@
 <br /><br />
 
 <h4>Expression names and Collections</h4>
+@*@model Person
+    @{
+        var index = (int)ViewData["index"];
+    }
+
+    <form asp-controller="ToDo" asp-action="Edit" method="post">
+        @Html.EditorFor(m => m.Colors[index])
+        <label asp-for="Age"></label>
+        <input asp-for="Age" /><br />
+        <button type="submit">Post</button>
+    </form>*@
+
+@*@model List<ToDoItem>
+    <form asp-controller="ToDo" asp-action="Edit" method="post">
+        <table>
+            <tr> <th>Name</th> <th>Is Done</th> </tr>
+
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                <tr>
+                    @Html.EditorFor(model => model[i])
+                </tr>
+            }
+
+        </table>
+        <button type="submit">Save</button>
+    </form>*@
 <br /><br />
 
-
-
+<h3>The Textarea Tag Helper</h3>
+@{
+    var Description = new DescriptionViewModel();
+}
+<form asp-controller="Demo" asp-action="RegisterTextArea" method="post">
+    <textarea asp-for="@Description.Comment"></textarea>
+    <button type="submit">Test</button>
+</form>
 <br /><br />
 
+<h3>The Label Tag Helper</h3>
+@{
+    var SimpleModel = new SimpleViewModel();
+}
+<form asp-controller="Demo" asp-action="RegisterLabel" method="post">
+    <label asp-for="@SimpleModel.Email"></label>
+    <input asp-for="@SimpleModel.Email" /> <br />
+</form>
 <br /><br />
 
+<h3>The Validation Tag Helpers</h3>
+<span asp-validation-for="Email"></span>
+<br /><br />
+
+<h4>The Validation Summary Tag Helper</h4>
+<form asp-controller="Demo" asp-action="RegisterValidation" method="post">
+    <div asp-validation-summary="ModelOnly"></div>
+    Email:  <input asp-for="Email" /> <br />
+    <span asp-validation-for="Email"></span><br />
+    Password: <input asp-for="Password" /><br />
+    <span asp-validation-for="Password"></span><br />
+    <button type="submit">Register</button>
+</form>
+<br /><br />
+
+<h4>The Select Tag Helper</h4>
+@{
+    var CountryModel = new CountryViewModel();
+}
+<select asp-for="@CountryModel.Country" asp-items="@CountryModel.Countries"></select>
+<br /><br />
+
+<form asp-controller="From" asp-action="CreateCountry" method="post">
+    <select asp-for="@CountryModel.Country" asp-items="@CountryModel.Countries"></select>
+    <br /><button type="submit">Register</button>
+</form>
+<br /><br />
+
+<h4>Enum binding</h4>
+@{
+    var EnumCountryModel = new CountryEnumViewModel();
+}
+<form asp-controller="Home" asp-action="IndexEnum" method="post">
+    <select asp-for="@EnumCountryModel.EnumCountry"
+            asp-items="Html.GetEnumSelectList<CountryEnum>()"></select>
+    <br /><button type="submit">Register</button>
+</form>
+<br /><br />
+
+<h4>Option Group</h4>
+<form method="post" action="/Home/IndexGroup">
+    <select id="Country" name="Country">
+        <optgroup label="North America">
+            <option value="MEX">Mexico</option>
+            <option value="CAN">Canada</option>
+            <option value="US">USA</option>
+        </optgroup>
+        <optgroup label="Europe">
+            <option value="FR">France</option>
+            <option value="ES">Spain</option>
+            <option value="DE">Germany</option>
+        </optgroup>
+    </select>
+    <br /><button type="submit">Register</button>
+    <input name="__RequestVerificationToken" type="hidden" value="<removed for brevity>">
+</form>
+<br /><br />
+
+<h4>Multiple selection</h4>
+@{
+    var CountryCodeList = new CountryViewModelIEnumerable();
+}
+<form asp-controller="Home" asp-action="IndexMultiSelect" method="post">
+    <select asp-for="@CountryCodeList.CountryCodes" asp-items="@CountryCodeList.Countries"></select>
+    <br /><button type="submit">Register</button>
+</form>
+<br /><br />
+
+<h4>No selection</h4>
+<select asp-for="@CountryModel.Country" asp-items="@CountryModel.Countries">
+    <option value="">--none--</option>
+</select>
+
+<form asp-controller="Home" asp-action="IndexEmpty" method="post">
+    <select asp-for="@CountryModel.Country">
+        <option value="">&lt;none&gt;</option>
+        <option value="MX">Mexico</option>
+        <option value="CA">Canada</option>
+        <option value="US">USA</option>
+    </select>
+    <br /><button type="submit">Register</button>
+</form>
 <br /><br />
 
 <br /><br />

@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MVCareas</title>
+</head>
+<body>
+    <header>
+      <h3>Header-Views</h3>
+    </header>
+    <div class="container">
+        <main role="main">
+            @RenderBody()
+        </main>
+        <partial name="_linksPartial" />
+
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2019 - WebApps_Advanced_Areas - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

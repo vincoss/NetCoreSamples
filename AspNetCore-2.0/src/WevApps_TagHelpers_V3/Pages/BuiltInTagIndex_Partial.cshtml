@@ -1,0 +1,26 @@
+﻿@page
+@model BuiltInTagIndex_Partial
+@{
+    ViewData["IsNumberReadOnly"] = true;
+}
+
+<h4>name|for</h4>
+<partial name="Shared/_ProductPartial.cshtml" for="Product">
+
+<h4>model</h4>
+<partial name="_ProductPartial" model='new Product { Number = 1, Name = "Test product", Description = "This is a test" }'>
+
+<h4>view-data</h4>
+<partial name="_ProductPartial" for="Product" view-data="ViewData">
+
+<h3>Migrate from an HTML Helper</h3>
+
+@foreach (var product in Model.Products)
+{
+    @await Html.PartialAsync("_ProductPartial", product)
+}
+
+@foreach (var product in Model.Products)
+{
+    <partial name="_ProductPartial" model="product" />
+}

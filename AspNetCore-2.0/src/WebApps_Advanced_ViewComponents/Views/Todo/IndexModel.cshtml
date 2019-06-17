@@ -1,0 +1,9 @@
+﻿@using WebApps_ViewComponents.Models
+@model IEnumerable<TodoItem>
+
+<h3>Invoking a view component</h3>
+
+<h4>Pass model into view component</h4>
+<div>
+    @await Component.InvokeAsync("PriorityListModel", new { modelData = Model })
+</div>

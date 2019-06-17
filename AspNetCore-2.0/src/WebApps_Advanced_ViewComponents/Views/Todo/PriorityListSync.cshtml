@@ -1,0 +1,8 @@
+﻿@using WebApps_ViewComponents.Models
+@model IEnumerable<TodoItem>
+
+<h3>Perform synchronous work</h3>
+
+<div>
+    @await Component.InvokeAsync("PriorityListSync", new { maxPriority = 2, isDone = false })
+</div>

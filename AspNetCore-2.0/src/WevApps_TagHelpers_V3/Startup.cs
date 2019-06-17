@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using WebApps_SessionAndAppState_V3;
 using WevApps_TagHelpers_V3.TagHelpers;
 
 namespace WevApps_TagHelpers_V3
@@ -18,6 +19,12 @@ namespace WevApps_TagHelpers_V3
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                // This lambda determines whether user consent for non-essential cookies is needed for a given request.
+                options.CheckConsentNeeded = context => true;
+            });
+
             services.AddControllersWithViews()
            .AddSessionStateTempDataProvider() // Session store
            .AddNewtonsoftJson();
@@ -47,6 +54,7 @@ namespace WevApps_TagHelpers_V3
             app.UseStaticFiles();
 
             app.UseCookiePolicy();
+
 
             app.UseRouting();
 
