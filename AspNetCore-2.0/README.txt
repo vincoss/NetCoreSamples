@@ -3,4 +3,4 @@
 
 - Fix unloaded projects
 - Review and fix the Blazor samples
-- mark project names with Cove version 3,2,1
+- mark project names with Core version 3,2,1
