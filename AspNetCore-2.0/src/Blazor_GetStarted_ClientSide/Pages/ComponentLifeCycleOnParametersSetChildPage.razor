@@ -1,0 +1,18 @@
+﻿
+<!-- Child Component -->
+
+@counterOutput
+
+@functions {
+
+    [Parameter]
+    private int Counter { get; set; }
+
+    private string counterOutput;
+
+    protected override void OnParametersSet()
+    {
+        counterOutput = Counter.ToString() + " and counting...";
+    }
+
+}

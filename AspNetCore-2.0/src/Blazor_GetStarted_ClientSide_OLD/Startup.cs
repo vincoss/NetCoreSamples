@@ -1,5 +1,3 @@
-using Blazor_GetStarted_ClientSide.Interfaces;
-using Blazor_GetStarted_ClientSide.Services;
 using Microsoft.AspNetCore.Components.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -9,7 +7,6 @@ namespace Blazor_GetStarted_ClientSide
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<IBudgetService, BudgetService>();
         }
 
         public void Configure(IComponentsApplicationBuilder app)

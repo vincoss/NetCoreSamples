@@ -1,0 +1,38 @@
+﻿@page "/ComponentLifeCycleOnInitAsyncPage"
+
+@inject IBudgetService BudgetService
+
+<h4>View Expenses Async</h4>
+
+@if (_expenses == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <table>
+        @foreach (var expense in _expenses)
+        {
+            <tr>
+                <td>
+                    @expense.Description
+                </td>
+                <td>
+                    @expense.Amount
+                </td>
+            </tr>
+        }
+    </table>
+}
+
+@functions 
+{
+
+    private IEnumerable<Expense> _expenses;
+
+    protected override async Task OnInitAsync()
+    {
+        _expenses = await BudgetService.GetExpensesAsync();
+    }
+
+}

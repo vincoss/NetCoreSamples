@@ -1,0 +1,19 @@
+﻿@page "/ComponentLifeCycleOnInitPage"
+
+<h4>@Title</h4>
+
+<p>I was rendered at @TimeRendered</p>
+
+@functions
+{
+
+    private string Title { get; set; }
+    private string TimeRendered { get; set; }
+
+    protected override void OnInit()
+    {
+        Title = "Hello World";
+        TimeRendered = DateTime.Now.ToString();
+    }
+
+}

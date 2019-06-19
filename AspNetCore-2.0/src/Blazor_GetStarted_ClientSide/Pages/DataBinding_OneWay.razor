@@ -1,0 +1,35 @@
+﻿@page "/DataBinding_OneWay"
+
+<h4>@Title</h4>
+
+Welcome to my one-way binding example. Here's a list of colours.
+
+<ul>
+    @foreach (var colour in Colours)
+    {
+        <li>@colour</li>
+    }
+</ul>
+
+@if (DateTime.Now.DayOfWeek == DayOfWeek.Saturday || DateTime.Now.DayOfWeek == DayOfWeek.Sunday)
+{
+    <p class="@weekendFontStyle">It's the weekend!</p>
+}
+else
+{
+    <p>It's @DateTime.Now.DayOfWeek.ToString()</p>
+}
+
+@functions 
+{
+
+    private string Title { get; set; } = "Welcome to one-way binding";
+
+    private List<string> Colours { get; set; } = new List<string>
+    {
+        "Red", "Blue", "Green", "Yellow"
+    };
+
+    private string weekendFontStyle { get; set; } = "party-time";
+
+}

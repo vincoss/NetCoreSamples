@@ -1,0 +1,23 @@
+﻿@page "/ComponentLifeCycleOnParametersSetParentPage"
+
+<!-- Parent Component -->
+
+<h4>Increment Counter</h4>
+
+<DisplayValue Counter=@CounterValue />
+
+<button onclick="@IncrementCounter">Increment</button>
+
+<ComponentLifeCycleOnParametersSetChildPage Counter="@CounterValue"/>
+
+@functions
+{
+
+    int CounterValue = 0;
+
+    void IncrementCounter()
+    {
+        CounterValue = CounterValue += 2;
+    }
+
+}

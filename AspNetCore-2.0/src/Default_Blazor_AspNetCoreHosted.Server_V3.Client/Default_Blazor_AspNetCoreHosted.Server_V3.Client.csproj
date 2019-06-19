@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <OutputType>Exe</OutputType>
     <RestoreAdditionalProjectSources>
       https://dotnet.myget.org/F/aspnetcore-dev/api/v3/index.json;
       https://dotnet.myget.org/F/blazor-dev/api/v3/index.json;
@@ -13,11 +14,10 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Blazor" Version="3.0.0-preview5-19227-01" />
     <PackageReference Include="Microsoft.AspNetCore.Blazor.Build" Version="3.0.0-preview5-19227-01" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.AspNetCore.Blazor.DevServer" Version="3.0.0-preview5-19227-01" PrivateAssets="all" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Shared\" />
+    <ProjectReference Include="..\Default_Blazor_AspNetCoreHosted.Server_V3.Shared\Default_Blazor_AspNetCoreHosted.Server_V3.Shared.csproj" />
   </ItemGroup>
 
 </Project>
