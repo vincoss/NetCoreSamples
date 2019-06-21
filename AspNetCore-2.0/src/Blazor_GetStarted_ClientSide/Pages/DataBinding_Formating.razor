@@ -1,0 +1,51 @@
+﻿@page "/DataBinding_Formating"
+
+<!-- Databinding Formating -->
+
+<h4>Record your current favourite colour</h4>
+
+<p>
+    <input @bind="@Name" />
+</p>
+
+<p>
+    <select @bind="@FavouriteColour">
+        <option>Red</option>
+        <option>Blue</option>
+        <option>Green</option>
+        <option>Yellow</option>
+    </select>
+</p>
+
+<p>
+    @*<input @bind="@DateRecorded" @bind :format="dd/mm/yyyy" />*@
+    <input bind="@DateRecorded" format-value="yyyy-MM-dd" />
+</p>
+
+<hr />
+
+<p>Hi @Name</p>
+<p>Your favourite colour on @DateRecorded was @FavouriteColour</p>
+
+
+@functions
+{
+
+    public string Name { get; set; }
+    public string FavouriteColour { get; set; }
+
+    private DateTime _dateRecorded = DateTime.Now;
+
+    public string DateRecorded
+    {
+        get => _dateRecorded.ToShortDateString();
+        set => DateTime.TryParse(value, out _dateRecorded);
+    }
+
+    protected override void OnInit()
+    {
+        Name = "Ferdinand";
+        FavouriteColour = "Green";
+        DateRecorded = DateTime.Now.ToString();
+    }
+}
