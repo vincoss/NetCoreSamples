@@ -1,0 +1,29 @@
+﻿@page "/Routing0001_Samples"
+@page "/Routing0001_Samples_Another"
+@page "/Routing0001_Samples_Parameters/{ProductId:int}"
+
+<!--
+    NOTE: example constraint types.
+
+    bool
+    datetime
+    decimal
+    double
+    float
+    guid
+    int
+    long
+
+-->
+
+<h4>Blazor routing</h4>
+
+<p>
+    Route parameter @ProductId
+</p>
+
+@functions
+{
+    [Parameter]
+    private int ProductId { get; set; }
+}

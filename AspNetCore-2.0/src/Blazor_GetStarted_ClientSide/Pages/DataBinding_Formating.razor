@@ -5,11 +5,12 @@
 <h4>Record your current favourite colour</h4>
 
 <p>
-    <input @bind="@Name" />
+    <input bind="@Name" />
 </p>
 
 <p>
-    <select @bind="@FavouriteColour">
+    <select id="colours" bind="@FavouriteColour">
+        <option></option>
         <option>Red</option>
         <option>Blue</option>
         <option>Green</option>
@@ -18,8 +19,7 @@
 </p>
 
 <p>
-    @*<input @bind="@DateRecorded" @bind :format="dd/mm/yyyy" />*@
-    <input bind="@DateRecorded" format-value="yyyy-MM-dd" />
+    <input bind="@DateRecorded" format-value="yyyy-MM-dd hh:mm:ss" />
 </p>
 
 <hr />
@@ -27,25 +27,16 @@
 <p>Hi @Name</p>
 <p>Your favourite colour on @DateRecorded was @FavouriteColour</p>
 
-
 @functions
 {
-
     public string Name { get; set; }
     public string FavouriteColour { get; set; }
-
-    private DateTime _dateRecorded = DateTime.Now;
-
-    public string DateRecorded
-    {
-        get => _dateRecorded.ToShortDateString();
-        set => DateTime.TryParse(value, out _dateRecorded);
-    }
+    public DateTime DateRecorded { get; set; }
 
     protected override void OnInit()
     {
         Name = "Ferdinand";
         FavouriteColour = "Green";
-        DateRecorded = DateTime.Now.ToString();
+        DateRecorded = DateTime.Now;
     }
 }

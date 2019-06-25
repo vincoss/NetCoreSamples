@@ -1,0 +1,50 @@
+﻿@page "/Select_Samples"
+<!--
+
+    NOTE: if bind attribute is used then onchange does not works
+
+-->
+
+<h4>Select with onchange event</h4>
+
+<!-- onchange -->
+<p>
+    <select id="colours" onchange="@ColourSelectionChanged">
+        <option></option>
+        <option>Red</option>
+        <option>Blue</option>
+        <option>Green</option>
+        <option>Yellow</option>
+    </select>
+</p>
+<p>Selected value: @SelectedColour</p>
+<hr />
+
+<h4>Select with data-biding </h4>
+<p>
+    <select id="coloursbind" bind="@FavouriteColour">
+        <option></option>
+        <option>Red</option>
+        <option>Blue</option>
+        <option>Green</option>
+        <option>Yellow</option>
+    </select>
+</p>
+<p>Selected value: @FavouriteColour</p>
+<hr />
+
+@functions
+{
+    public string FavouriteColour { get; set; }
+    public string SelectedColour { get; set; }
+
+    protected override void OnInit()
+    {
+        FavouriteColour = "Green";
+    }
+
+    void ColourSelectionChanged(UIChangeEventArgs e)
+    {
+        SelectedColour = e.Value.ToString();
+    }
+}

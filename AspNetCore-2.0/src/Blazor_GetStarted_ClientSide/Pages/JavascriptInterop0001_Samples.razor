@@ -1,0 +1,15 @@
+﻿@page "/JavascriptInterop0001_Samples"
+@inject IJSRuntime jsRuntime
+
+<input type="text" bind="@message" />
+<button onclick="@ShowAlert">Show Alert</button>
+
+@functions 
+{
+    string message = "";
+
+    private async Task ShowAlert()
+    {
+        await jsRuntime.InvokeAsync<object>("alert", message);
+    }
+}

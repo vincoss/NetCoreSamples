@@ -1,0 +1,26 @@
+﻿@page "/Events0001_Samples"
+<!--
+
+    NOTE: See all event handers 
+    https://github.com/aspnet/AspNetCore/blob/master/src/Components/Components/src/EventHandlers.cs
+
+-->
+
+<input placeholder="Type something here..." onkeypress="@LogKeyPressed" />
+
+<p>
+    @foreach (var key in keyLog)
+    {
+        @key
+    }
+</p>
+
+@functions 
+{
+    private List<string> keyLog { get; set; } = new List<string> ();
+
+    void LogKeyPressed(UIKeyboardEventArgs eventArgs)
+    {
+        keyLog.Add(eventArgs.Key);
+    }
+}
