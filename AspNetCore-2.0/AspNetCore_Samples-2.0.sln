@@ -196,17 +196,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApps_Advanced_AppParts",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApps_Advanced_AppParts_Plugin", "src\WebApps_Advanced_AppParts_Plugin\WebApps_Advanced_AppParts_Plugin.csproj", "{D6BE6DE7-DF8B-4EE6-85D4-6BAC078B6834}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_Blazor_AspNetCoreHosted.Server_V3.Server", "src\Default_Blazor_AspNetCoreHosted.Server_V3.Server\Default_Blazor_AspNetCoreHosted.Server_V3.Server.csproj", "{555A338D-B079-458D-87D7-83430C80D013}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_Blazor_AspNetCoreHosted.Server_V3.Server", "src\Default_Blazor_AspNetCoreHosted.Server_V3.Server\Default_Blazor_AspNetCoreHosted.Server_V3.Server.csproj", "{555A338D-B079-458D-87D7-83430C80D013}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_Blazor_AspNetCoreHosted.Server_V3.Client", "src\Default_Blazor_AspNetCoreHosted.Server_V3.Client\Default_Blazor_AspNetCoreHosted.Server_V3.Client.csproj", "{98F22FF3-701F-45D8-B5DB-3D6110038B39}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_Blazor_AspNetCoreHosted.Server_V3.Client", "src\Default_Blazor_AspNetCoreHosted.Server_V3.Client\Default_Blazor_AspNetCoreHosted.Server_V3.Client.csproj", "{98F22FF3-701F-45D8-B5DB-3D6110038B39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_Blazor_AspNetCoreHosted.Server_V3.Shared", "src\Default_Blazor_AspNetCoreHosted.Server_V3.Shared\Default_Blazor_AspNetCoreHosted.Server_V3.Shared.csproj", "{CE0CF767-DF8D-49CD-ADEB-7DA78ED4230F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_Blazor_AspNetCoreHosted.Server_V3.Shared", "src\Default_Blazor_AspNetCoreHosted.Server_V3.Shared\Default_Blazor_AspNetCoreHosted.Server_V3.Shared.csproj", "{CE0CF767-DF8D-49CD-ADEB-7DA78ED4230F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_Blazor_ClientSide_V3", "src\Default_Blazor_ClientSide_V3\Default_Blazor_ClientSide_V3.csproj", "{716C139A-ED49-44FD-8244-70DB78FE0D45}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_Blazor_ClientSide_V3", "src\Default_Blazor_ClientSide_V3\Default_Blazor_ClientSide_V3.csproj", "{716C139A-ED49-44FD-8244-70DB78FE0D45}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_Blazor_ServerSide", "src\Default_Blazor_ServerSide\Default_Blazor_ServerSide.csproj", "{1C24A86C-1043-4DE9-A872-2C47475BC39E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_Blazor_ServerSide", "src\Default_Blazor_ServerSide\Default_Blazor_ServerSide.csproj", "{1C24A86C-1043-4DE9-A872-2C47475BC39E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor_GetStarted_ClientSide", "src\Blazor_GetStarted_ClientSide\Blazor_GetStarted_ClientSide.csproj", "{1815565D-C649-4C43-AF9F-5ABEFDC9F163}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor_GetStarted_ClientSide", "src\Blazor_GetStarted_ClientSide\Blazor_GetStarted_ClientSide.csproj", "{1815565D-C649-4C43-AF9F-5ABEFDC9F163}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor_GetStarted_ClientSide_Localization_V3", "src\Blazor_GetStarted_ClientSide_Localization_V3\Blazor_GetStarted_ClientSide_Localization_V3.csproj", "{5B3FB7DC-AB7C-4745-AEA1-56013847D2DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -570,6 +572,10 @@ Global
 		{1815565D-C649-4C43-AF9F-5ABEFDC9F163}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1815565D-C649-4C43-AF9F-5ABEFDC9F163}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1815565D-C649-4C43-AF9F-5ABEFDC9F163}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B3FB7DC-AB7C-4745-AEA1-56013847D2DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B3FB7DC-AB7C-4745-AEA1-56013847D2DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B3FB7DC-AB7C-4745-AEA1-56013847D2DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B3FB7DC-AB7C-4745-AEA1-56013847D2DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -662,6 +668,7 @@ Global
 		{716C139A-ED49-44FD-8244-70DB78FE0D45} = {510746BD-FAFA-403E-8B58-120FAAD2059A}
 		{1C24A86C-1043-4DE9-A872-2C47475BC39E} = {510746BD-FAFA-403E-8B58-120FAAD2059A}
 		{1815565D-C649-4C43-AF9F-5ABEFDC9F163} = {510746BD-FAFA-403E-8B58-120FAAD2059A}
+		{5B3FB7DC-AB7C-4745-AEA1-56013847D2DD} = {510746BD-FAFA-403E-8B58-120FAAD2059A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D8282B92-1BD9-46FB-A23B-4AD1E0EA297F}

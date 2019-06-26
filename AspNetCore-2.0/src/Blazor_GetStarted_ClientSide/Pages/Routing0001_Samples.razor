@@ -1,6 +1,7 @@
 ﻿@page "/Routing0001_Samples"
 @page "/Routing0001_Samples_Another"
 @page "/Routing0001_Samples_Parameters/{ProductId:int}"
+@inject IUriHelper UriHelper
 
 <!--
     NOTE: example constraint types.
@@ -26,4 +27,21 @@
 {
     [Parameter]
     private int ProductId { get; set; }
+}
+
+<h4>Linking Pages</h4>
+
+<!-- Defining link -->
+<NavLink href="/Routing0001_Samples" Match="NavLinkMatch.Prefix">Home</NavLink>
+<NavLink href="/Routing0001_Samples_Another" Match="NavLinkMatch.All">Home</NavLink>
+
+<h4>Navigation</h4>
+<button onclick="@OnNavigate">Go Home</button>
+
+@functions
+{
+    void OnNavigate()
+    {
+        UriHelper.NavigateTo("/");
+    }
 }
