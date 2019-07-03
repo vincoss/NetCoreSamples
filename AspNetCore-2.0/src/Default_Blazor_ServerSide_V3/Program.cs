@@ -9,7 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace Default_Blazor_ServerSide
+namespace Default_Blazor_ServerSide_V3
 {
     public class Program
     {

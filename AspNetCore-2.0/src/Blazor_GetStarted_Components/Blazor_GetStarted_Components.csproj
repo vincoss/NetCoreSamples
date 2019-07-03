@@ -24,8 +24,4 @@
     <None Include="Components\JavaScriptInterop\OnAfterRenderSample.razor" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Blazor_GetStarted_ClassLib\Blazor_GetStarted_ClassLib.csproj" />
-  </ItemGroup>
-
 </Project>
