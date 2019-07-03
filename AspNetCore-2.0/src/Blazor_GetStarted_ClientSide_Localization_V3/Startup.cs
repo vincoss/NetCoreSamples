@@ -8,6 +8,7 @@ namespace Blazor_GetStarted_ClientSide_Localization_V3
     {
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddBlazoredLocalisation();
         }
 
         public void Configure(IComponentsApplicationBuilder app)
