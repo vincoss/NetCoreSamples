@@ -1,15 +1,16 @@
-using Blazor_GetStarted_ClientSide.Interfaces;
-using Blazor_GetStarted_ClientSide.Services;
+using Blazor_GetStarted_ClientSide_V3.Interfaces;
+using Blazor_GetStarted_ClientSide_V3.Services;
 using Microsoft.AspNetCore.Components.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Blazor_GetStarted_ClientSide
+namespace Blazor_GetStarted_ClientSide_V3
 {
     public class Startup
     {
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IBudgetService, BudgetService>();
+            services.AddSingleton<ToastService>();
         }
 
         public void Configure(IComponentsApplicationBuilder app)

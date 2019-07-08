@@ -1,15 +1,43 @@
 ﻿@page "/JavascriptInterop0001_Samples"
 @inject IJSRuntime jsRuntime
 
+
 <input type="text" bind="@message" />
 <button onclick="@ShowAlert">Show Alert</button>
 
-@functions 
+<h4>How to call a C# method from JavaScript</h4>
+<p>Calling static methods</p>
+<button @onclick="@WriteToConsole">Run Static</button>
+
+<p>Calling instance methods</p>
+<button @onclick="@WriteToConsoleInstance">Run Instance</button>
+
+@functions
 {
     string message = "";
 
     private async Task ShowAlert()
     {
         await jsRuntime.InvokeAsync<object>("alert", message);
+
+        // Synchronous call
+        ((IJSInProcessRuntime)jsRuntime).Invoke<object>("alert", message);
+    }
+
+    private async Task WriteToConsole()
+    {
+        await jsRuntime.InvokeAsync<object>("WriteCSharpMessageToConsole");
+    }
+
+    private async Task WriteToConsoleInstance()
+    {
+       // await jsRuntime.InvokeAsync<object>("WriteCSharpMessageToConsoleInstance", DotNetObjectRef.Create(this));
+    }
+
+    [JSInvokable]
+    public Task<string> GetHelloMessageInstance()
+    {
+        var message = "Hello from a C# instance";
+        return Task.FromResult(message);
     }
 }

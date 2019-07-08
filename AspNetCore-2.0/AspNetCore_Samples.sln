@@ -208,7 +208,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor_GetStarted_ClientSid
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor_GetStarted_ClassLib_V3", "src\Blazor_GetStarted_ClassLib_V3\Blazor_GetStarted_ClassLib_V3.csproj", "{ABFCA5C4-8080-4E05-A245-B06F5B73372A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_Blazor_ServerSide_V3", "src\Default_Blazor_ServerSide_V3\Default_Blazor_ServerSide_V3.csproj", "{A8814823-D0BC-4A53-8316-CF36171CD982}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_Blazor_ServerSide_V3", "src\Default_Blazor_ServerSide_V3\Default_Blazor_ServerSide_V3.csproj", "{A8814823-D0BC-4A53-8316-CF36171CD982}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Blazor_GetStarted_ClientSide.Components
+namespace Blazor_GetStarted_ClientSide_V3.Components
 {
     public class CreatingComponentsPageBase : ComponentBase
     {
