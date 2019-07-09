@@ -1,0 +1,55 @@
+﻿@page "/Communication0001_Samples"
+
+<h4>EventCallback Sample</h4>
+
+<Communication0002_Child OnClick="@ClickHandler" />
+
+<p>@message</p>
+
+@functions
+{
+
+    string message = "Hello from ParentComponent";
+
+    void ClickHandler(string newMessage)
+    {
+        message = newMessage;
+    }
+
+}
+
+
+<h4>State Container Sample</h4>
+@inject AppState AppState
+
+@AppState.SelectedColour
+
+<Communication0003_Child />
+<Communication0004_Child />
+
+@functions {
+
+    protected override void OnInit()
+    {
+        AppState.SetColour("#696969"); // Initial colour
+        AppState.OnChange += StateHasChanged;
+    }
+
+}
+
+<h4>Cascading Values Sample</h4>
+
+<div @onclick="@SetSelectedTab">@Title @(TabContainer.SelectedTab == Title ? "Selected" : "")</div>
+
+@functions 
+{
+
+    [CascadingParameter] Communication0005_Child TabContainer { get; set; }
+
+    [Parameter] string Title { get; set; }
+
+    void SetSelectedTab()
+    {
+        TabContainer.SetSelectedTab(Title);
+    }
+}

@@ -1,0 +1,9 @@
+﻿<!-- Child Component -->
+
+<button @onclick="@(() => OnClick.InvokeAsync("Hello from ChildComponent"))">Click me</button>
+
+@functions 
+{
+    [Parameter] EventCallback<string>
+    OnClick { get; set; }
+}

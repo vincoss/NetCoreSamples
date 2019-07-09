@@ -1,5 +1,6 @@
 ﻿#Based on
 
+https://github.com/aspnet/Blazor.Docs
 https://chrissainty.com/blazor-bites-data-binding-and-events/
 https://chrissainty.com/blazor-bites-javascript-interop/
 https://chrissainty.com/blazor-bites-layouts/

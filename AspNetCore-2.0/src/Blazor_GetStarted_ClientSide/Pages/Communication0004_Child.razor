@@ -1,0 +1,15 @@
+﻿<!-- Child Component -->
+
+@inject AppState AppState
+
+<button @onclick="@SelectColour">Select Blue</button>
+
+@functions 
+{
+
+    void SelectColour()
+    {
+        AppState.SetColour("Blue");
+    }
+
+}

@@ -1,0 +1,42 @@
+﻿@page "/Validation0001_Samples"
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+<hr />
+
+<EditForm Model="@Person" OnValidSubmit="@SubmitValidForm">
+    <FluentValidationValidatorComponent />
+    <ValidationSummary />
+
+    <p>
+        <label>Name: </label>
+        <input bind="@Person.Name" />
+    </p>
+
+    <p>
+        <label>Age: </label>
+        <input bind="@Person.Age" />
+    </p>
+
+    <p>
+        <label>Email Address: </label>
+        <input bind="@Person.EmailAddress" />
+    </p>
+
+    <button type="submit">Save</button>
+
+</EditForm>
+
+@functions 
+{
+    Person Person { get; set; } = new Person();
+
+    void SubmitValidForm()
+    {
+        Console.WriteLine("Form Submitted Successfully!");
+    }
+}
+
+
