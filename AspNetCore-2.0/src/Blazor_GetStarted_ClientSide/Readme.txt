@@ -1,6 +1,8 @@
 ﻿#Based on
 
 https://github.com/aspnet/Blazor.Docs
+https://learn-blazor.com/
+https://github.com/chrissainty/awesome-blazor
 https://chrissainty.com/blazor-bites-data-binding-and-events/
 https://chrissainty.com/blazor-bites-javascript-interop/
 https://chrissainty.com/blazor-bites-layouts/
@@ -13,3 +15,4 @@ https://chrissainty.com/building-a-blogging-app-with-blazor-editing-deleting-pos
 https://chrissainty.com/building-a-blogging-app-with-blazor-adding-authentication/
 https://jonhilton.net/2017/10/11/secure-your-asp.net-core-2.0-api-part-1---issuing-a-jwt/
 https://chrissainty.com/simple-localisation-in-blazor/
+https://chrissainty.com/a-detailed-look-at-data-binding-in-blazor/

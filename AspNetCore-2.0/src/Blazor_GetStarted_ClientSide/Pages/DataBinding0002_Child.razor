@@ -1,0 +1,16 @@
+﻿<!-- Child Component -->
+
+<h4>Parent Title is: @ParentsTitle</h4>
+<button onclick="@UpdateParentsTitle">Update Parents Title</button>
+
+@functions
+{
+    [Parameter] private string ParentsTitle { get; set; }
+    [Parameter] private EventCallback<string> ParentsTitleChanged { get; set; }
+
+    private async Task UpdateParentsTitle()
+    {
+        ParentsTitle = "Hello, From Child Component!";
+        await ParentsTitleChanged.InvokeAsync(ParentsTitle);
+    }
+}

@@ -1,10 +1,17 @@
-﻿@page "/DataBinding_Formating"
-
+﻿@page "/DataBinding0003_Formating"
 <!-- Databinding Formating -->
+
+<p>
+    Title
+    <input bind="@Title" />
+    <h4>@Title</h4>
+    <input bind-value="@Title" bind-value-change="oninput" />
+</p>
 
 <h4>Record your current favourite colour</h4>
 
 <p>
+    Name
     <input bind="@Name" />
 </p>
 
@@ -27,16 +34,26 @@
 <p>Hi @Name</p>
 <p>Your favourite colour on @DateRecorded was @FavouriteColour</p>
 
+<p>TwoWay binding between components</p>
+<DataBinding0002_Child ParentsTitle="@Title" />
+
+
 @functions
 {
     public string Name { get; set; }
     public string FavouriteColour { get; set; }
     public DateTime DateRecorded { get; set; }
+    private string Title { get; set; } = "Hello, World!";
 
     protected override void OnInit()
     {
         Name = "Ferdinand";
         FavouriteColour = "Green";
         DateRecorded = DateTime.Now;
+    }
+
+    private void UpdateTitle()
+    {
+        Title = "Hello, Blazor!";
     }
 }

@@ -1,8 +1,9 @@
-﻿@page "/DataBinding_OneWay"
+﻿@page "/DataBinding0001_OneWay"
 
 <h4>@Title</h4>
+<button onclick="@UpdateTitle">Update Title</button>
 
-Welcome to my one-way binding example. Here's a list of colours.
+<p>Welcome to my one-way binding example. Here's a list of colours.</p>
 
 <ul>
     @foreach (var colour in Colours)
@@ -20,16 +21,23 @@ else
     <p>It's @DateTime.Now.DayOfWeek.ToString()</p>
 }
 
-@functions 
+<p>OneWay binding between components</p>
+<DataBinding0002_Child ParentsTitle="@Title" />
+
+@functions
 {
 
     private string Title { get; set; } = "Welcome to one-way binding";
 
     private List<string> Colours { get; set; } = new List<string>
-    {
+{
         "Red", "Blue", "Green", "Yellow"
     };
 
     private string weekendFontStyle { get; set; } = "party-time";
 
+    private void UpdateTitle()
+    {
+        Title = "Hello, Blazor!";
+    }
 }
