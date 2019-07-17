@@ -1,4 +1,5 @@
 ﻿Based on
+https://docs.microsoft.com/en-us/aspnet/core/tutorials/build-your-first-blazor-app?view=aspnetcore-3.0
 https://docs.microsoft.com/en-us/aspnet/core/blazor/get-started?view=aspnetcore-3.0&tabs=visual-studio
 https://docs.microsoft.com/en-us/aspnet/core/blazor/forms-validation?view=aspnetcore-3.0
 https://docs.microsoft.com/en-us/aspnet/core/blazor/class-libraries?view=aspnetcore-3.0&tabs=visual-studio

@@ -12,22 +12,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <!--<PackageReference Include="Microsoft.AspNetCore.Blazor" Version="3.0.0-preview5-19227-01" />
-    <PackageReference Include="Microsoft.AspNetCore.Blazor.Build" Version="3.0.0-preview5-19227-01" PrivateAssets="all" />-->
-
     <PackageReference Include="Blazored.LocalStorage" Version="2.0.2" />
-
     <PackageReference Include="Microsoft.AspNetCore.Blazor" Version="3.0.0-preview6.19307.2" />
     <PackageReference Include="Microsoft.AspNetCore.Blazor.Build" Version="3.0.0-preview6.19307.2" PrivateAssets="all" />
   </ItemGroup>
   
-
   <ItemGroup>
     <ProjectReference Include="..\Blazor_GetStarted_ClientSide_Authentication_V3.Shared\Blazor_GetStarted_ClientSide_Authentication_V3.Shared.csproj" />
   </ItemGroup>
   
 
-  <ItemGroup>
+  <!--<ItemGroup>
     <Content Update="Shared\MainLayout.razor">
       <Generator>MSBuild:RazorGenerateComponentDeclarationDesignTime</Generator>
     </Content>
@@ -49,6 +44,6 @@
 
   <ItemGroup>
     <_ContentIncludedByDefault Remove="Shared\LoginDisplay.razor" />
-  </ItemGroup>
+  </ItemGroup>-->
 
 </Project>

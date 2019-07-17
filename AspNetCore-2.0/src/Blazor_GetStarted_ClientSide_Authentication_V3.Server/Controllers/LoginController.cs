@@ -1,13 +1,10 @@
 ﻿using Blazor_GetStarted_ClientSide_Authentication_V3.Shared;
-using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Blazor_GetStarted_ClientSide_Authentication_V3.Server.Controllers
 {
-    [Microsoft.AspNetCore.Components.Route("api/[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class LoginController : ControllerBase
     {

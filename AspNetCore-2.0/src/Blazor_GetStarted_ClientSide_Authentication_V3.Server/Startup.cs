@@ -71,6 +71,7 @@ namespace Blazor_GetStarted_ClientSide_Authentication_V3.Server
                 app.UseBlazorDebugging();
             }
 
+            app.UseClientSideBlazorFiles<Client.Startup>();
             app.UseRouting();
 
             // Enabling Authentication: Adding middleware
@@ -80,9 +81,10 @@ namespace Blazor_GetStarted_ClientSide_Authentication_V3.Server
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapDefaultControllerRoute();
+                endpoints.MapFallbackToClientSideBlazor<Client.Startup>("index.html");
             });
 
-            app.UseBlazor<Client.Startup>();
+            //app.UseBlazor<Client.Startup>();
         }
     }
 }

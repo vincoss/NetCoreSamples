@@ -7,6 +7,11 @@ namespace Blazor_GetStarted_ServerSide.Models
 {
     public class TodoItem
     {
+        public TodoItem()
+        {
+            IsDone = true;
+        }
+
         public string Title { get; set; }
         public bool IsDone { get; set; }
     }

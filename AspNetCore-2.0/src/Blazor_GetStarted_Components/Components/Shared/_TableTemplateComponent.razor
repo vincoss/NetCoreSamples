@@ -17,9 +17,10 @@
 
 <br/>
 <ListViewTemplate Items="@pets">
-    <ItemTemplate Context="pet">
+    <!--TODO: not working-->
+    @*<ItemTemplate Context="pet">
         <li>@pet.Name</li>
-    </ItemTemplate>
+    </ItemTemplate>*@
 </ListViewTemplate>
 
 @*<ListViewTemplate Items="@pets" TItem="Pet">
@@ -29,6 +30,9 @@
 </ListViewTemplate>*@
 
 @functions {
+
+     PetItem[] pets;
+
     [Parameter]
     private RenderFragment TableHeader { get; set; }
 

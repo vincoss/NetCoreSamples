@@ -1,0 +1,21 @@
+﻿<div>
+    <h4>@Title</h4>
+
+    @ChildContent
+
+    <button onclick="@OnYes">Yes!</button>
+</div>
+
+@functions 
+{
+    [Parameter]
+    private string Title { get; set; }
+
+    [Parameter]
+    private RenderFragment ChildContent { get; set; }
+
+    private void OnYes()
+    {
+        Console.WriteLine("Write to the console in C#! 'Yes' button was selected.");
+    }
+}

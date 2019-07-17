@@ -1,12 +1,12 @@
-﻿<TableTemplate Items="@pets">
+﻿<TableTemplate Items="@pets" TItem="PetItem">
     <TableHeader>
         <th>ID</th>
         <th>Name</th>
     </TableHeader>
-    <RowTemplate>
-        <td>@context.PetId</td>
-        <td>@context.Name</td>
-    </RowTemplate>
+    @*<RowTemplate Context="pet">
+        <td>@pet.PetId</td>
+        <td>@pet.Name</td>
+    </RowTemplate>*@
 </TableTemplate>
 
 <!-- Change @context to @pet -->
@@ -32,3 +32,8 @@
             <td>@pet.Name</td>
         </RowTemplate>
     </TableTemplate>*@
+
+@functions
+{
+    PetItem[] pets;
+}

@@ -8,13 +8,11 @@
   <ItemGroup>
     <Content Remove="Components\DependencyInjection\CustomerList.razor" />
     <Content Remove="Components\FormsAndValidation\StarshipDetailView.razor" />
-    <Content Remove="Components\JavaScriptInterop\NetInstanceMethodCallFromJavaScript.razor" />
     <Content Remove="Components\JavaScriptInterop\OnAfterRenderSample.razor" />
     <Content Remove="Components\NestedLayouts\MasterListLayout.razor" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="Components\JavaScriptInterop\NetInstanceMethodCallFromJavaScript.razor" />
     <Compile Include="Components\NestedLayouts\MasterListLayout.razor" />
   </ItemGroup>
 
@@ -22,6 +20,10 @@
     <None Include="Components\DependencyInjection\CustomerList.razor" />
     <None Include="Components\FormsAndValidation\StarshipDetailView.razor" />
     <None Include="Components\JavaScriptInterop\OnAfterRenderSample.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Blazor_GetStarted_ClassLib\Blazor_GetStarted_ClassLib.csproj" />
   </ItemGroup>
 
 </Project>

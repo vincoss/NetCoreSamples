@@ -7,5 +7,6 @@ namespace Blazor_GetStarted_Components.Data
 {
     public class EditFormSampleViewModel
     {
+        public string Name { get; set; }
     }
 }

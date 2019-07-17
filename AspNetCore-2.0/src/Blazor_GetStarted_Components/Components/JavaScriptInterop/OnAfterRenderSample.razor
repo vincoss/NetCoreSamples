@@ -1,4 +1,5 @@
 ﻿@using Microsoft.JSInterop
+@using Microsoft.AspNetCore.Components
 @inject IJSRuntime JSRuntime
 
 <input ref="myInput" value="Value set during render" />
@@ -6,9 +7,10 @@
 @functions {
     ElementRef myInput;
 
-    protected override void OnAfterRender()
-    {
-        JSRuntime.InvokeAsync<object>(
-            "setElementValue", myInput, "Value set after render");
-    }
+    // TODO: method not fould
+    //protected override void OnAfterRender()
+    //{
+    //    JSRuntime.InvokeAsync<object>(
+    //        "setElementValue", myInput, "Value set after render");
+    //}
 }

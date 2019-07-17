@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Blazor_GetStarted_Components.Data;
+using Microsoft.JSInterop;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,7 +21,7 @@ namespace Blazor_GetStarted_Components.Components.JavaScriptInterop
             // sayHello is implemented in wwwroot/exampleJsInterop.js
             return _jsRuntime.InvokeAsync<object>(
                 "exampleJsFunctions.sayHello",
-                new DotNetObjectRef(new HelloHelper(name)));
+                 DotNetObjectRef.Create(new HelloHelper(name)));
         }
     }
 }
