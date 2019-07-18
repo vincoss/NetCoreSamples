@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Tutorials_WebApiWithMongoDb.Models;
+using Tutorials_WebApiWithMongoDb_V3.Models;
 
 namespace Tutorials_WebApiWithMongoDb.Services
 {
@@ -12,11 +13,11 @@ namespace Tutorials_WebApiWithMongoDb.Services
     {
         private readonly IMongoCollection<Book> _books;
 
-        public BookService(IConfiguration config)
+        public BookService(IBookstoreDatabaseSettings settings)
         {
-            var client = new MongoClient(config.GetConnectionString("BookstoreDb"));
-            var database = client.GetDatabase("BookstoreDb");
-            _books = database.GetCollection<Book>("Books");
+            var client = new MongoClient(settings.ConnectionString);
+            var database = client.GetDatabase(settings.DatabaseName);
+            _books = database.GetCollection<Book>(settings.BooksCollectionName);
         }
 
         public List<Book> Get()

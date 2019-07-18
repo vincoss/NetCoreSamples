@@ -1,6 +1,6 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-
+using Newtonsoft.Json;
 
 namespace Tutorials_WebApiWithMongoDb.Models
 {
@@ -11,6 +11,7 @@ namespace Tutorials_WebApiWithMongoDb.Models
         public string Id { get; set; }
 
         [BsonElement("Name")]
+        [JsonProperty("Name")]
         public string BookName { get; set; }
 
         [BsonElement("Price")]
