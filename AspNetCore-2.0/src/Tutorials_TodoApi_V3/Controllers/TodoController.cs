@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Tutorials_TodoApi.Models;
-using Tutorials_TodoApi.Services;
+using Tutorials_TodoApi_V3.Models;
+using Tutorials_TodoApi_V3.Services;
 
-namespace Tutorials_TodoApi.Controllers
+namespace Tutorials_TodoApi_V3.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
