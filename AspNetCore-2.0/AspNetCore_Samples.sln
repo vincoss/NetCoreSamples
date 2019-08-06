@@ -220,17 +220,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorials_RealTimeWebApps_S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorials_GrpcGreeter_gRPCService_Server", "src\Tutorials_GrpcGreeter_gRPCService_Server\Tutorials_GrpcGreeter_gRPCService_Server.csproj", "{7CC471A0-AD60-4E62-8A71-621A25B02689}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorials_GrpcGreeter_gRPCService_Client", "src\Tutorials_GrpcGreeter_gRPCService_Client\Tutorials_GrpcGreeter_gRPCService_Client.csproj", "{1868DDD2-E84B-4CC0-A1F6-CC08BDEFD792}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorials_GrpcGreeter_gRPCService_Client", "src\Tutorials_GrpcGreeter_gRPCService_Client\Tutorials_GrpcGreeter_gRPCService_Client.csproj", "{1868DDD2-E84B-4CC0-A1F6-CC08BDEFD792}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test-Debug-Troubleshoot", "Test-Debug-Troubleshoot", "{61EB2B49-C0FD-4C44-BC50-B3AB0BEA4251}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDebugTroubleshoot_DotNetUnitTest", "src\TestDebugTroubleshoot_DotNetUnitTest\TestDebugTroubleshoot_DotNetUnitTest.csproj", "{A4046A9C-ECB7-4BC2-BDF2-E9C550BA97AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestDebugTroubleshoot_DotNetUnitTest", "src\TestDebugTroubleshoot_DotNetUnitTest\TestDebugTroubleshoot_DotNetUnitTest.csproj", "{A4046A9C-ECB7-4BC2-BDF2-E9C550BA97AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDebugTroubleshoot_RazorPages", "src\TestDebugTroubleshoot_RazorPages\TestDebugTroubleshoot_RazorPages.csproj", "{DA756E08-16D7-4E4E-8350-F00506DE563E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestDebugTroubleshoot_RazorPages", "src\TestDebugTroubleshoot_RazorPages\TestDebugTroubleshoot_RazorPages.csproj", "{DA756E08-16D7-4E4E-8350-F00506DE563E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDebugTroubleshoot_RazorPages.Test", "src\TestDebugTroubleshoot_RazorPages.Test\TestDebugTroubleshoot_RazorPages.Test.csproj", "{E980F6F1-0471-4A19-99D0-7DF72012D48E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestDebugTroubleshoot_RazorPages.Test", "src\TestDebugTroubleshoot_RazorPages.Test\TestDebugTroubleshoot_RazorPages.Test.csproj", "{E980F6F1-0471-4A19-99D0-7DF72012D48E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDebugTroubleshoot_RemoteDebugging", "src\TestDebugTroubleshoot_RemoteDebugging\TestDebugTroubleshoot_RemoteDebugging.csproj", "{735F650C-C279-4284-A209-DC5EA0C357CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestDebugTroubleshoot_RemoteDebugging", "src\TestDebugTroubleshoot_RemoteDebugging\TestDebugTroubleshoot_RemoteDebugging.csproj", "{735F650C-C279-4284-A209-DC5EA0C357CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApps_Mvc_PartialViews", "src\WebApps_Mvc_PartialViews\WebApps_Mvc_PartialViews.csproj", "{6F5E6443-4E50-4ABD-BD1C-35F28FE92C5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -638,6 +640,10 @@ Global
 		{735F650C-C279-4284-A209-DC5EA0C357CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{735F650C-C279-4284-A209-DC5EA0C357CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{735F650C-C279-4284-A209-DC5EA0C357CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F5E6443-4E50-4ABD-BD1C-35F28FE92C5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F5E6443-4E50-4ABD-BD1C-35F28FE92C5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F5E6443-4E50-4ABD-BD1C-35F28FE92C5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F5E6443-4E50-4ABD-BD1C-35F28FE92C5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -741,6 +747,7 @@ Global
 		{DA756E08-16D7-4E4E-8350-F00506DE563E} = {61EB2B49-C0FD-4C44-BC50-B3AB0BEA4251}
 		{E980F6F1-0471-4A19-99D0-7DF72012D48E} = {61EB2B49-C0FD-4C44-BC50-B3AB0BEA4251}
 		{735F650C-C279-4284-A209-DC5EA0C357CC} = {61EB2B49-C0FD-4C44-BC50-B3AB0BEA4251}
+		{6F5E6443-4E50-4ABD-BD1C-35F28FE92C5D} = {3DF44458-5277-4486-B3F3-585CF7B357AE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D8282B92-1BD9-46FB-A23B-4AD1E0EA297F}
