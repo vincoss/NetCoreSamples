@@ -1,0 +1,38 @@
+﻿@{
+    var author = "Ferdinand";
+    var keywords = new[] { "abstract", "class", "goto", "struct" };
+}
+
+<partial name="_AuthorPartial" />
+<partial name="_AuthorPartial.cshtml" model="author" />
+
+<h4>Razor Pages</h4>
+<partial name="~/Pages/_AuthorPartial.cshtml" />
+<partial name="/Pages/_AuthorPartial.cshtml" />
+
+<h4>MVC</h4>
+<partial name="~/Views/Shared/_AuthorPartial.cshtml" />
+<partial name="/Views/Shared/_AuthorPartial.cshtml" />
+
+<h4>Relative Path</h4>
+<partial name="../Home/_AuthorPartial.cshtml" />
+
+<h4>Asynchronous HTML Helper</h4>
+@await Html.PartialAsync("_AuthorPartial")
+@await Html.PartialAsync("_AuthorPartial.cshtml")
+@await Html.PartialAsync("~/Views/Shared/_AuthorPartial.cshtml")
+@await Html.PartialAsync("/Views/Shared/_AuthorPartial.cshtml")
+@{
+    await Html.RenderPartialAsync("_AuthorPartial");
+}
+
+<h4>Access data from partial views</h4>
+@await Html.PartialAsync("_AuthorPartial", "This is a model for partial view")
+@await Html.PartialAsync("_AuthorPartial", author)
+
+@{
+    foreach (var keyword in keywords)
+    {
+        <partial name="_AuthorPartial" model="keyword" />
+    }
+}

@@ -1,0 +1,36 @@
+﻿@page "/indexpage"
+@model WebApps_Mvc_PartialViews.Pages.IndexPageModel
+@{
+    ViewData["Title"] = "IndexPage";
+}
+
+<h4>IndexPage</h4>
+
+@*<partial name="_AuthorPartial" />
+
+    <partial name="_AuthorPartial.cshtml" />
+
+    <h4>Razor Pages</h4>
+    <partial name="~/Pages/_AuthorPartial.cshtml" />
+    <partial name="/Pages/_AuthorPartial.cshtml" />
+
+    <h4>MVC</h4>
+    <partial name="~/Views/_AuthorPartial.cshtml" />
+    <partial name="/Views/_AuthorPartial.cshtml" />
+
+    <h4>Asynchronous HTML Helper</h4>
+    @await Html.PartialAsync("_AuthorPartial");
+    @{
+        await Html.RenderPartialAsync("_AuthorPartial");
+    }
+
+    <h4>Access data from partial views</h4>
+    @await Html.PartialAsync("_PartialName", "This is a model for partial view")
+    @await Html.PartialAsync("_PartialName", Model)*@
+
+@{ 
+    var partialModel = "From Parent View";
+}
+
+<partial name="~/Views/Shared/_InfoPartial.cshtml" model="partialModel" />
+@await Html.PartialAsync("~/Views/Shared/_InfoPartial.cshtml", partialModel);
