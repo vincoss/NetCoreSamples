@@ -98,11 +98,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fundamentals_HandleErrors",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fundamentals_MakeHttpRequests", "src\Fundamentals_MakeHttpRequests\Fundamentals_MakeHttpRequests.csproj", "{11E26228-D361-4ED2-B623-FF3D22009A0D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_EmptyProject", "src\Default_EmptyProject\Default_EmptyProject.csproj", "{BF170607-2E97-48A5-B895-B020DF5947BD}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_EmptyProject_Docker", "src\Default_EmptyProject_Docker\Default_EmptyProject_Docker.csproj", "{9451332A-94BC-4138-B208-6320F5139CEE}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_WebApplication", "src\Default_WebApplication\Default_WebApplication.csproj", "{4AC8813F-38B0-4BF7-9B32-6D05740001C2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_WebApplication_MVC", "src\Default_WebApplication_MVC\Default_WebApplication_MVC.csproj", "{8627EF40-1412-4D0E-B113-67FF89EB45AC}"
 EndProject
@@ -214,9 +210,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorials_WebApiWithMongoDb
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorials_TodoApiMobileBackend_V3", "src\Tutorials_TodoApiMobileBackend_V3\Tutorials_TodoApiMobileBackend_V3.csproj", "{012561C4-879F-44C0-B59C-DFA270CE7611}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorials_RealTimeWebApps_SignalR_JavaScript_V3", "src\Tutorials_RealTimeWebApps_SignalR_JavaScript_V3\Tutorials_RealTimeWebApps_SignalR_JavaScript_V3.csproj", "{6D3EEFA3-D7E8-434A-86AE-FF57B9CF48CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorials_RealTimeWebApps_SignalR_JavaScript_V3", "src\Tutorials_RealTimeWebApps_SignalR_JavaScript_V3\Tutorials_RealTimeWebApps_SignalR_JavaScript_V3.csproj", "{6D3EEFA3-D7E8-434A-86AE-FF57B9CF48CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorials_RealTimeWebApps_SignalR_TypeScript_V3", "src\Tutorials_RealTimeWebApps_SignalR_TypeScript_V3\Tutorials_RealTimeWebApps_SignalR_TypeScript_V3.csproj", "{60B38D34-E99E-4BE0-AD1E-668137C2F9F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorials_RealTimeWebApps_SignalR_TypeScript_V3", "src\Tutorials_RealTimeWebApps_SignalR_TypeScript_V3\Tutorials_RealTimeWebApps_SignalR_TypeScript_V3.csproj", "{60B38D34-E99E-4BE0-AD1E-668137C2F9F0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_EmptyProject_V3", "src\Default_EmptyProject_V3\Default_EmptyProject_V3.csproj", "{8EEBF611-39C1-49CB-B2D0-BEF07CDA81AC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_WebApplication_V3", "src\Default_WebApplication_V3\Default_WebApplication_V3.csproj", "{60BE3932-B7EF-4B92-9C64-D314B19A2676}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_WebApplication_RazorPages_IndividUserAccount_V3", "src\Default_WebApplication_RazorPages_IndividUserAccount_V3\Default_WebApplication_RazorPages_IndividUserAccount_V3.csproj", "{72975D50-6A73-483E-A8E1-648A62E2CCBA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -372,18 +374,10 @@ Global
 		{11E26228-D361-4ED2-B623-FF3D22009A0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11E26228-D361-4ED2-B623-FF3D22009A0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11E26228-D361-4ED2-B623-FF3D22009A0D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BF170607-2E97-48A5-B895-B020DF5947BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BF170607-2E97-48A5-B895-B020DF5947BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BF170607-2E97-48A5-B895-B020DF5947BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BF170607-2E97-48A5-B895-B020DF5947BD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9451332A-94BC-4138-B208-6320F5139CEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9451332A-94BC-4138-B208-6320F5139CEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9451332A-94BC-4138-B208-6320F5139CEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9451332A-94BC-4138-B208-6320F5139CEE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4AC8813F-38B0-4BF7-9B32-6D05740001C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4AC8813F-38B0-4BF7-9B32-6D05740001C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4AC8813F-38B0-4BF7-9B32-6D05740001C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4AC8813F-38B0-4BF7-9B32-6D05740001C2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8627EF40-1412-4D0E-B113-67FF89EB45AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8627EF40-1412-4D0E-B113-67FF89EB45AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8627EF40-1412-4D0E-B113-67FF89EB45AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -600,6 +594,18 @@ Global
 		{60B38D34-E99E-4BE0-AD1E-668137C2F9F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60B38D34-E99E-4BE0-AD1E-668137C2F9F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60B38D34-E99E-4BE0-AD1E-668137C2F9F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EEBF611-39C1-49CB-B2D0-BEF07CDA81AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EEBF611-39C1-49CB-B2D0-BEF07CDA81AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EEBF611-39C1-49CB-B2D0-BEF07CDA81AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EEBF611-39C1-49CB-B2D0-BEF07CDA81AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60BE3932-B7EF-4B92-9C64-D314B19A2676}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60BE3932-B7EF-4B92-9C64-D314B19A2676}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60BE3932-B7EF-4B92-9C64-D314B19A2676}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60BE3932-B7EF-4B92-9C64-D314B19A2676}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72975D50-6A73-483E-A8E1-648A62E2CCBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72975D50-6A73-483E-A8E1-648A62E2CCBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72975D50-6A73-483E-A8E1-648A62E2CCBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72975D50-6A73-483E-A8E1-648A62E2CCBA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -641,9 +647,7 @@ Global
 		{A07A1743-BE7D-4CA6-A70C-06E4502E50E8} = {FD87B9F7-931B-440D-BA33-6E0072E4E072}
 		{C017AF20-F86E-4CA9-9668-B29478927CCB} = {FD87B9F7-931B-440D-BA33-6E0072E4E072}
 		{11E26228-D361-4ED2-B623-FF3D22009A0D} = {FD87B9F7-931B-440D-BA33-6E0072E4E072}
-		{BF170607-2E97-48A5-B895-B020DF5947BD} = {01BC067A-DE01-4B53-AFE9-5B78CEE4FC85}
 		{9451332A-94BC-4138-B208-6320F5139CEE} = {01BC067A-DE01-4B53-AFE9-5B78CEE4FC85}
-		{4AC8813F-38B0-4BF7-9B32-6D05740001C2} = {01BC067A-DE01-4B53-AFE9-5B78CEE4FC85}
 		{8627EF40-1412-4D0E-B113-67FF89EB45AC} = {01BC067A-DE01-4B53-AFE9-5B78CEE4FC85}
 		{92896A74-6B48-4813-B63B-5A29309069F0} = {01BC067A-DE01-4B53-AFE9-5B78CEE4FC85}
 		{907ADA62-ACEF-47C6-8346-C8B815EF5CCF} = {01BC067A-DE01-4B53-AFE9-5B78CEE4FC85}
@@ -697,6 +701,9 @@ Global
 		{012561C4-879F-44C0-B59C-DFA270CE7611} = {4F19C00D-6324-4748-8FB0-E69052771FB3}
 		{6D3EEFA3-D7E8-434A-86AE-FF57B9CF48CB} = {4F19C00D-6324-4748-8FB0-E69052771FB3}
 		{60B38D34-E99E-4BE0-AD1E-668137C2F9F0} = {4F19C00D-6324-4748-8FB0-E69052771FB3}
+		{8EEBF611-39C1-49CB-B2D0-BEF07CDA81AC} = {01BC067A-DE01-4B53-AFE9-5B78CEE4FC85}
+		{60BE3932-B7EF-4B92-9C64-D314B19A2676} = {01BC067A-DE01-4B53-AFE9-5B78CEE4FC85}
+		{72975D50-6A73-483E-A8E1-648A62E2CCBA} = {01BC067A-DE01-4B53-AFE9-5B78CEE4FC85}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D8282B92-1BD9-46FB-A23B-4AD1E0EA297F}
