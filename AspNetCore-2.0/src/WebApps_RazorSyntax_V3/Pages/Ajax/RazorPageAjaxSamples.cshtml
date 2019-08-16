@@ -1,0 +1,22 @@
+﻿@page
+@model RazorPageAjaxSamples
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<!-- Razor syntax -->
+
+@section Scripts
+{
+    <script>
+        $.ajax({
+            url: '/?handler=Filter',
+            data: {
+                FilterBy: filterByValue
+            }
+        })
+            .done(function (result) {
+       //… rest of code left out
+    </script>
+
+}
