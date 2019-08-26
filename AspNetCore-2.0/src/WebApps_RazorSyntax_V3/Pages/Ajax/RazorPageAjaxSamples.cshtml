@@ -1,22 +1,38 @@
-﻿@page
+﻿@page "/RazorPageAjaxSamples"
 @model RazorPageAjaxSamples
 @{
     ViewData["Title"] = "Home page";
 }
 
 <!-- Razor syntax -->
+<p>Select Keyword</p>
+<div>
+    <select id="customerid"></select>
+</div>
 
 @section Scripts
 {
+
     <script>
         $.ajax({
-            url: '/?handler=Filter',
-            data: {
-                FilterBy: filterByValue
-            }
+            type: "GET",
+            url: '/RazorPageAjaxSamples?handler=KeywordsAll', // <-- Where should this point?
+            contentType: "application/json; charset=utf-8",
+          
+            },
+            dataType: "json"
+        }).done(function (data) {
+            console.log(data.result);
         })
-            .done(function (result) {
-       //… rest of code left out
+        
+           // $.ajax({
+           //     url: '/?handler=Filter',
+           //     data: {
+           //         FilterBy: filterByValue
+           //     }
+           // })
+           //     .done(function (result) {
+           ////… rest of code left out
     </script>
 
 }
