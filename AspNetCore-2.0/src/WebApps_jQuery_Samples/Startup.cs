@@ -27,7 +27,7 @@ namespace WebApps_jQuery_Samples
         {
             services.AddSingleton<IDataService, DataService>();
 
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddJsonOptions(options => options.JsonSerializerOptions.PropertyNameCaseInsensitive = false);
             services.AddRazorPages();
         }
 
