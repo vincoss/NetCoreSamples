@@ -20,10 +20,16 @@ namespace WebApps_RazorSyntax_V3.Pages.Ajax
 
         }
 
-        public IActionResult OnGetKeywordsAll()
+        public async Task<IActionResult> OnGetKeywordsAll(string term)
         {
             var service = new DataService();
-            var data = service.GetCSharpKeywords();
+            var data =  await service.GetCSharpKeywords();
+
+            if(string.IsNullOrWhiteSpace(term) == false)
+            {
+                data = data.Where(x => x.StartsWith(term));
+            }
+
             return new JsonResult(data);
         }
     }

@@ -5,34 +5,40 @@
 }
 
 <!-- Razor syntax -->
-<p>Select Keyword</p>
+<p>jQuery Autocomplete</p>
 <div>
-    <select id="customerid"></select>
+    <div class="ui-widget">
+        <label for="keywords">Keywords: </label>
+        <input id="keywords">
+    </div>
+</div>
+
+<div class="ui-widget" style="margin-top:2em; font-family:Arial">
+    Result:
+    <div id="log" style="height: 200px; width: 300px; overflow: auto;" class="ui-widget-content"></div>
 </div>
 
 @section Scripts
 {
+    <script type="text/javascript">
 
-    <script>
-        $.ajax({
-            type: "GET",
-            url: '/RazorPageAjaxSamples?handler=KeywordsAll', // <-- Where should this point?
-            contentType: "application/json; charset=utf-8",
-          
-            },
-            dataType: "json"
-        }).done(function (data) {
-            console.log(data.result);
-        })
-        
-           // $.ajax({
-           //     url: '/?handler=Filter',
-           //     data: {
-           //         FilterBy: filterByValue
-           //     }
-           // })
-           //     .done(function (result) {
-           ////… rest of code left out
+        $(function ()
+        {    
+            function log(message)
+            {
+              $( "<div>" ).text( message ).prependTo( "#log" );
+              $( "#log" ).scrollTop( 0 );
+            }
+
+            $("#keywords").autocomplete({
+                source: "/RazorPageAjaxSamples?handler=KeywordsAll",
+                minLength: 1,
+                select: function (event, ui)
+                {
+                    log("Selected: " + ui.item.value + " aka " + ui.item.id);
+                }
+            });
+        });
+
     </script>
-
 }
