@@ -4,12 +4,12 @@
     ViewData["Title"] = "Home page";
 }
 
-<!-- Razor syntax -->
+<p></p>
 <p>jQuery Autocomplete</p>
 <div>
     <div class="ui-widget">
         <label for="keywords">Keywords: </label>
-        <input id="keywords">
+        <input id="keywords" class="form-control mdb-autocomplete">
     </div>
 </div>
 
@@ -18,26 +18,42 @@
     <div id="log" style="height: 200px; width: 300px; overflow: auto;" class="ui-widget-content"></div>
 </div>
 
+<p></p>
+<p>jQuery Autocomplete show all</p>
+<div>
+    <div class="ui-widget">
+        <label for="keywords">Keywords: </label>
+        <input id="keywordsAll" class="form-control mdb-autocomplete">
+    </div>
+</div>
+
+
 @section Scripts
 {
     <script type="text/javascript">
 
         $(function ()
-        {    
-            function log(message)
-            {
-              $( "<div>" ).text( message ).prependTo( "#log" );
-              $( "#log" ).scrollTop( 0 );
+        {
+            function log(message) {
+                $("<div>").text(message).prependTo("#log");
+                $("#log").scrollTop(0);
             }
 
             $("#keywords").autocomplete({
                 source: "/RazorPageAjaxSamples?handler=KeywordsAll",
                 minLength: 1,
-                select: function (event, ui)
-                {
+                select: function (event, ui) {
                     log("Selected: " + ui.item.value + " aka " + ui.item.id);
                 }
-            });
+            }).val('i');
+
+            $("#keywordsAll").autocomplete({
+                source: "/RazorPageAjaxSamples?handler=KeywordsAll",
+                minLength: 0,
+                select: function (event, ui) {
+                    log("Selected: " + ui.item.value + " aka " + ui.item.id);
+                }
+            }).focus(function () { $(this).autocomplete('search', $(this).val())});
         });
 
     </script>
