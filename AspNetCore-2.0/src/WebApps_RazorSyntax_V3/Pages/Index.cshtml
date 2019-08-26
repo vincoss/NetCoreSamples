@@ -77,7 +77,6 @@
 }
 
 <!--  Control structures -->
-
 @*Conditionals @if, else if, else, and @switch*@
 @if (Model.Value % 2 == 0)
 {
@@ -116,7 +115,7 @@ else
     {
           new Person("Gabriel", 33),
           new Person("Ferdinand", 41)
-    };
+            };
 }
 
 @for (var i = 0; i < people.Length; i++)
@@ -180,10 +179,10 @@ finally
 
 @*@lock*@
 @*
-@lock (SomeLock)
-{
-    // Do critical section work
-}
+    @lock (SomeLock)
+    {
+        // Do critical section work
+    }
 *@
 
 <!--   Directives -->

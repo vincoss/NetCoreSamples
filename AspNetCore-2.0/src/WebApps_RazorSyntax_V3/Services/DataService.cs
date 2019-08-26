@@ -7,5 +7,11 @@ namespace WebApps_RazorSyntax_V3.Services
 {
     public class DataService
     {
+        public Task<IQueryable<string>> GetCSharpKeywords()
+        {
+            var keywordk = ExtensionsHelpers.GetEmbeddedContent("WebApps_RazorSyntax_V3.Data.CSharpKeywords.txt");
+            var items = keywordk.Split(Environment.NewLine);
+            return Task.FromResult(items.AsQueryable());
+        }
     }
 }

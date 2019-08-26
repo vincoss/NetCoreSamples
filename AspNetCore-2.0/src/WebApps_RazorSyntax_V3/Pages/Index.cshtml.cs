@@ -4,7 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Logging;
 using WebApps_RazorSyntax_V3.Models;
+
 
 namespace WebApps_RazorSyntax_V3.Pages
 {

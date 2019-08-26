@@ -14,7 +14,7 @@ namespace WebApps_RazorSyntax_V3.Services
             {
                 throw new ArgumentNullException(nameof(path));
             }
-            using (var reader = new StreamReader(typeof(Extensions).Assembly.GetManifestResourceStream(path)))
+            using (var reader = new StreamReader(typeof(ExtensionsHelpers).Assembly.GetManifestResourceStream(path)))
             {
                 return reader.ReadToEnd();
             }
