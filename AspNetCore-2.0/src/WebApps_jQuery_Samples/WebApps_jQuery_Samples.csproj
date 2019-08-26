@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
+    <AssemblyName>WebApps_jQuery_Samples</AssemblyName>
+    <RootNamespace>WebApps_jQuery_Samples</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

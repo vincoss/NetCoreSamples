@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebApps_jQuery_DataTablesNet.Dto;
-using WebApps_jQuery_DataTablesNet.Interfaces;
+using WebApps_jQuery_Samples.Dto;
+using WebApps_jQuery_Samples.Interfaces;
 
 using CsvHelper;
 using System.IO;
 
-namespace WebApps_jQuery_DataTablesNet.Services
+namespace WebApps_jQuery_Samples.Services
 {
     public class DataService : IDataService
     {
@@ -18,7 +18,7 @@ namespace WebApps_jQuery_DataTablesNet.Services
         {
             if (_adwProducts.Any() == false)
             {
-                var rn = "WebApps_jQuery_DataTablesNet.Data.AdwentureWorksProducts.csv";
+                var rn = "WebApps_jQuery_Samples.Data.AdwentureWorksProducts.csv";
                 var assembly = typeof(Extensions).Assembly;
 
                 using (var stream = assembly.GetManifestResourceStream(rn))

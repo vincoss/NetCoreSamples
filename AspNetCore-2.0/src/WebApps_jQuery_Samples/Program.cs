@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace WebApps_jQuery_DataTablesNet
+namespace WebApps_jQuery_Samples
 {
     public class Program
     {

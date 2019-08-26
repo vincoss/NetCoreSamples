@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebApps_jQuery_DataTablesNet.Dto;
+using WebApps_jQuery_Samples.Dto;
 
 
-namespace WebApps_jQuery_DataTablesNet.Interfaces
+namespace WebApps_jQuery_Samples.Interfaces
 {
     public interface IDataService
     {

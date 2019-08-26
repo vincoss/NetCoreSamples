@@ -1,33 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using WebApps_jQuery_DataTablesNet.Interfaces;
-using WebApps_jQuery_DataTablesNet.Models;
+using WebApps_jQuery_Samples.Interfaces;
 
 
-namespace WebApps_jQuery_DataTablesNet.Controllers
+namespace WebApps_jQuery_Samples.Controllers
 {
-    public class HomeController : Controller
+    public class DataTablesController : Controller
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IDataService _dataService;
 
-        public HomeController(ILogger<HomeController> logger, IDataService dataService)
+        public DataTablesController(ILogger<HomeController> logger, IDataService dataService)
         {
             _logger = logger;
             _dataService = dataService;
         }
 
         public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult FullSample()
         {
             return View();
         }

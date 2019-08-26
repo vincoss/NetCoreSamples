@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 
 
-namespace WebApps_jQuery_DataTablesNet.Services
+namespace WebApps_jQuery_Samples.Services
 {
     public static class Extensions
     {

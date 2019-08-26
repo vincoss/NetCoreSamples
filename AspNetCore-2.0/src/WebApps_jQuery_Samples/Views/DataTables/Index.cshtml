@@ -1,6 +1,4 @@
-﻿
-
-@{
+﻿@{
     ViewData["Title"] = "FullSample";
 }
 
@@ -48,14 +46,14 @@
 
 @section Scripts
 {
-        <script>
+    <script>
         $(document).ready(function () {
             $('#example').DataTable({
-                processing: true,   // for show progress bar  
-                serverSide: true,   // for process server side  
+                processing: true,   // for show progress bar
+                serverSide: true,   // for process server side
                 searching: true,
-                filter: true,       // this is for disable filter (search box)  
-                orderMulti: false,  // for disable multiple column at once 
+                filter: true,       // this is for disable filter (search box)
+                orderMulti: false,  // for disable multiple column at once
                 info: true,
                 ordering: true,      // enable disable columns order
                 search: "Fo",        // Set initial filter during initialization
@@ -67,30 +65,30 @@
                     url: '@Url.Action("GetAdwProducts")',
                     type: 'POST',
                     dataSrc: 'data',
-                    datatype: 'json'  
-                }, 
-                
-                 "columnDefs":  
-                [{  
-                    "targets": [0],  
-                    "visible": true,  
-                    "searchable": false  
-                },  
-                {  
-                    "targets": [1],  
-                    "searchable": true,  
-                    "orderable": true  
-                },  
-                {  
-                    "targets": [3],  
-                    "searchable": false,  
-                    "orderable": false  
-                },  
-                {  
-                    "targets": [4],  
-                    "searchable": false,  
-                    "orderable": false  
-                }], 
+                    datatype: 'json'
+                },
+
+                 "columnDefs":
+                [{
+                    "targets": [0],
+                    "visible": true,
+                    "searchable": false
+                },
+                {
+                    "targets": [1],
+                    "searchable": true,
+                    "orderable": true
+                },
+                {
+                    "targets": [3],
+                    "searchable": false,
+                    "orderable": false
+                },
+                {
+                    "targets": [4],
+                    "searchable": false,
+                    "orderable": false
+                }],
                 columns: [
                     { data: "productID", name: "Product ID", autoWidth: true },
                     { data: "name" },

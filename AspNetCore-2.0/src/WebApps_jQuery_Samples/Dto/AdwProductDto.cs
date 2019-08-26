@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebApps_jQuery_DataTablesNet.Dto
+namespace WebApps_jQuery_Samples.Dto
 {
     public class AdwProductDto
     {

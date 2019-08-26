@@ -8,10 +8,10 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using WebApps_jQuery_DataTablesNet.Interfaces;
-using WebApps_jQuery_DataTablesNet.Services;
+using WebApps_jQuery_Samples.Interfaces;
+using WebApps_jQuery_Samples.Services;
 
-namespace WebApps_jQuery_DataTablesNet
+namespace WebApps_jQuery_Samples
 {
     public class Startup
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace WebApps_jQuery_DataTablesNet.Models
+namespace WebApps_jQuery_Samples.Models
 {
     public class ErrorViewModel
     {
