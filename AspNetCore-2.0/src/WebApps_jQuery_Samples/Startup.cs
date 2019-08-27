@@ -27,8 +27,12 @@ namespace WebApps_jQuery_Samples
         {
             services.AddSingleton<IDataService, DataService>();
 
-            services.AddControllersWithViews().AddJsonOptions(options => options.JsonSerializerOptions.PropertyNameCaseInsensitive = false);
+            // Razor pages
             services.AddRazorPages();
+            // MVC views
+            services.AddControllersWithViews().AddJsonOptions(options => options.JsonSerializerOptions.PropertyNameCaseInsensitive = false);
+            // Web API
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,10 +58,16 @@ namespace WebApps_jQuery_Samples
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                // Razor pages
                 endpoints.MapRazorPages();
+
+                // Mvc views
+                endpoints.MapControllerRoute(
+                  name: "default",
+                  pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                // Web API
+                endpoints.MapControllers();
             });
         }
     }

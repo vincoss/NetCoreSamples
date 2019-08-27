@@ -10,7 +10,7 @@ namespace WebApps_jQuery_Samples.Services
 {
     public static class Extensions
     {
-        public static string GetFileContent(string resourceName)
+        public static string GetEmbeddedContent(string resourceName)
         {
             if(string.IsNullOrWhiteSpace(resourceName))
             {

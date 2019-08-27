@@ -10,5 +10,6 @@ namespace WebApps_jQuery_Samples.Interfaces
     public interface IDataService
     {
         IQueryable<AdwProductDto> GeAdwProducts();
+        Task<IQueryable<string>> GetCSharpKeywords();
     }
 }

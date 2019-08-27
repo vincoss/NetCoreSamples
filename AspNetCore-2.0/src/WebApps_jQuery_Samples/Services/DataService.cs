@@ -37,5 +37,12 @@ namespace WebApps_jQuery_Samples.Services
 
             return _adwProducts.AsQueryable();
         }
+
+        public Task<IQueryable<string>> GetCSharpKeywords()
+        {
+            var keywordk = Extensions.GetEmbeddedContent("WebApps_jQuery_Samples.Data.CSharpKeywords.txt");
+            var items = keywordk.Split(Environment.NewLine);
+            return Task.FromResult(items.AsQueryable());
+        }
     }
 }
