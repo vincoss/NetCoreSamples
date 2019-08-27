@@ -4,14 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using WebApps_RazorSyntax_V3.Models;
-using WebApps_RazorSyntax_V3.Services;
+using WebApps_jQuery_Samples.Services;
 
-namespace WebApps_RazorSyntax_V3.Pages.Ajax
+namespace WebApps_RazorSyntax_V3.Pages
 {
-    public class RazorPageAjaxSamples : PageModel
+    public class Autocomplete : PageModel
     {
-        public RazorPageAjaxSamples()
+        public Autocomplete()
         {
         }
 

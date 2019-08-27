@@ -1,5 +1,5 @@
-﻿@page "/RazorPageAjaxSamples"
-@model RazorPageAjaxSamples
+﻿@page "/Autocomplete"
+@model Autocomplete
 @{
     ViewData["Title"] = "Home page";
 }
@@ -40,7 +40,7 @@
             }
 
             $("#keywords").autocomplete({
-                source: "/RazorPageAjaxSamples?handler=KeywordsAll",
+                source: "/Autocomplete?handler=KeywordsAll",
                 minLength: 1,
                 select: function (event, ui) {
                     log("Selected: " + ui.item.value + " aka " + ui.item.id);
@@ -48,7 +48,7 @@
             }).val('i');
 
             $("#keywordsAll").autocomplete({
-                source: "/RazorPageAjaxSamples?handler=KeywordsAll",
+                source: "/Autocomplete?handler=KeywordsAll",
                 minLength: 0,
                 select: function (event, ui) {
                     log("Selected: " + ui.item.value + " aka " + ui.item.id);
