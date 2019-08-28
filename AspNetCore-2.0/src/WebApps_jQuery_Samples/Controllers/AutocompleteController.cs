@@ -13,10 +13,5 @@ namespace WebApps_jQuery_Samples.Controllers
         {
             return View();
         }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
     }
 }
