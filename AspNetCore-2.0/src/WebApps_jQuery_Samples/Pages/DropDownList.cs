@@ -4,13 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
+using WebApps_jQuery_Samples.Services;
 
 namespace WebApps_jQuery_Samples.Pages
 {
-    public class IndexModel : PageModel
+    public class DropDownList : PageModel
     {
-        public IndexModel()
+        public DropDownList()
         {
         }
 

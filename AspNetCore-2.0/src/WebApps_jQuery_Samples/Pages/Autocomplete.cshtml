@@ -1,7 +1,7 @@
 ﻿@page "/Autocomplete"
 @model Autocomplete
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "jQuery Autocomplete sample";
 }
 
 <p></p>
@@ -31,7 +31,7 @@
 @section Scripts
 {
     <script type="text/javascript">
-
+        
         $(function ()
         {
             function log(message) {
@@ -53,7 +53,8 @@
                 select: function (event, ui) {
                     log("Selected: " + ui.item.value + " aka " + ui.item.id);
                 }
-            }).focus(function () { $(this).autocomplete('search', $(this).val())});
+            }).focus(function () { $(this).autocomplete('search', $(this).val()) });
+
         });
 
     </script>

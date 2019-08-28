@@ -18,5 +18,8 @@ namespace WebApps_jQuery_Samples.Dto
         public decimal StandardCost { get; set; }
         public decimal ListPrice { get; set; }
         public string Size { get; set; }
+
+        public string ProductCategory { get; set; }
+        public string ProductSubcategory { get; set; }
     }
 }

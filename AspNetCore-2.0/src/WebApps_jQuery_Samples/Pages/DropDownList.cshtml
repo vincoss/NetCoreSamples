@@ -1,0 +1,116 @@
+﻿@page "/DropDownList"
+@model DropDownList
+@{
+    ViewData["Title"] = "jQuery DropDownList samples";
+}
+
+<p></p>
+<p>jQuery DropDownList</p>
+<div>
+    <div class="ui-widget">
+        <label for="keywords">Keywords: </label>
+        <select id="keywords" class="form-control custom-select">
+        </select>
+    </div>
+</div>
+
+<div class="ui-widget" style="margin-top:2em; font-family:Arial">
+    Result:
+    <div id="log" style="height: 200px; width: 300px; overflow: auto;" class="ui-widget-content"></div>
+</div>
+
+<p></p>
+<p>jQuery DropDownList Cascade</p>
+<div>
+    <div class="ui-widget">
+        <label for="productCategory">Product Category: </label>
+        <select id="productCategory" class="form-control custom-select">
+        </select>
+    </div>
+    <div class="ui-widget">
+        <label for="productSubcategory">Product Subcategory: </label>
+        <select id="productSubcategory" class="form-control custom-select">
+        </select>
+    </div>  
+    <div class="ui-widget">
+        <label for="product">Product: </label>
+        <select id="product" class="form-control custom-select">
+        </select>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script type="text/javascript">
+
+        $(function ()
+        {
+            function log(message) {
+                $("<div>").text(message).prependTo("#log");
+                $("#log").scrollTop(0);
+            }
+
+            $.getJSON("/Autocomplete?handler=KeywordsAll",
+                    function (data)
+                    {
+                        $("#keywords").empty();
+
+                        $.each(data, function ()
+                        {
+                            $("#keywords").append($("<option></option>").val(this).html(this));
+                        });
+
+                        // Select (default value)
+                        $('#keywords option[value="int"]').attr("selected", true);
+                        //$('select option:contains("int")').prop('selected',true);
+                        //$('#keywords').val(goto);
+                });
+
+            $("#keywords").change(function (e)
+            {
+                log("Selected: " + $(this).val());
+            });
+
+             $.getJSON("/product/productCategory",
+                    function (data)
+                    {
+                        $("#productCategory").empty();
+
+                        $.each(data, function ()
+                        {
+                            $("#productCategory").append($("<option></option>").val(this).html(this));
+                        });
+                 });
+
+            $("#productCategory").change(function (e)
+            {
+                 $.getJSON("/product/productSubcategory/" + $("#productCategory").val(),
+                    function (data)
+                    {
+                        $("#productSubcategory").empty();
+                        $("#product").empty();
+
+                        $.each(data, function ()
+                        {
+                            $("#productSubcategory").append($("<option></option>").val(this).html(this));
+                        });
+                 });
+            });
+
+             $("#productSubcategory").change(function (e)
+                    {
+                         $.getJSON("/product/productName/" + $("#productSubcategory").val(),
+                            function (data)
+                            {
+                                $("#product").empty();
+
+                                $.each(data, function ()
+                                {
+                                    $("#product").append($("<option></option>").val(this).html(this));
+                                });
+                         });
+                    });
+            });
+
+    </script>
+}

@@ -14,6 +14,12 @@ namespace WebApps_jQuery_Samples.Services
     {
         private static readonly IList<AdwProductDto> _adwProducts = new List<AdwProductDto>();
 
+        public IQueryable<string> GeAdwProductCategories()
+        {
+            var query = GeAdwProducts().Select(x => x.ProductCategory ?? string.Empty).Distinct();
+            return query;
+        }
+
         public IQueryable<AdwProductDto> GeAdwProducts()
         {
             if (_adwProducts.Any() == false)
@@ -42,7 +48,8 @@ namespace WebApps_jQuery_Samples.Services
         {
             var keywordk = Extensions.GetEmbeddedContent("WebApps_jQuery_Samples.Data.CSharpKeywords.txt");
             var items = keywordk.Split(Environment.NewLine);
-            return Task.FromResult(items.AsQueryable());
+            return Task.FromResult(items.OrderBy(x => x).AsQueryable());
         }
+
     }
 }
