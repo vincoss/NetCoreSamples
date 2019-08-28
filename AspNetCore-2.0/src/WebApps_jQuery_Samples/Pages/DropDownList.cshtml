@@ -82,7 +82,7 @@
                         });
                  });
 
-            $("#productCategory").change(function (e)
+            $("#productCategory").change(function ()
             {
                  $.getJSON("/product/productSubcategory/" + $("#productCategory").val(),
                     function (data)
@@ -97,7 +97,7 @@
                  });
             });
 
-             $("#productSubcategory").change(function (e)
+             $("#productSubcategory").change(function ()
                     {
                          $.getJSON("/product/productName/" + $("#productSubcategory").val(),
                             function (data)
