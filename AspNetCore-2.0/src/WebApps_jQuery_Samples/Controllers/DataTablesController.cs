@@ -27,7 +27,8 @@ namespace WebApps_jQuery_Samples.Controllers
         }
 
         [HttpPost]
-        public IActionResult GetAdwProducts(IDictionary<string, string> id)
+        [ValidateAntiForgeryToken]
+        public IActionResult GetAdwProducts()
         {
             var form = this.Request.Form;
 
@@ -63,6 +64,8 @@ namespace WebApps_jQuery_Samples.Controllers
             recordsFilteredTotal = query.Count();
             var model = query.Skip(skip).Take(pageSize).ToList();
             var response = new { draw = draw, recordsFiltered = recordsFilteredTotal, recordsTotal = recordsTotal,  data = model};
+
+            System.Threading.Thread.Sleep(2000);
 
             return Json(response);
         }
