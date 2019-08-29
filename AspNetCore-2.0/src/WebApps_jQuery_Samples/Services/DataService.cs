@@ -25,7 +25,7 @@ namespace WebApps_jQuery_Samples.Services
             if (_adwProducts.Any() == false)
             {
                 var rn = "WebApps_jQuery_Samples.Data.AdwentureWorksProducts.csv";
-                var assembly = typeof(Extensions).Assembly;
+                var assembly = typeof(UtilityExtensions).Assembly;
 
                 using (var stream = assembly.GetManifestResourceStream(rn))
                 using (var reader = new StreamReader(stream))
@@ -46,7 +46,7 @@ namespace WebApps_jQuery_Samples.Services
 
         public Task<IQueryable<string>> GetCSharpKeywords()
         {
-            var keywordk = Extensions.GetEmbeddedContent("WebApps_jQuery_Samples.Data.CSharpKeywords.txt");
+            var keywordk = UtilityExtensions.GetEmbeddedContent("WebApps_jQuery_Samples.Data.CSharpKeywords.txt");
             var items = keywordk.Split(Environment.NewLine);
             return Task.FromResult(items.OrderBy(x => x).AsQueryable());
         }

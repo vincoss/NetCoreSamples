@@ -8,8 +8,10 @@ using System.Threading.Tasks;
 
 namespace WebApps_jQuery_Samples.Services
 {
-    public static class Extensions
+    public static class UtilityExtensions
     {
+        private static Random _rnd = new Random();
+
         public static string GetEmbeddedContent(string resourceName)
         {
             if(string.IsNullOrWhiteSpace(resourceName))
@@ -17,7 +19,7 @@ namespace WebApps_jQuery_Samples.Services
                 throw new ArgumentNullException(nameof(resourceName));
             }
 
-            var assembly = typeof(Extensions).Assembly;
+            var assembly = typeof(UtilityExtensions).Assembly;
 
             using (var stream = assembly.GetManifestResourceStream(resourceName))
             using (var reader = new StreamReader(stream))
@@ -25,6 +27,12 @@ namespace WebApps_jQuery_Samples.Services
                 string result = reader.ReadToEnd();
                 return result;
             }
+        }
+
+        public static string GetRandomColor()
+        {
+            var color = String.Format("#{0:X6}", _rnd.Next(0x1000000));
+            return color;
         }
     }
 }
