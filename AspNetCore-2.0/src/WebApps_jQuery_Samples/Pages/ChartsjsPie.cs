@@ -8,9 +8,9 @@ using WebApps_jQuery_Samples.Services;
 
 namespace WebApps_jQuery_Samples.Pages
 {
-    public class ChartsjsDonut : PageModel
+    public class ChartsjsPie : PageModel
     {
-        public ChartsjsDonut()
+        public ChartsjsPie()
         {
         }
 
