@@ -78,23 +78,27 @@ namespace Default_WebApplication_API_V3.Controllers
         }
 
         /// <summary>
-        /// product/productsPerProductCategory
+        /// product/pieChartData
         /// </summary>
         [HttpGet]
-        [Route("productsPerProductCategory")]
-        public IEnumerable<dynamic> GetProductsPerProductCategory()
+        [Route("pieChartData")]
+        public dynamic GetPieChartData()
         {
-            var query = from x in _dataService.GeAdwProducts()
-                        group x by x.ProductCategory into g
-                        select new
-                        {
-                            Name = string.IsNullOrWhiteSpace(g.Key) ? "None" : g.Key,
-                            Value = g.Count(),
-                            Colour = UtilityExtensions.GetRandomColor(),
-                            Highlight = "#d2d6de"
-                        };
+            var data = new
+            {
+                datasets = new[]
+                {
+                   new
+                   {
+                       data = new[] { 10, 20, 30 },
+                       backgroundColor = new[] { "#ff0000", "#0099ff", "#ffff00" }
+                   }
+                },
 
-            return query.ToArray();
+                labels = new[] { "Red", "Blue", "Yellow" }
+            };
+
+            return data;
         }
     }
 }
