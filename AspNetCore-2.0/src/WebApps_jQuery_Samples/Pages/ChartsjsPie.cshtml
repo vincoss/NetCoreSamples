@@ -10,11 +10,23 @@ https://www.chartjs.org/docs/latest/charts/doughnut.html#data-structure
 -->
 
 <p></p>
-<p>jQuery Doughnut|Pie - Samples</p>
+<p>jQuery - Doughnut|Pie - Samples</p>
 <div>
     <div class="ui-widget">
         <div class="chart-responsive">
             <canvas id="pieChart" aria-label="Hi Pie" role="img">
+                Basic Pie Chart
+            </canvas>
+        </div>
+    </div>
+</div>
+
+<p></p>
+<p>ViewModel - Doughnut|Pie - Samples</p>
+<div>
+    <div class="ui-widget">
+        <div class="chart-responsive">
+            <canvas id="pieChart2" aria-label="Hi Pie" role="img">
                 Basic Pie Chart
             </canvas>
         </div>
@@ -26,8 +38,7 @@ https://www.chartjs.org/docs/latest/charts/doughnut.html#data-structure
 {
     <script type="text/javascript">
 
-        $(function ()
-        {
+        $(function () {
             var dataPoints = [];
             var options =
             {
@@ -47,7 +58,7 @@ https://www.chartjs.org/docs/latest/charts/doughnut.html#data-structure
                     animateRotate: true
                 }
             };
-            
+
             var ctx = $("#pieChart");
             var pieChart = new Chart(ctx,
                 {
@@ -57,10 +68,17 @@ https://www.chartjs.org/docs/latest/charts/doughnut.html#data-structure
                 });
 
             $.getJSON("/product/pieChartData",
-                function (data)
-                {
+                function (data) {
                     pieChart.data = data;
                     pieChart.update();
+                });
+
+            var ctx2 = $("#pieChart2");
+            var pieChart2 = new Chart(ctx2,
+                {
+                    type: 'pie',
+                    data: @Html.Raw(@Model.ChartData),
+                    options: options
                 });
         });
 
