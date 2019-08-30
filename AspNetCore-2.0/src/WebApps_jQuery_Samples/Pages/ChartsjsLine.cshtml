@@ -6,7 +6,7 @@
 
 <!--
 Reference
-https://www.chartjs.org/docs/latest/charts/doughnut.html#data-structure
+https://www.chartjs.org/docs/latest/charts/line.html
 -->
 
 <p></p>
@@ -14,21 +14,26 @@ https://www.chartjs.org/docs/latest/charts/doughnut.html#data-structure
 <div>
     <div class="ui-widget">
         <div class="chart-responsive">
-            <canvas id="chart1" aria-label="Hi Pie" role="img">
+            <canvas id="chart1" aria-label="Hi Chart" role="img">
+                Basic Line Chart
+            </canvas>
+        </div>
+    </div>
+    <div class="ui-widget">
+        <div class="chart-responsive">
+            <canvas id="chart2" aria-label="Hi Chart" role="img">
                 Basic Line Chart
             </canvas>
         </div>
     </div>
 </div>
 
-
-
 @section Scripts
 {
     <script type="text/javascript">
 
         $(function () {
-            var dataPoints = [];
+
             var options =
             {
                 responsive: true,
@@ -42,18 +47,14 @@ https://www.chartjs.org/docs/latest/charts/doughnut.html#data-structure
                     position: 'top',
                 },
                 scales: {
-                    xAxes: [{
-                        type: 'time',
-                        distribution: 'series',
-                        ticks: {
-                            source: 'data',
-                            autoSkip: true
-                        }
-                    }],
                     yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        },
                         scaleLabel: {
                             display: true,
-                            labelString: 'Closing price ($)'
+                            labelString: 'Quantity',
+                            fontSize: 20
                         }
                     }]
                 },
@@ -78,197 +79,106 @@ https://www.chartjs.org/docs/latest/charts/doughnut.html#data-structure
                 }
             };
 
-            var lineChartData = {
-                labels: aLabels,
-                datasets: [
-                    {
-                        label: "Data1",
-                        //fill:false,
-                        fillColor: "rgba(0,0,0,0)",
-                        strokeColor: "rgba(220,220,220,1)",
-                        pointColor: "rgba(200,122,20,1)",
-
-                        data: [[1, 12], [2, 7], [3, 6], [4, 6], [5, 9], [6, 13], [7, 12], [8, 15], [9, 14], [10, 18]]
-                    },
-                    {
-                        label: "Data2",
-                        fillColor: 'rgba(0,0,0,0)',
-                        strokeColor: 'rgba(220,180,0,1)',
-                        pointColor: 'rgba(220,180,0,1)',
-                        data: aDatasets2
-                    },
-                    {
-
-                        label: "Data5",
-                        fillColor: "rgba(0,0,0,0)",
-                        strokeColor: "rgba(151,187,205,1)",
-                        pointColor: "rgba(152,188,204,1)",
-                        data: aDatasets3
-                    },
-
-                    {
-                        label: "Data4",
-                        fillColor: 'rgba(0,0,0,0)',
-                        strokeColor: 'rgba(151,187,205,1)',
-                        pointColor: 'rgba(151,187,205,1)',
-                        data: aDatasets4
-                    },
-                    {
-                        label: "Data4",
-                        fillColor: 'rgba(0,0,0,0)',
-                        strokeColor: 'rgba(151,187,205,1)',
-                        pointColor: 'rgba(151,187,205,1)',
-
-                        data: aDatasets5
-                    },
-
-
+            var dataPoints =
+            {
+                labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                datasets: [{
+                    label: "Stock A",
+                    fill: false,
+                    lineTension: 0.1,
+                    backgroundColor: "rgba(225,0,0,0.4)",
+                    borderColor: "red", // The main line color
+                    borderCapStyle: 'square',
+                    borderDash: [], // try [5, 15] for instance
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: 'miter',
+                    pointBorderColor: "black",
+                    pointBackgroundColor: "white",
+                    pointBorderWidth: 1,
+                    pointHoverRadius: 8,
+                    pointHoverBackgroundColor: "yellow",
+                    pointHoverBorderColor: "brown",
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 4,
+                    pointHitRadius: 10,
+                    // notice the gap in the data and the spanGaps: true
+                    data: [65, 59, 80, 81, 56, 55, 40, , 60, 55, 30, 78],
+                    spanGaps: true,
+                }, {
+                    label: "Stock B",
+                    fill: true,
+                    lineTension: 0.1,
+                    backgroundColor: "rgba(167,105,0,0.4)",
+                    borderColor: "rgb(167, 105, 0)",
+                    borderCapStyle: 'butt',
+                    borderDash: [],
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: 'miter',
+                    pointBorderColor: "white",
+                    pointBackgroundColor: "black",
+                    pointBorderWidth: 1,
+                    pointHoverRadius: 8,
+                    pointHoverBackgroundColor: "brown",
+                    pointHoverBorderColor: "yellow",
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 4,
+                    pointHitRadius: 10,
+                    // notice the gap in the data and the spanGaps: false
+                    data: [10, 20, 60, 95, 64, 78, 90, , 70, 40, 70, 89],
+                    spanGaps: false,
+                }
                 ]
             };
 
-            var ctx = $("#chart1");
-            var chart1 = new Chart(ctx,
+            var ctx1 = $("#chart1");
+            var chart1 = new Chart(ctx1,
                 {
                     type: 'line',
                     data: dataPoints,
                     options: options
                 });
 
-            $.getJSON("/product/lineChartData",
-                function (data) {
-                    chart1.data = data;
-                    chart1.update();
+            //--------------------------------------------------------------------------------
+
+            var chart2Data = {
+                labels: [1500, 1600, 1700, 1750, 1800, 1850, 1900, 1950, 1999, 2050],
+                datasets: [{
+                    data: [86, 114, 106, 106, 107, 111, 133, 221, 783, 2478],
+                    label: "Africa",
+                    borderColor: "#3e95cd",
+                    fill: false
+                }, {
+                    data: [282, 350, 411, 502, 635, 809, 947, 1402, 3700, 5267],
+                    label: "Asia",
+                    borderColor: "#8e5ea2",
+                    fill: false
+                }, {
+                    data: [168, 170, 178, 190, 203, 276, 408, 547, 675, 734],
+                    label: "Europe",
+                    borderColor: "#3cba9f",
+                    fill: false
+                }, {
+                    data: [40, 20, 10, 16, 24, 38, 74, 167, 508, 784],
+                    label: "Latin America",
+                    borderColor: "#e8c3b9",
+                    fill: false
+                }, {
+                    data: [6, 3, 2, 2, 7, 26, 82, 172, 312, 433],
+                    label: "North America",
+                    borderColor: "#c45850",
+                    fill: false
+                }
+                ]
+            };
+
+            var ctx2 = $("#chart2");
+            var chart2 = new Chart(ctx2,
+                {
+                    type: 'line',
+                    data: chart2Data,
+                    options: options
                 });
         });
 
     </script>
 }
-
-<!--
-
-
-var canvas = document.getElementById("barChart");
-var ctx = canvas.getContext('2d');
-
-// Global Options:
-Chart.defaults.global.defaultFontColor = 'black';
-Chart.defaults.global.defaultFontSize = 16;
-
-var data = {
-  labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-  datasets: [{
-      label: "Stock A",
-      fill: false,
-      lineTension: 0.1,
-      backgroundColor: "rgba(225,0,0,0.4)",
-      borderColor: "red", // The main line color
-      borderCapStyle: 'square',
-      borderDash: [], // try [5, 15] for instance
-      borderDashOffset: 0.0,
-      borderJoinStyle: 'miter',
-      pointBorderColor: "black",
-      pointBackgroundColor: "white",
-      pointBorderWidth: 1,
-      pointHoverRadius: 8,
-      pointHoverBackgroundColor: "yellow",
-      pointHoverBorderColor: "brown",
-      pointHoverBorderWidth: 2,
-      pointRadius: 4,
-      pointHitRadius: 10,
-      // notice the gap in the data and the spanGaps: true
-      data: [65, 59, 80, 81, 56, 55, 40, ,60,55,30,78],
-      spanGaps: true,
-    }, {
-      label: "Stock B",
-      fill: true,
-      lineTension: 0.1,
-      backgroundColor: "rgba(167,105,0,0.4)",
-      borderColor: "rgb(167, 105, 0)",
-      borderCapStyle: 'butt',
-      borderDash: [],
-      borderDashOffset: 0.0,
-      borderJoinStyle: 'miter',
-      pointBorderColor: "white",
-      pointBackgroundColor: "black",
-      pointBorderWidth: 1,
-      pointHoverRadius: 8,
-      pointHoverBackgroundColor: "brown",
-      pointHoverBorderColor: "yellow",
-      pointHoverBorderWidth: 2,
-      pointRadius: 4,
-      pointHitRadius: 10,
-      // notice the gap in the data and the spanGaps: false
-      data: [10, 20, 60, 95, 64, 78, 90,,70,40,70,89],
-      spanGaps: false,
-    }
-
-  ]
-};
-
-// Notice the scaleLabel at the same level as Ticks
-var options = {
-  scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:true
-                },
-                scaleLabel: {
-                     display: true,
-                     labelString: 'Moola',
-                     fontSize: 20
-                  }
-            }]
-        }
-};
-
-// Chart declaration:
-var myBarChart = new Chart(ctx, {
-  type: 'line',
-  data: data,
-  options: options
-});
--->
-<!--
-
-
-<canvas id="line-chart" width="800" height="450"></canvas>
-new Chart(document.getElementById("line-chart"), {
-  type: 'line',
-  data: {
-    labels: [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050],
-    datasets: [{
-        data: [86,114,106,106,107,111,133,221,783,2478],
-        label: "Africa",
-        borderColor: "#3e95cd",
-        fill: false
-      }, {
-        data: [282,350,411,502,635,809,947,1402,3700,5267],
-        label: "Asia",
-        borderColor: "#8e5ea2",
-        fill: false
-      }, {
-        data: [168,170,178,190,203,276,408,547,675,734],
-        label: "Europe",
-        borderColor: "#3cba9f",
-        fill: false
-      }, {
-        data: [40,20,10,16,24,38,74,167,508,784],
-        label: "Latin America",
-        borderColor: "#e8c3b9",
-        fill: false
-      }, {
-        data: [6,3,2,2,7,26,82,172,312,433],
-        label: "North America",
-        borderColor: "#c45850",
-        fill: false
-      }
-    ]
-  },
-  options: {
-    title: {
-      display: true,
-      text: 'World population per region (in millions)'
-    }
-  }
-});
--->
