@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Xml.Linq;
 using Microsoft.AspNetCore.Mvc;
 using WebApps_jQuery_Samples.Interfaces;
-using WebApps_jQuery_Samples.Services;
+
 
 namespace Default_WebApplication_API_V3.Controllers
 {

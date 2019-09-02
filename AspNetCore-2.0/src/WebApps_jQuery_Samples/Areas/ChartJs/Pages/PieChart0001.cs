@@ -7,11 +7,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Newtonsoft.Json;
 using WebApps_jQuery_Samples.Services;
 
-namespace WebApps_jQuery_Samples.Pages
+namespace WebApps_jQuery_Samples.Areas.ChartJs.Pages
 {
-    public class ChartsjsPie : PageModel
+    public class PieChart0001 : PageModel
     {
-        public ChartsjsPie()
+        public PieChart0001()
         {
         }
 

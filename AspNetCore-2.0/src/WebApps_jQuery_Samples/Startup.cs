@@ -66,6 +66,10 @@ namespace WebApps_jQuery_Samples
                   name: "default",
                   pattern: "{controller=Home}/{action=Index}/{id?}");
 
+                //endpoints.MapControllerRoute(
+                //  name: "MyArea",
+                //  pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
                 // Web API
                 endpoints.MapControllers();
             });

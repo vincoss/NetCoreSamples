@@ -65,7 +65,7 @@ namespace WebApps_jQuery_Samples.Controllers
             var model = query.Skip(skip).Take(pageSize).ToList();
             var response = new { draw = draw, recordsFiltered = recordsFilteredTotal, recordsTotal = recordsTotal,  data = model};
 
-            System.Threading.Thread.Sleep(2000);
+            //System.Threading.Thread.Sleep(2000); // Test progress
 
             return Json(response);
         }

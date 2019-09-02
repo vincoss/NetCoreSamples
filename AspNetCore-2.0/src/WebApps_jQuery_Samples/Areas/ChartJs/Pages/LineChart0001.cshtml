@@ -1,16 +1,11 @@
-﻿@page "/ChartsjsLine"
-@model ChartsjsLine
+﻿@page "/chartjs/ChartsjsLine"
+@model LineChart0001
 @{
     ViewData["Title"] = "Chart.js Line - Samples";
 }
 
-<!--
-Reference
-https://www.chartjs.org/docs/latest/charts/line.html
--->
-
 <p></p>
-<p>jQuery - Line - Samples</p>
+<p>jQuery - Line - Samples areal</p>
 <div>
     <div class="ui-widget">
         <div class="chart-responsive">
@@ -79,6 +74,8 @@ https://www.chartjs.org/docs/latest/charts/line.html
                 }
             };
 
+            //-------------------------------------------------------------------------------- Chart1
+
             var dataPoints =
             {
                 labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
@@ -138,7 +135,7 @@ https://www.chartjs.org/docs/latest/charts/line.html
                     options: options
                 });
 
-            //--------------------------------------------------------------------------------
+            //-------------------------------------------------------------------------------- Chart2
 
             var chart2Data = {
                 labels: [1500, 1600, 1700, 1750, 1800, 1850, 1900, 1950, 1999, 2050],
