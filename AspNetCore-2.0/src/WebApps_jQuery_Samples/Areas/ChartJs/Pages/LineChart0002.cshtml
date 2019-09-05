@@ -28,40 +28,27 @@
                 title:
                 {
                     display: true,
-                    text: 'Chart.js Line Chart'
+                    text: 'Chart.js Line Chart series'
                 },
                 legend:
                 {
                     position: 'top',
                 },
-                //scales: {
-                //    xAxes: [{
-                //        type: 'time',
-                //        distribution: 'series',
-                //        ticks: {
-                //            source: 'data',
-                //            autoSkip: true
-                //        }
-                //    }],
-                //    yAxes: [{
-                //        scaleLabel: {
-                //            display: true,
-                //            labelString: 'Closing price ($)'
-                //        }
-                //    }]
-                //},
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        },
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'Quantity',
-                            fontSize: 20
-                        }
-                    }]
-                },
+                scales:
+                {
+                    xAxes: [{
+                         scaleLabel: {
+							    display: true,
+							    labelString: 'Duration(s)'
+						    }
+                    }],
+				    yAxes: [{
+						    scaleLabel: {
+							    display: true,
+							    labelString: 'Requests(s)'
+						    }
+					    }]
+				},
                 tooltips: {
                     intersect: false,
                     mode: 'index',
@@ -87,34 +74,29 @@
 
             var dataPoints =
             {
-                labels: [1500, 1600, 1700, 1750, 1800, 1850, 1900, 1950, 1999, 2050],
+                labels: ['00:00:01', '00:00:02', '00:00:03', '00:00:04', '00:00:05', '00:00:06', '00:00:07', '00:00:08', '00:00:09', '00:00:10'],
                 datasets: [{
-                    data: [86, 114, 106, 106, 107, 111, 133, 221, 783, 2478],
-                    label: "Africa",
-                    borderColor: "#3e95cd",
-                    fill: false
-                }, {
-                    data: [282, 350, 411, 502, 635, 809, 947, 1402, 3700, 5267],
-                    label: "Asia",
-                    borderColor: "#8e5ea2",
-                    fill: false
-                }, {
-                    data: [168, 170, 178, 190, 203, 276, 408, 547, 675, 734],
-                    label: "Europe",
-                    borderColor: "#3cba9f",
-                    fill: false
-                }, {
-                    data: [40, 20, 10, 16, 24, 38, 74, 167, 508, 784],
-                    label: "Latin America",
-                    borderColor: "#e8c3b9",
-                    fill: false
-                }, {
-                    data: [6, 3, 2, 2, 7, 26, 82, 172, 312, 433],
-                    label: "North America",
-                    borderColor: "#c45850",
-                    fill: false
-                }
-                ]
+                    data: [86, 1500, 106, 300, 500, 111, 900, 221, 1300, 2478],
+                    label: "Success",
+                    borderColor: "#33FF33",
+                    fill: false,
+                    type: 'line',
+					pointRadius: 0,
+					fill: false,
+					lineTension: 0,
+					borderWidth: 2
+                },
+                {
+                    data: [0, 50, 1, 300, 33, 0, 10, 100, 0, 4],
+                    label: "Error",
+                    borderColor: "#FF5733",
+                    fill: false,
+                    type: 'line',
+					pointRadius: 0,
+					fill: false,
+					lineTension: 0,
+					borderWidth: 2
+                }]
             };
 
             var ctx1 = $("#Chart1");
@@ -127,218 +109,5 @@
         });
 
     </script>
-
-    <script>
-        function randomNumber(min, max) {
-            return Math.random() * (max - min) + min;
-        }
-
-        function randomBar(date, lastClose) {
-            var open = randomNumber(lastClose * 0.95, lastClose * 1.05).toFixed(2);
-            var close = randomNumber(open * 0.95, open * 1.05).toFixed(2);
-            return {
-                t: date.valueOf(),
-                y: close
-            };
-        }
-
-        var dateFormat = 'MMMM DD YYYY';
-        var date = moment('April 01 2017', dateFormat);
-        var data = [randomBar(date, 30)];
-        while (data.length < 60) {
-            date = date.clone().add(1, 'd');
-            if (date.isoWeekday() <= 5) {
-                data.push(randomBar(date, data[data.length - 1].y));
-            }
-        }
-
-        var ctx = document.getElementById('chart1').getContext('2d');
-        ctx.canvas.width = 1000;
-        ctx.canvas.height = 300;
-
-        var color = Chart.helpers.color;
-        var cfg = {
-            type: 'bar',
-            data: {
-                datasets: [{
-                    label: 'CHRT - Chart.js Corporation',
-                    backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
-                    borderColor: window.chartColors.red,
-                    data: data,
-                    type: 'line',
-                    pointRadius: 0,
-                    fill: false,
-                    lineTension: 0,
-                    borderWidth: 2
-                }]
-            },
-            options: {
-                scales: {
-                    xAxes: [{
-                        type: 'time',
-                        distribution: 'series',
-                        ticks: {
-                            source: 'data',
-                            autoSkip: true
-                        }
-                    }],
-                    yAxes: [{
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'Closing price ($)'
-                        }
-                    }]
-                },
-                tooltips: {
-                    intersect: false,
-                    mode: 'index',
-                    callbacks: {
-                        label: function (tooltipItem, myData) {
-                            var label = myData.datasets[tooltipItem.datasetIndex].label || '';
-                            if (label) {
-                                label += ': ';
-                            }
-                            label += parseFloat(tooltipItem.value).toFixed(2);
-                            return label;
-                        }
-                    }
-                }
-            }
-        };
-
-        var chart = new Chart(ctx, cfg);
-
-        document.getElementById('update').addEventListener('click', function () {
-            var type = document.getElementById('type').value;
-            chart.config.data.datasets[0].type = type;
-            chart.update();
-        });
-
-    </script>
+ 
 }
-
-
-<!--
-
-
-<!doctype html>
-<html>
-
-<head>
-    <title>Line Chart</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-    <script src="../../../../dist/2.8.0/Chart.min.js"></script>
-    <script src="../../utils.js"></script>
-    <style>
-        canvas {
-            -moz-user-select: none;
-            -webkit-user-select: none;
-            -ms-user-select: none;
-        }
-    </style>
-</head>
-
-<body>
-    <div style="width:1000px">
-        <canvas id="chart1"></canvas>
-    </div>
-    <br>
-    <br>
-    Chart Type:
-    <select id="type">
-        <option value="line">Line</option>
-        <option value="bar">Bar</option>
-    </select>
-    <button id="update">update</button>
-    <script>
-        function randomNumber(min, max) {
-            return Math.random() * (max - min) + min;
-        }
-
-        function randomBar(date, lastClose) {
-            var open = randomNumber(lastClose * 0.95, lastClose * 1.05).toFixed(2);
-            var close = randomNumber(open * 0.95, open * 1.05).toFixed(2);
-            return {
-                t: date.valueOf(),
-                y: close
-            };
-        }
-
-        var dateFormat = 'MMMM DD YYYY';
-        var date = moment('April 01 2017', dateFormat);
-        var data = [randomBar(date, 30)];
-        while (data.length < 60) {
-            date = date.clone().add(1, 'd');
-            if (date.isoWeekday() <= 5) {
-                data.push(randomBar(date, data[data.length - 1].y));
-            }
-        }
-
-        var ctx = document.getElementById('chart1').getContext('2d');
-        ctx.canvas.width = 1000;
-        ctx.canvas.height = 300;
-
-        var color = Chart.helpers.color;
-        var cfg = {
-            type: 'bar',
-            data: {
-                datasets: [{
-                    label: 'CHRT - Chart.js Corporation',
-                    backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
-                    borderColor: window.chartColors.red,
-                    data: data,
-                    type: 'line',
-                    pointRadius: 0,
-                    fill: false,
-                    lineTension: 0,
-                    borderWidth: 2
-                }]
-            },
-            options: {
-                scales: {
-                    xAxes: [{
-                        type: 'time',
-                        distribution: 'series',
-                        ticks: {
-                            source: 'data',
-                            autoSkip: true
-                        }
-                    }],
-                    yAxes: [{
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'Closing price ($)'
-                        }
-                    }]
-                },
-                tooltips: {
-                    intersect: false,
-                    mode: 'index',
-                    callbacks: {
-                        label: function(tooltipItem, myData) {
-                            var label = myData.datasets[tooltipItem.datasetIndex].label || '';
-                            if (label) {
-                                label += ': ';
-                            }
-                            label += parseFloat(tooltipItem.value).toFixed(2);
-                            return label;
-                        }
-                    }
-                }
-            }
-        };
-
-        var chart = new Chart(ctx, cfg);
-
-        document.getElementById('update').addEventListener('click', function() {
-            var type = document.getElementById('type').value;
-            chart.config.data.datasets[0].type = type;
-            chart.update();
-        });
-
-    </script>
-</body>
-
-</html>
-
--->
