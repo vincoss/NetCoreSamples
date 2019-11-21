@@ -33,6 +33,18 @@ https://www.chartjs.org/docs/latest/charts/doughnut.html#data-structure
     </div>
 </div>
 
+<p></p>
+<p>ViewModel - Doughnut|Pie - Logo</p>
+<div>
+    <div class="ui-widget">
+        <div class="chart-responsive">
+            <canvas id="pieChart3" aria-label="Hi Pie" role="img">
+                Basic Pie Chart - Logo
+            </canvas>
+        </div>
+    </div>
+</div>
+
 
 @section Scripts
 {
@@ -43,6 +55,8 @@ https://www.chartjs.org/docs/latest/charts/doughnut.html#data-structure
             var options =
             {
                 responsive: true,
+                rotation: -1.89,
+                //cutoutPercentage: 50,
                 legend:
                 {
                     position: 'top',
@@ -80,6 +94,25 @@ https://www.chartjs.org/docs/latest/charts/doughnut.html#data-structure
                     data: @Html.Raw(@Model.ChartData),
                     options: options
                 });
+
+            var d3 = {
+                "datasets": [{
+                    "data": [30, 20, 10, 40],
+                     "borderWidth": [15, 15, 15, 15],
+                    "backgroundColor": ["#EA4335", "#34A853", "#FBBC05", "#4285F4"]
+                }],
+                "labels": ["30%", "20%", "10%", "40%"],
+          
+            };
+
+               var ctx3 = $("#pieChart3");
+                var pieChart3 = new Chart(ctx3,
+                    {
+                        type: 'pie',
+                        data: d3,
+                        options: options
+                    });
+           
         });
 
     </script>

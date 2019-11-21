@@ -238,6 +238,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApps_RazorSyntax_V3", "s
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_WebApplication_API_V3", "src\Default_WebApplication_API_V3\Default_WebApplication_API_V3.csproj", "{E03D6C62-D3DD-4128-B2E5-9B668E9CFABB}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApps_WebAdminLte_Template", "src\WebApps_WebAdminLte_Template\WebApps_WebAdminLte_Template.csproj", "{DAB2451E-6CD8-4536-818B-E2316ACDDB27}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -656,6 +658,10 @@ Global
 		{E03D6C62-D3DD-4128-B2E5-9B668E9CFABB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E03D6C62-D3DD-4128-B2E5-9B668E9CFABB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E03D6C62-D3DD-4128-B2E5-9B668E9CFABB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAB2451E-6CD8-4536-818B-E2316ACDDB27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAB2451E-6CD8-4536-818B-E2316ACDDB27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAB2451E-6CD8-4536-818B-E2316ACDDB27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAB2451E-6CD8-4536-818B-E2316ACDDB27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -762,6 +768,7 @@ Global
 		{A462D197-A416-4247-8B60-390710CA0763} = {3DF44458-5277-4486-B3F3-585CF7B357AE}
 		{103D3F22-A3C5-4C1A-8F01-D70A2A4C286E} = {3DF44458-5277-4486-B3F3-585CF7B357AE}
 		{E03D6C62-D3DD-4128-B2E5-9B668E9CFABB} = {01BC067A-DE01-4B53-AFE9-5B78CEE4FC85}
+		{DAB2451E-6CD8-4536-818B-E2316ACDDB27} = {3DF44458-5277-4486-B3F3-585CF7B357AE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D8282B92-1BD9-46FB-A23B-4AD1E0EA297F}
