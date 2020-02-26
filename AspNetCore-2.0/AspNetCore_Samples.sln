@@ -242,6 +242,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApps_WebAdminLte_Templat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_WebApplication_MVC_IndividualUserAccount_V31", "src\Default_WebApplication_MVC_IndividualUserAccount_V31\Default_WebApplication_MVC_IndividualUserAccount_V31.csproj", "{A60D912B-F1B1-48AD-97FA-50FF922C35A2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_WebApplication_MVC_IndividualUserAccount_V22", "src\Default_WebApplication_MVC_IndividualUserAccount_V22\Default_WebApplication_MVC_IndividualUserAccount_V22.csproj", "{E938623E-C10B-4F1B-A802-B380BC9E2EA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -668,6 +670,10 @@ Global
 		{A60D912B-F1B1-48AD-97FA-50FF922C35A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A60D912B-F1B1-48AD-97FA-50FF922C35A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A60D912B-F1B1-48AD-97FA-50FF922C35A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E938623E-C10B-4F1B-A802-B380BC9E2EA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E938623E-C10B-4F1B-A802-B380BC9E2EA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E938623E-C10B-4F1B-A802-B380BC9E2EA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E938623E-C10B-4F1B-A802-B380BC9E2EA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -776,6 +782,7 @@ Global
 		{E03D6C62-D3DD-4128-B2E5-9B668E9CFABB} = {01BC067A-DE01-4B53-AFE9-5B78CEE4FC85}
 		{DAB2451E-6CD8-4536-818B-E2316ACDDB27} = {3DF44458-5277-4486-B3F3-585CF7B357AE}
 		{A60D912B-F1B1-48AD-97FA-50FF922C35A2} = {01BC067A-DE01-4B53-AFE9-5B78CEE4FC85}
+		{E938623E-C10B-4F1B-A802-B380BC9E2EA2} = {01BC067A-DE01-4B53-AFE9-5B78CEE4FC85}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D8282B92-1BD9-46FB-A23B-4AD1E0EA297F}
