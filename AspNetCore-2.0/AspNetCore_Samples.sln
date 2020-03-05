@@ -240,11 +240,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_WebApplication_API_
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApps_WebAdminLte_Template", "src\WebApps_WebAdminLte_Template\WebApps_WebAdminLte_Template.csproj", "{DAB2451E-6CD8-4536-818B-E2316ACDDB27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_WebApplication_MVC_IndividualUserAccount_V31", "src\Default_WebApplication_MVC_IndividualUserAccount_V31\Default_WebApplication_MVC_IndividualUserAccount_V31.csproj", "{A60D912B-F1B1-48AD-97FA-50FF922C35A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_WebApplication_MVC_IndividualUserAccount_V31", "src\Default_WebApplication_MVC_IndividualUserAccount_V31\Default_WebApplication_MVC_IndividualUserAccount_V31.csproj", "{A60D912B-F1B1-48AD-97FA-50FF922C35A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_WebApplication_MVC_IndividualUserAccount_V22", "src\Default_WebApplication_MVC_IndividualUserAccount_V22\Default_WebApplication_MVC_IndividualUserAccount_V22.csproj", "{E938623E-C10B-4F1B-A802-B380BC9E2EA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_WebApplication_MVC_IndividualUserAccount_V22", "src\Default_WebApplication_MVC_IndividualUserAccount_V22\Default_WebApplication_MVC_IndividualUserAccount_V22.csproj", "{E938623E-C10B-4F1B-A802-B380BC9E2EA2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_WebApplication_MVC_ScaffoldIdentity_V31", "src\Default_WebApplication_MVC_ScaffoldIdentity_V31\Default_WebApplication_MVC_ScaffoldIdentity_V31.csproj", "{B2269A16-5737-44F2-891F-6782AB152FB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_WebApplication_MVC_ScaffoldIdentity_V31", "src\Default_WebApplication_MVC_ScaffoldIdentity_V31\Default_WebApplication_MVC_ScaffoldIdentity_V31.csproj", "{B2269A16-5737-44F2-891F-6782AB152FB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Host_InWorkerService", "src\Host_InWorkerService\Host_InWorkerService.csproj", "{25A9BF06-91EF-4D4A-9607-B7CF6311B926}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -680,6 +682,10 @@ Global
 		{B2269A16-5737-44F2-891F-6782AB152FB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2269A16-5737-44F2-891F-6782AB152FB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2269A16-5737-44F2-891F-6782AB152FB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25A9BF06-91EF-4D4A-9607-B7CF6311B926}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25A9BF06-91EF-4D4A-9607-B7CF6311B926}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25A9BF06-91EF-4D4A-9607-B7CF6311B926}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25A9BF06-91EF-4D4A-9607-B7CF6311B926}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -790,6 +796,7 @@ Global
 		{A60D912B-F1B1-48AD-97FA-50FF922C35A2} = {01BC067A-DE01-4B53-AFE9-5B78CEE4FC85}
 		{E938623E-C10B-4F1B-A802-B380BC9E2EA2} = {01BC067A-DE01-4B53-AFE9-5B78CEE4FC85}
 		{B2269A16-5737-44F2-891F-6782AB152FB5} = {01BC067A-DE01-4B53-AFE9-5B78CEE4FC85}
+		{25A9BF06-91EF-4D4A-9607-B7CF6311B926} = {93E15D98-7749-4C2B-9856-CCF80BFADD06}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D8282B92-1BD9-46FB-A23B-4AD1E0EA297F}
