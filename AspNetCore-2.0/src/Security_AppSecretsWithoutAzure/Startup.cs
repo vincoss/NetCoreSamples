@@ -48,11 +48,13 @@ namespace Security_AppSecretsWithoutAzure
                 endpoints.MapGet("/", async context =>
                 {
                     var dataProtectionProvider = app.ApplicationServices.GetService<IDataProtectionProvider>();
-                    var config = Configuration["SampleSecret"];
                     var protector = Program.CreateProtector(dataProtectionProvider);
-                    var str = protector.Unprotect(config);
+                    var secretEnc = Configuration["SampleSecret"];
+                    var secretVal = protector.Unprotect(secretEnc);
+                    var messageEnc = Configuration["Message"];
+                    var messageVal = protector.Unprotect(messageEnc);
 
-                    await context.Response.WriteAsync($"Hello World!-{str}");
+                    await context.Response.WriteAsync($"Hello World!-{secretVal}-{messageVal}");
                 });
             });
         }
