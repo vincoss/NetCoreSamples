@@ -53,6 +53,7 @@ namespace Security_GoogleSignIn
 
                  options.ClientId = googleAuthNSection["ClientId"];
                  options.ClientSecret = googleAuthNSection["ClientSecret"];
+                 options.SignInScheme = IdentityConstants.ExternalScheme;
              });
 
             services.AddControllersWithViews();
