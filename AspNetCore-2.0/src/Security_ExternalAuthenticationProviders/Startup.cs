@@ -1,17 +1,15 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Security_ExternalAuthenticationProviders.Data;
-using Security_ExternalAuthenticationProviders.Models;
-using Security_ExternalAuthenticationProviders.Services;
-using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Hosting;
 
 namespace Security_ExternalAuthenticationProviders
 {
@@ -25,84 +23,53 @@ namespace Security_ExternalAuthenticationProviders
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
+        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
-            services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
-                .AddDefaultTokenProviders();
-
-            // See: %APPDATA%\Microsoft\UserSecrets\<user_secrets_id>\secrets.json
-            services.AddAuthentication().AddMicrosoftAccount(microsoftOptions =>
+            services.AddAuthentication(options =>
             {
-                microsoftOptions.ClientId = Configuration["Authentication:Microsoft:ApplicationId"];
-                microsoftOptions.ClientSecret = Configuration["Authentication:Microsoft:Password"];
+                options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            })
+            .AddCookie(options =>
+            {
+                options.LoginPath = "/signin";
+                options.LogoutPath = "/signout";
+            })
+            .AddYandex(options =>
+            {
+                IConfigurationSection googleAuthNSection = Configuration.GetSection("Authentication:Yandex");
+
+                options.ClientId = googleAuthNSection["ClientId"];
+                options.ClientSecret = googleAuthNSection["ClientSecret"];
+                options.SignInScheme = IdentityConstants.ExternalScheme;
             });
 
-            /*
-                services.AddAuthentication()
-                        .AddMicrosoftAccount(microsoftOptions => { ... })
-                        .AddGoogle(googleOptions => { ... })
-                        .AddTwitter(twitterOptions => { ... })
-                        .AddFacebook(facebookOptions => { ... }); 
-            */
-
-            // Add application services.
-            services.AddTransient<IEmailSender, EmailSender>();
-
-            services.AddMvc();
-
-
-            /*
-                Require HTTPS
-            */
-            services.AddHttpsRedirection(options =>
-            {
-                options.RedirectStatusCode = StatusCodes.Status307TemporaryRedirect; // Production apps should call UseHsts.
-                options.HttpsPort = 5001;   // Sets the HTTPS port to 5001. The default value is 443.
-            });
-
+            services.AddControllersWithViews();
+            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseBrowserLink();
-                app.UseDatabaseErrorPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-                app.UseHsts(); // OAuth 2.0 requires the use of SSL for authentication over the HTTPS protocol.
             }
 
-            var builder = new ConfigurationBuilder()
-                  .SetBasePath(env.ContentRootPath)
-                  .AddJsonFile("appsettings.json",
-                               optional: false,
-                               reloadOnChange: true)
-                  .AddEnvironmentVariables();
-
-                        if (env.IsDevelopment())
-                        {
-                            builder.AddUserSecrets<Startup>();
-                        }
-
-            app.UseStaticFiles();
-            // Require HTTPS
-            app.UseHttpsRedirection();
+            app.UseRouting();
             app.UseAuthentication();
+            app.UseAuthorization();
 
-            app.UseMvc(routes =>
+            app.UseEndpoints(endpoints =>
             {
-                routes.MapRoute(
+                endpoints.MapDefaultControllerRoute();
+                endpoints.MapControllers();
+                endpoints.MapRazorPages();
+                endpoints.MapControllerRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
