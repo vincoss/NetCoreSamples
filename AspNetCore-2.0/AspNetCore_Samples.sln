@@ -250,7 +250,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Security_GoogleSignIn", "sr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_WebApplication_MVC_IndividualUserAccount_V31", "src\Default_WebApplication_MVC_IndividualUserAccount_V31\Default_WebApplication_MVC_IndividualUserAccount_V31.csproj", "{711D9A46-90F6-4EEA-8491-E217A06F21D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Security_ExternalAuthenticationProviders", "src\Security_ExternalAuthenticationProviders\Security_ExternalAuthenticationProviders.csproj", "{50D6EB31-531D-45D7-8B40-3096BE3D5D21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Security_ExternalAuthenticationProviders", "src\Security_ExternalAuthenticationProviders\Security_ExternalAuthenticationProviders.csproj", "{50D6EB31-531D-45D7-8B40-3096BE3D5D21}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Security-SSL", "Security-SSL", "{518CE3AB-7FDB-43E0-AC17-1D82FC345E54}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LettuceEncrypt_Sample", "src\SSL\LettuceEncrypt_Sample\LettuceEncrypt_Sample.csproj", "{F3762C27-3D43-4933-B360-0F636F48E950}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -698,6 +702,10 @@ Global
 		{50D6EB31-531D-45D7-8B40-3096BE3D5D21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50D6EB31-531D-45D7-8B40-3096BE3D5D21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50D6EB31-531D-45D7-8B40-3096BE3D5D21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3762C27-3D43-4933-B360-0F636F48E950}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3762C27-3D43-4933-B360-0F636F48E950}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3762C27-3D43-4933-B360-0F636F48E950}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3762C27-3D43-4933-B360-0F636F48E950}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -811,6 +819,7 @@ Global
 		{4B417797-48F3-4382-87AA-4D13E66AFEDD} = {41AB4F9F-8C59-4E9E-85F0-B805DA8BD751}
 		{711D9A46-90F6-4EEA-8491-E217A06F21D8} = {01BC067A-DE01-4B53-AFE9-5B78CEE4FC85}
 		{50D6EB31-531D-45D7-8B40-3096BE3D5D21} = {41AB4F9F-8C59-4E9E-85F0-B805DA8BD751}
+		{F3762C27-3D43-4933-B360-0F636F48E950} = {518CE3AB-7FDB-43E0-AC17-1D82FC345E54}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D8282B92-1BD9-46FB-A23B-4AD1E0EA297F}
