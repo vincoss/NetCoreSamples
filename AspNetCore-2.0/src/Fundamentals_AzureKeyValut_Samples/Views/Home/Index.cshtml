@@ -1,0 +1,8 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+
+<h1>ConnectionStrings--Northwind--Dev</h1>
+<h3>@Configuration["ConnectionStrings--Northwind--Dev"]</h3>
