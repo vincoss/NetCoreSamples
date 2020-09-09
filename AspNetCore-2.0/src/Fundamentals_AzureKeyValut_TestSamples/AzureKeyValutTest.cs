@@ -14,18 +14,19 @@ namespace Fundamentals_AzureKeyValut_TestSamples
 {
     /// <summary>
     /// https://docs.microsoft.com/en-us/learn/modules/manage-secrets-with-azure-key-vault/
+    /// https://docs.microsoft.com/en-us/cli/azure/storage/account?view=azure-cli-latest
     /// https://c-sharx.net/read-secrets-from-azure-key-vault-in-a-net-core-console-app
     /// </summary>
     public class AzureKeyValutTest
     {
         // This is the ID which can be found as "Application (client) ID" when selecting the registered app under "Azure Active Directory" -> "App registrations".
-        const string APP_CLIENT_ID = "APP ID";
+        const string APP_CLIENT_ID = "TODO-Client ID";
 
         // This is the client secret from the app registration process.
-        const string APP_CLIENT_SECRET = "APP SECRET";
+        const string APP_CLIENT_SECRET = "TODO-Secret";
 
         // This is available as "DNS Name" from the overview page of the Key Vault.
-        const string KEYVAULT_BASE_URI = "https://key-value-name-here.vault.azure.net";
+        const string KEYVAULT_BASE_URI = "https://TODO-blobname.vault.azure.net";
 
         [Fact]
         public async void GetSecretAsyncTest()
@@ -82,9 +83,7 @@ namespace Fundamentals_AzureKeyValut_TestSamples
 
             await cred.InitialiseAzure();
 
-            var value = await cred.GetSecretAsync("Message");
-
-            Assert.Equal("Hello from Key Valut.", value);
+            Assert.True(cred.Cache.Any());
         }
     }
 }
@@ -94,7 +93,7 @@ public class AzureConfigurationService
     private readonly string _vaultUrl;
     private readonly string _applicationId;
     private readonly string _applicationSecret;
-    private readonly Dictionary<string, SecureString> Cache = new Dictionary<string, SecureString>(StringComparer.OrdinalIgnoreCase);
+    public readonly Dictionary<string, SecureString> Cache = new Dictionary<string, SecureString>(StringComparer.OrdinalIgnoreCase);
 
     public AzureConfigurationService(string vaultUrl, string applicationId, string applicationSecret)
     {
