@@ -7,6 +7,7 @@ using WebApps_jQuery_Samples.Interfaces;
 
 using CsvHelper;
 using System.IO;
+using System.Globalization;
 
 namespace WebApps_jQuery_Samples.Services
 {
@@ -29,7 +30,7 @@ namespace WebApps_jQuery_Samples.Services
 
                 using (var stream = assembly.GetManifestResourceStream(rn))
                 using (var reader = new StreamReader(stream))
-                using (var csv = new CsvReader(reader))
+                using (var csv = new CsvReader(reader, CultureInfo.CurrentCulture))
                 {
                     csv.Configuration.HasHeaderRecord = true;
 
