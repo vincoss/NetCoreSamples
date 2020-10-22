@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = ViewBag.Title;
+}
+@using WebApplication_MVC_Navigation_V31.Navigation
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<nav id="sidebar">
+
+    <div class="p-4 pt-5">
+        <ul class="list-unstyled components mb-5">
+            @foreach (NavigationItemViewModel item in ViewBag.Navigation)
+            {
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="@item.GetValue(item.HasItems,"dropdown-toggle")"><span>@item.Title</span> <small class="count">(@item.ItemsCount)</small></a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        @foreach (NavigationItemViewModel m in item.Children)
+                        {
+                            <li>
+                                <a href="@Url.Action(m.ActionName, m.Controller, m.RouteValues.ToRouteDictionary())" class="tile">
+
+                                    <span class="icon">
+                                        <span class="glyphicon glyphicon-@m.Image" style="color:#ba8f00;padding-bottom:10px;"></span>
+                                    </span>
+
+                                    <span class="text">
+                                        <span class="name">@m.Title</span>
+                                    </span>
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </li>
+            }
+        </ul>
+    </div>
+</nav>
