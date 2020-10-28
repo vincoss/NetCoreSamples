@@ -8,7 +8,8 @@ using System.Net.Http;
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using System.Security;
 using System.Runtime.InteropServices;
-
+using System.Text;
+using System.IO;
 
 namespace Fundamentals_AzureKeyValut_TestSamples
 {
@@ -53,7 +54,7 @@ namespace Fundamentals_AzureKeyValut_TestSamples
         }
 
         [Fact]
-        public async void GetSecretsAsyncTest()
+        public async void GetSecretKeysAsyncTest()
         {
             // Use the client SDK to get access to the key vault. To authenticate we use the identity app we registered and
             // use the client ID and the client secret to make our claim.
@@ -84,6 +85,27 @@ namespace Fundamentals_AzureKeyValut_TestSamples
             await cred.InitialiseAzure();
 
             Assert.True(cred.Cache.Any());
+        }
+
+        [Fact]
+        public async void GetSecreetsAndValuesTest()
+        {
+            var cred = new AzureConfigurationService(KEYVAULT_BASE_URI, APP_CLIENT_ID, APP_CLIENT_SECRET);
+
+            await cred.InitialiseAzure();
+            var sb = new StringBuilder();
+
+            Assert.True(cred.Cache.Any());
+
+            foreach (var pair in cred.Cache)
+            {
+                var v = await cred.GetSecretAsync(pair.Key);
+                sb.AppendLine($"{pair.Key}: {v}");
+            }
+
+            Assert.True(sb.Length > 0);
+
+            //File.WriteAllText(@"C:\Temp\GetSecreetsAndValuesTest.txt", sb.ToString());
         }
     }
 }
