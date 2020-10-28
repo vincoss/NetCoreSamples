@@ -42,5 +42,10 @@ namespace WebApplication_MVC_Navigation_V31.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public IActionResult SidebarOne()
+        {
+            return View();
+        }
     }
 }

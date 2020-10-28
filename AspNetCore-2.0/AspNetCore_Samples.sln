@@ -258,7 +258,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LettuceEncrypt_Sample", "sr
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Navigation", "Navigation", "{0C2006E6-F7C2-4C86-B063-0B10E9EFA9DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication_MVC_Navigation_V31", "src\WebApplication_MVC_Navigation_V31\WebApplication_MVC_Navigation_V31.csproj", "{C28B0477-3705-4DF9-AD34-6DC3E4F97A42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication_MVC_Navigation_V31", "src\WebApplication_MVC_Navigation_V31\WebApplication_MVC_Navigation_V31.csproj", "{C28B0477-3705-4DF9-AD34-6DC3E4F97A42}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
