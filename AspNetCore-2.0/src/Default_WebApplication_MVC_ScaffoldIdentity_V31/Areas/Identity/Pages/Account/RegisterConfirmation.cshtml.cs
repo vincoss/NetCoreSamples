@@ -27,7 +27,7 @@ namespace Default_WebApplication_MVC_ScaffoldIdentity_V31.Areas.Identity.Pages.A
 
         public string EmailConfirmationUrl { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(string email)
+        public async Task<IActionResult> OnGetAsync(string email, string returnUrl = null)
         {
             if (email == null)
             {
@@ -51,7 +51,7 @@ namespace Default_WebApplication_MVC_ScaffoldIdentity_V31.Areas.Identity.Pages.A
                 EmailConfirmationUrl = Url.Page(
                     "/Account/ConfirmEmail",
                     pageHandler: null,
-                    values: new { area = "Identity", userId = userId, code = code },
+                    values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
                     protocol: Request.Scheme);
             }
 
