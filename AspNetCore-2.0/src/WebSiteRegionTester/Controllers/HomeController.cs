@@ -39,6 +39,8 @@ namespace WebSiteRegionTester.Controllers
             sb.Add($"RemoteIp:        {RemoteIp()}");
             sb.Add($"CurrentTimeZone: {System.TimeZoneInfo.Local}");
 
+            sb.AddRange(GetRequestHeaders());
+
             return sb;
         }
 
@@ -61,6 +63,14 @@ namespace WebSiteRegionTester.Controllers
                 return HttpContext.Connection.RemoteIpAddress.ToString();
             }
             return null;
+        }
+
+        public IEnumerable<string> GetRequestHeaders()
+        {
+            foreach(var h in this.HttpContext.Request.Headers)
+            {
+                yield return $"{h.Key}:         {h.Value}";
+            }
         }
     }
 }
