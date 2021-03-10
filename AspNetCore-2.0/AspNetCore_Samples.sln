@@ -106,8 +106,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_WebApplication_MVC_
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_RazorClassLibrary", "src\Default_RazorClassLibrary\Default_RazorClassLibrary.csproj", "{8D3AACB0-1DAB-4A6B-9C4F-84ED608DAEBD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MassiveORM_Samples", "src\MassiveORM_Samples\MassiveORM_Samples.csproj", "{A2A1A120-052C-4F29-A288-05799F577562}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApps", "WebApps", "{3DF44458-5277-4486-B3F3-585CF7B357AE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApps_RazorPages_Introduction", "src\WebApps_RazorPages_Introduction\WebApps_RazorPages_Introduction.csproj", "{911ADA80-C262-4BFD-9A43-807463DF7A8B}"
@@ -264,7 +262,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{2B896D63
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebSiteRegionTester", "src\WebSiteRegionTester\WebSiteRegionTester.csproj", "{6CD14E36-F345-486D-9332-CEC758FA78AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_CoreWebAPI_V5", "src\Default_CoreWebAPI_V5\Default_CoreWebAPI_V5.csproj", "{21922F67-8D77-40F0-BA3A-126F18E7218E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_CoreWebAPI_V5", "src\Default_CoreWebAPI_V5\Default_CoreWebAPI_V5.csproj", "{21922F67-8D77-40F0-BA3A-126F18E7218E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -436,10 +434,6 @@ Global
 		{8D3AACB0-1DAB-4A6B-9C4F-84ED608DAEBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D3AACB0-1DAB-4A6B-9C4F-84ED608DAEBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D3AACB0-1DAB-4A6B-9C4F-84ED608DAEBD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A2A1A120-052C-4F29-A288-05799F577562}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A2A1A120-052C-4F29-A288-05799F577562}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A2A1A120-052C-4F29-A288-05799F577562}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A2A1A120-052C-4F29-A288-05799F577562}.Release|Any CPU.Build.0 = Release|Any CPU
 		{911ADA80-C262-4BFD-9A43-807463DF7A8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{911ADA80-C262-4BFD-9A43-807463DF7A8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{911ADA80-C262-4BFD-9A43-807463DF7A8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
