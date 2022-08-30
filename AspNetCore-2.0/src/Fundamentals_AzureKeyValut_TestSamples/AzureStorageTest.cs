@@ -10,6 +10,8 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Text;
 using Xunit;
+using System.Net.Http;
+using System.IO;
 
 namespace Fundamentals_AzureKeyValut_TestSamples
 {
@@ -74,7 +76,7 @@ namespace Fundamentals_AzureKeyValut_TestSamples
                     tenantId,
                     AzureEnvironment.AzureGlobalCloud);
 
-            var azure = Azure
+            var azure = Microsoft.Azure.Management.Fluent.Azure
         .Configure()
         .Authenticate(credentials)
         .WithDefaultSubscription();
@@ -92,6 +94,29 @@ namespace Fundamentals_AzureKeyValut_TestSamples
             var container = blobClient.GetContainerReference("TODO - container name");
 
             Assert.NotNull(container);
+        }
+
+        [Fact]
+        public async void PushFileToBlobWithSasTokenUrl()
+        {
+            var filePath = @"c:\temp\test.txt";
+            var url = "SAS Token url here";
+
+            var _client = new HttpClient();
+            var content = new MultipartFormDataContent();
+            var file = File.OpenRead(filePath);
+
+            var fileContent = new StreamContent(file);
+
+            content.Add(fileContent, "file", "test.txt");
+
+            content.Headers.Add("x-ms-blob-type", "BlockBlob");
+
+            var response = await _client.PutAsync(url, content);
+
+            response.EnsureSuccessStatusCode();
+
+             Assert.NotNull(response);
         }
     }
 }
