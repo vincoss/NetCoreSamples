@@ -264,7 +264,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebSiteRegionTester", "src\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_CoreWebAPI_V5", "src\Default_CoreWebAPI_V5\Default_CoreWebAPI_V5.csproj", "{21922F67-8D77-40F0-BA3A-126F18E7218E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial_UploadSamples", "src\Tutorial_UploadSamples\Tutorial_UploadSamples.csproj", "{1EE872EB-0956-447D-B035-1017438DF21F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial_UploadSamples", "src\Tutorial_UploadSamples\Tutorial_UploadSamples.csproj", "{1EE872EB-0956-447D-B035-1017438DF21F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_AspNetCoreWebApi_7", "src\Default_AspNetCoreWebApi_7\Default_AspNetCoreWebApi_7.csproj", "{B2F8CCC3-7238-4A21-B9FD-F84CD3BC3013}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_AspNetCoreWebApp_7", "src\Default_AspNetCoreWebApp_7\Default_AspNetCoreWebApp_7.csproj", "{07AECA5E-891A-4D10-934D-20F301500655}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -728,6 +732,14 @@ Global
 		{1EE872EB-0956-447D-B035-1017438DF21F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EE872EB-0956-447D-B035-1017438DF21F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1EE872EB-0956-447D-B035-1017438DF21F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2F8CCC3-7238-4A21-B9FD-F84CD3BC3013}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2F8CCC3-7238-4A21-B9FD-F84CD3BC3013}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2F8CCC3-7238-4A21-B9FD-F84CD3BC3013}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2F8CCC3-7238-4A21-B9FD-F84CD3BC3013}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07AECA5E-891A-4D10-934D-20F301500655}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07AECA5E-891A-4D10-934D-20F301500655}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07AECA5E-891A-4D10-934D-20F301500655}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07AECA5E-891A-4D10-934D-20F301500655}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -846,6 +858,8 @@ Global
 		{6CD14E36-F345-486D-9332-CEC758FA78AC} = {2B896D63-8331-4A27-85E7-93412EC7A3E4}
 		{21922F67-8D77-40F0-BA3A-126F18E7218E} = {01BC067A-DE01-4B53-AFE9-5B78CEE4FC85}
 		{1EE872EB-0956-447D-B035-1017438DF21F} = {4F19C00D-6324-4748-8FB0-E69052771FB3}
+		{B2F8CCC3-7238-4A21-B9FD-F84CD3BC3013} = {01BC067A-DE01-4B53-AFE9-5B78CEE4FC85}
+		{07AECA5E-891A-4D10-934D-20F301500655} = {01BC067A-DE01-4B53-AFE9-5B78CEE4FC85}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D8282B92-1BD9-46FB-A23B-4AD1E0EA297F}
