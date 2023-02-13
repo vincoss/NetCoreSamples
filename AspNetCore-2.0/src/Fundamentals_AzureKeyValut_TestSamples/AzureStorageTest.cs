@@ -21,6 +21,7 @@ using System.Net.Http.Headers;
 using System.Net.Mime;
 using System.Security.Cryptography;
 using System.Threading;
+using Fundamentals_AzureKeyValut_TestSamples.Services;
 
 namespace Fundamentals_AzureKeyValut_TestSamples
 {
@@ -126,6 +127,16 @@ namespace Fundamentals_AzureKeyValut_TestSamples
             response.EnsureSuccessStatusCode();
 
              Assert.NotNull(response);
+        }
+
+        [Fact]
+        public async void UploadLargeFile()
+        {
+            var filePath = @"C:\Temp\upload\8CC9EFF8-BFFC-4F8D-B434-FDF74A6C8793.exe";
+            var fileName = Path.GetFileName(filePath);
+
+            var url = "";
+            await new AzureBlobService().UploadAsync(url, fileName, File.OpenRead(filePath));
         }
 
         [Fact]
