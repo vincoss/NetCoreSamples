@@ -270,7 +270,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_AspNetCoreWebApp_7"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_ClassLibrary", "src\Default_ClassLibrary\Default_ClassLibrary.csproj", "{EA4AEA90-25B2-40A6-9B7D-9AA0D4E4472A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_AspNetCoreWebApi_7", "src\Default_AspNetCoreWebApi_7\Default_AspNetCoreWebApi_7.csproj", "{692733C8-523D-4C5B-B40C-B172D4740076}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_AspNetCoreWebApi_7", "src\Default_AspNetCoreWebApi_7\Default_AspNetCoreWebApi_7.csproj", "{692733C8-523D-4C5B-B40C-B172D4740076}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
