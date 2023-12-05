@@ -13,8 +13,8 @@ namespace Fundamentals_AzureKeyValut_TestSamples
         [Fact]
         public async void T1()
         {
-            var n = "9dfeba6c-95e9-4b42-b114-599f80acdd13";
-            var k = "xeTTfBk-1Vl0yI.7r-B841Mf8r5_S.5RH_";
+            var n = "";
+            var k = "";
             var scopes = new[] { "User.Read" };
 
             string redirectUri = "https://login.windows.net";

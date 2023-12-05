@@ -15,16 +15,16 @@ namespace Fundamentals_AzureKeyValut_TestSamples
 		public async Task DefaultAzureCredentialTest()
 		{
 			// When deployed to an azure host, the default azure credential will authenticate the specified user assigned managed identity.
-			string userAssignedClientId = "9dfeba6c-95e9-4b42-b114-599f80acdd13";
+			string userAssignedClientId = "";
 			var credential = new DefaultAzureCredential(new DefaultAzureCredentialOptions { ManagedIdentityClientId = userAssignedClientId });
 		}
 
 			[Fact]
 		public async Task EnvironmentCredentialTest()
 		{
-			var clientId = "9dfeba6c-95e9-4b42-b114-599f80acdd13";
-			var tenantId = "3721078a-9a5b-472f-b173-637fce1dee74";
-			var clientSecret = "xeTTfBk-1Vl0yI.7r-B841Mf8r5_S.5RH_";
+			var clientId = "";
+			var tenantId = "";
+			var clientSecret = "";
 
 			// First we construct our client
 			ArmClient client = new ArmClient(new EnvironmentCredential());

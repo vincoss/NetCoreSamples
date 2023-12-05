@@ -132,7 +132,7 @@ namespace Fundamentals_AzureKeyValut_TestSamples
         [Fact]
         public async void UploadLargeFile()
         {
-            var filePath = @"C:\Temp\upload\8CC9EFF8-BFFC-4F8D-B434-FDF74A6C8793.exe";
+            var filePath = @"C:\Temp\upload\test.txt";
             var fileName = Path.GetFileName(filePath);
 
             var url = "";
@@ -142,7 +142,7 @@ namespace Fundamentals_AzureKeyValut_TestSamples
         [Fact]
         public async void ChunkedPushFileToBlobWithSasTokenUrl()
         {
-            var filePath = @"C:\Temp\upload\Workstation-Installs-2022_3.7z";
+            var filePath = @"";
             var fileName = Path.GetFileName(filePath);
 
 
